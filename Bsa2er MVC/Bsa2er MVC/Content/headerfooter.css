@@ -48,17 +48,17 @@ footer{
 
 /*endsearch*/
 
-::placeholder {
+::placeholder{
   text-align: right;
   color: black;
   font-weight: 700;
 }
 
-#upperheader{
-  background-image: url(../../images/7.jpg);
-  float:left;
-  border-radius: 0 0 30% 0;
-  border-bottom: .3em solid #F9D801;
+#upperheader {
+    background-image: url('../images/7.jpg');
+    float: left;
+    border-radius: 0 0 30% 0;
+    border-bottom: .3em solid #F9D801;
 }
 #lowerheader span a{
   text-align: right;
@@ -132,17 +132,17 @@ svg{
   margin-top: 20px;
   margin-left: 20px;
 }
-.side-nav{
-height:100%;
-width:0;
-position:fixed;
-z-index:20;
-top:0;
-left:0;
-background-image: url(/Basaer/images/7.jpg);
-overflow-x:hidden;
-padding-top:60px;
-transition:0.5s;
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    background-image: url('../images/7.jpg');
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
 }
 
 .side-nav a{
@@ -168,13 +168,13 @@ margin-left:50px;
 ul{
   list-style-type:none ;
 }
-#sign{
-  background-image: url(../../images/7.jpg);
-  border-radius: 0 0 20% 20%;
-  border-bottom: .2em solid #F9D801;
-  display: flex;
-  justify-content: center;
-  margin-top:2% ;
+#sign {
+    background-image: url('../images/7.jpg');
+    border-radius: 0 0 20% 20%;
+    border-bottom: .2em solid #F9D801;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
 }
 #sign a{
   color: white;
@@ -205,7 +205,7 @@ text-align: center;
 }
 
 body {
-  background-image: url(../../images/6.jpg);
+    background-image: url('../images/6.jpg');
 }
 .myf,.myl{
   width: 60%;

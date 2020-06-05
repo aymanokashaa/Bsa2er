@@ -24,7 +24,20 @@ namespace Bsa2er_MVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                     "~/Content/headerfooter.css",
+                     "~/Content/font-awesome.css",
+                     "~/Content/bootstrap-rtl.min.css"));
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+                "~/Scripts/date.js",
+                "~/Scripts/date2.js",
+                "~/Scripts/scroll.js",
+                "~/Scripts/show.js",
+                "~/Scripts/slide.js", 
+                "~/Scripts/show2.js",
+                 "~/Scripts/popper.js",
+            "~/Scripts/jquery.nicescroll.min.js"
+                ));
         }
     }
 }
