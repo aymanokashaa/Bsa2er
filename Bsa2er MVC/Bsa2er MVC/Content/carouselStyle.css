@@ -1,0 +1,92 @@
+
+/*carousel style*//*************************************************************************/
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.carousel-control-prev-icon {
+  margin-right: 110px;
+}
+.carousel-indicators{
+  z-index: 5;
+}
+.carousel-control-next-icon {
+  margin-left: 110px;
+}
+
+.box {
+  top: -60px;
+  z-index: 10;
+
+}
+
+.box a div {
+  width: 150px;
+  height:  90px;
+  background-color: rgb(75, 47, 47);
+  z-index: 10;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  font-size: larger;
+}
+/*.box a:first-child div,.box a:nth-child(2) div {
+  padding-top: 10px;
+}*/
+.box a div{
+  padding-top: 30px;
+}
+
+.box a div:hover {
+  color: teal;
+}
+.box a div span {
+text-align: center;
+margin-top: 5px;
+}
+.box a:hover{
+   text-decoration: none;
+}
+.carousel-inner img{
+      width: 100%;
+}
+@media all and (max-width: 786px) and (min-width: 320px){
+  .carousel-control-prev-icon,.carousel-control-next-icon  {
+    margin: 0px;
+    width: 50px;
+    height: 50px;
+  }
+.box a div{
+  width: 90px;
+  height: 50px;
+  font-size: medium;
+}
+
+.box a:nth-child(2) div,.box a:nth-child(3) div {
+  padding-top: 1px;
+}
+.box a:nth-child(1) div{
+  padding-top: 10px;
+}
+.box a div span {
+  text-align: justify;
+  margin-top: 5px;
+  }
+  
+.box {
+  top: -30px;
+
+}
+}
+@media all and (max-width: 320px){
+
+.box a div{
+  width: 70px;
+  
+}
+
+}
