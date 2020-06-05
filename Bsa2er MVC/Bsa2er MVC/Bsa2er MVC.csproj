@@ -191,7 +191,11 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carouselStyle.css" />
     <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\Gallery.css" />
     <Content Include="Content\headerfooter.css" />
+    <Content Include="Content\Library.css" />
+    <Content Include="Content\News.css" />
+    <Content Include="Content\PublicProgames.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -373,6 +377,12 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Library.cshtml" />
+    <Content Include="Views\Home\PublicProgarms.cshtml" />
+    <Content Include="Views\Home\Tracks.cshtml" />
+    <Content Include="Views\Home\Progs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,7 +17,11 @@ namespace Bsa2er_MVC
                      "~/Content/bootstrap-rtl.min.css",
                      "~/Content/bootstrap.min.css",
                      "~/Content/font-awesome.css",
-                     "~/Content/headerfooter.css"));
+                     "~/Content/headerfooter.css",
+                     "~/Content/Gallery.css",
+                     "~/Content/News.css",
+                      "~/Content/Library.css"
+));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                 "~/Scripts/slide.js",

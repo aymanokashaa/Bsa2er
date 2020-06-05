@@ -26,5 +26,29 @@ namespace Bsa2er_MVC.Controllers
 
             return View();
         }
+        public ActionResult Gallery()
+        {
+            return View();
+        }
+        public ActionResult News()
+        {
+            return View();
+        }
+        public ActionResult Library()
+        {
+            return View();
+        }
+        public ActionResult PublicProgarms()
+        {
+            return View();
+        }
+        public ActionResult Tracks()
+        {
+            return View();
+        }
+        public ActionResult Progs()
+        {
+            return View();
+        }
     }
 }

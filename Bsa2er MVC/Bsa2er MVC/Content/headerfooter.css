@@ -97,12 +97,12 @@ input {
   transform: scale(1.25);
 }
 #image2{
-  width: 90%;
+  width: 80%;
   margin-top: 5%;
   transition: 1s;
 }
 #image2:hover{
-  transform: scale(1.5);
+  transform: scale(1.4);
 }
 
 header {
