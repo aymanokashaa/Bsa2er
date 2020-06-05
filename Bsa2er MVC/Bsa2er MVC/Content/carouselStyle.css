@@ -24,7 +24,7 @@
 
 }
 
-.box a div {
+.box div {
   width: 150px;
   height:  90px;
   background-color: rgb(75, 47, 47);
@@ -37,14 +37,16 @@
 /*.box a:first-child div,.box a:nth-child(2) div {
   padding-top: 10px;
 }*/
-.box a div{
+.box div{
   padding-top: 30px;
 }
-
-.box a div:hover {
+.box div a {
+  color: white;
+}
+.box div a:hover {
   color: teal;
 }
-.box a div span {
+.box div span {
 text-align: center;
 margin-top: 5px;
 }
@@ -60,19 +62,19 @@ margin-top: 5px;
     width: 50px;
     height: 50px;
   }
-.box a div{
+.box div{
   width: 90px;
   height: 50px;
   font-size: medium;
 }
 
-.box a:nth-child(2) div,.box a:nth-child(3) div {
+.box:nth-child(2) div,.box:nth-child(3) div {
   padding-top: 1px;
 }
-.box a:nth-child(1) div{
+.box:nth-child(1) div{
   padding-top: 10px;
 }
-.box a div span {
+.box div span {
   text-align: justify;
   margin-top: 5px;
   }
@@ -84,7 +86,7 @@ margin-top: 5px;
 }
 @media all and (max-width: 320px){
 
-.box a div{
+.box div{
   width: 70px;
   
 }

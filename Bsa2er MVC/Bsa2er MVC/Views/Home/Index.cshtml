@@ -29,14 +29,14 @@
     </div>
 
     <div class="row box col-12 justify-content-around" style="margin-top: 12px;margin-left: 5px; width: 100%;">
-        <a href="#" class="">
-            <div><span>سجل الأن</span></div>
-        </a>
-        <a href="#" class="">
-            <div><span>تسجيل الدخول</span></div>
-        </a>
-        <a href="Personal.html" class="">
-            <div><span>التعليم الالكترونى</span></div>
-        </a>
+       
+            <div><span>@Html.ActionLink("سجل الأن", "Register", "Account", null,null) </span></div>
+      
+       
+            <div><span>@Html.ActionLink("تسجيل الدخول", "Login", "Account", null,null)  </span></div>
+       
+        
+            <div><span>@Html.ActionLink("التعليم الالكترونى", "", "", null, null)</span></div>
+       
     </div>
 </div>
