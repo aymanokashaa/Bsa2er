@@ -195,7 +195,9 @@
     <Content Include="Content\headerfooter.css" />
     <Content Include="Content\Library.css" />
     <Content Include="Content\News.css" />
+    <Content Include="Content\Program.css" />
     <Content Include="Content\PublicProgames.css" />
+    <Content Include="Content\Track.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -383,6 +385,9 @@
     <Content Include="Views\Home\PublicProgarms.cshtml" />
     <Content Include="Views\Home\Tracks.cshtml" />
     <Content Include="Views\Home\Progs.cshtml" />
+    <Content Include="Views\Home\Program.cshtml" />
+    <Content Include="Views\Home\Track.cshtml" />
+    <Content Include="Views\Home\Prog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

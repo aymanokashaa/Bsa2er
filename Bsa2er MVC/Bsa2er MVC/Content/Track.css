@@ -1,0 +1,38 @@
+﻿.imgContainer {
+    padding-left: 25%;
+}
+
+    .imgContainer img {
+        transition: 1s;
+        border-radius: 10px;
+        width: 70%;
+        height: 300px;
+    }
+
+        .imgContainer img:hover {
+            transform: scale(1.1);
+        }
+
+.tracktb {
+    direction: rtl;
+    box-shadow: 7px 7px 10px gray;
+}
+
+.tracktb tr {
+    text-align: right;
+}
+
+.inputDiv {
+    padding-left: 37%;
+}
+
+@media all and (max-width: 800px) {
+    .imgContainer img {
+        width: 70%;
+        height: 125px;
+    }
+
+    .imgContainer {
+        padding-left: 25%;
+    }
+}

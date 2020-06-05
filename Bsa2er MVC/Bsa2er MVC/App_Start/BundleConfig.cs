@@ -19,8 +19,11 @@ namespace Bsa2er_MVC
                      "~/Content/font-awesome.css",
                      "~/Content/headerfooter.css",
                      "~/Content/Gallery.css",
+                     "~/Content/carouselStyle.css",
                      "~/Content/News.css",
-                      "~/Content/Library.css"
+                      "~/Content/Library.css",
+                      "~/Content/Program.css",
+                      "~/Content/Track.css"
 ));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(

@@ -1,0 +1,20 @@
+﻿#prgframe {
+    width: 55%;
+    height: 400px;
+}
+
+.tab {
+    direction: rtl;
+    text-align: right;
+}
+
+ol {
+    list-style-type: none;
+}
+
+@media only screen and (max-width: 786px) {
+    #prgframe {
+        width: 70%;
+        height: 200px;
+    }
+}

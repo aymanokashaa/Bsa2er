@@ -15,8 +15,6 @@ namespace Bsa2er_MVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
@@ -42,7 +40,16 @@ namespace Bsa2er_MVC.Controllers
         {
             return View();
         }
+        public ActionResult Program()
+        {
+            return View();
+        }
+
         public ActionResult Tracks()
+        {
+            return View();
+        }
+        public ActionResult Track()
         {
             return View();
         }
@@ -50,5 +57,10 @@ namespace Bsa2er_MVC.Controllers
         {
             return View();
         }
+        public ActionResult Prog()
+        {
+            return View();
+        }
+        
     }
 }
