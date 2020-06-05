@@ -186,10 +186,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carouselStyle.css" />
-<<<<<<< HEAD
     <Content Include="Content\font-awesome.css" />
-=======
->>>>>>> cfc5574258e2353b0ec0cea3100b7d8e6428c4bf
     <Content Include="Content\headerfooter.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -230,10 +227,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-<<<<<<< HEAD
     <Content Include="Scripts\popper.js" />
-=======
->>>>>>> cfc5574258e2353b0ec0cea3100b7d8e6428c4bf
     <Content Include="Scripts\scroll.js" />
     <Content Include="Scripts\show.js" />
     <Content Include="Scripts\show2.js" />
