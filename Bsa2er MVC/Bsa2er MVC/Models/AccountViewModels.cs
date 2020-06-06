@@ -79,6 +79,10 @@ namespace Bsa2er_MVC.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+        public string Country {set;get;}
+        public string qualification {set;get;}
+        public int ? phonenumber { set; get; }
+
     }
 
     public class ResetPasswordViewModel

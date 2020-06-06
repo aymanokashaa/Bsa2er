@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bsa2er_MVC.Models;
+using System.Collections.Generic;
 
 namespace Bsa2er_MVC.Controllers
 {
@@ -139,6 +140,22 @@ namespace Bsa2er_MVC.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+              List<String> Countries = new List<String>();
+            List<String> qualifications = new List<string>();
+            Countries.Add("مصر");
+            Countries.Add("باكستان");
+            Countries.Add("السعودية");
+            Countries.Add("الامارات");
+            Countries.Add("تونس");
+            qualifications.Add("متوسط");
+            qualifications.Add("ثانوي");
+            qualifications.Add("بكالريوس ");
+            qualifications.Add("دراسات عليا ");
+            qualifications.Add("غير ذلك ");
+            SelectList qualification = new SelectList(qualifications);
+            SelectList CountriesNames = new SelectList(Countries);
+            ViewBag.countries = CountriesNames;
+            ViewBag.qualifications = qualification;
             return View();
         }
 
