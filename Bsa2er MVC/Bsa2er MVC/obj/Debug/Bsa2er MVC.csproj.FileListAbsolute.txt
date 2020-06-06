@@ -430,3 +430,5 @@ C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.C
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v1.resources
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.m1.resources
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
