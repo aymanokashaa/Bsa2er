@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Ajax.Utilities;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bsa2er_MVC.Models
@@ -62,28 +64,29 @@ namespace Bsa2er_MVC.Models
         public bool RememberMe { get; set; }
     }
 
+    
     public class RegisterViewModel
     {
-        [Required]
+        private const string V = "ادخل بريدك الالكتروني";
+        [Required(ErrorMessage = V)]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        
+        [Required(ErrorMessage = "يجب ادخال كلمة المرور")]
+        [StringLength(100, ErrorMessage = "كلمة المرور يجب ان تكون 6 حروف علي الاقل", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
-        [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
-        public string ConfirmPassword { get; set; }
-        public string Country {set;get;}
-        public string qualification {set;get;}
+        [Compare("Password", ErrorMessage = "لا تطابق كلمة المرور")]
+        public String ConfirmPassword { get; set; }
+        public String  countries { set;get;}
+        public String qualifications { set;get;}
         public int ? phonenumber { set; get; }
-
     }
+
 
     public class ResetPasswordViewModel
     {
@@ -93,14 +96,14 @@ namespace Bsa2er_MVC.Models
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "كلمة المرور يجب ان تكون 6 حروف علي الاقل", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Compare("Password", ErrorMessage = "لا تطابق كلمة المرور")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
