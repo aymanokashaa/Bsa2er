@@ -82,9 +82,9 @@ namespace Bsa2er_MVC.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "لا تطابق كلمة المرور")]
         public String ConfirmPassword { get; set; }
-        public String  countries { set;get;}
-        public String qualifications { set;get;}
-        public int ? phonenumber { set; get; }
+        public String  Countries { set;get;}
+        public String Qualifications { set;get;}
+        public  String  Phonenumber { set; get; }
     }
 
 
