@@ -2,7 +2,12 @@ namespace Bsa2er_MVC.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
+<<<<<<< HEAD:Bsa2er MVC/Bsa2er MVC/Migrations/202006061216275_v1.cs
     public partial class v1 : DbMigration
+=======
+    
+    public partial class m1 : DbMigration
+>>>>>>> 0d6afc8482ad81217b89b7f0b3d0238810b277d3:Bsa2er MVC/Bsa2er MVC/Migrations/202006061712287_m1.cs
     {
         public override void Up()
         {
