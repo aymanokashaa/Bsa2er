@@ -22,6 +22,5 @@ namespace Bsa2er_MVC.Models
 
         public string ImagePath { set; get; }
 
-        public virtual Book Book { set; get;}
     }
 }

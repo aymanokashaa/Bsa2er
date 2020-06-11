@@ -181,13 +181,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006102040003_v1.cs" />
-    <Compile Include="Migrations\202006102040003_v1.Designer.cs">
-      <DependentUpon>202006102040003_v1.cs</DependentUpon>
+    <Compile Include="Migrations\202006111829439_v1.cs" />
+    <Compile Include="Migrations\202006111829439_v1.Designer.cs">
+      <DependentUpon>202006111829439_v1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006111230503_version2.cs" />
-    <Compile Include="Migrations\202006111230503_version2.Designer.cs">
-      <DependentUpon>202006111230503_version2.cs</DependentUpon>
+    <Compile Include="Migrations\202006111831014_v2.cs" />
+    <Compile Include="Migrations\202006111831014_v2.Designer.cs">
+      <DependentUpon>202006111831014_v2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -420,11 +420,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006102040003_v1.resx">
-      <DependentUpon>202006102040003_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006111829439_v1.resx">
+      <DependentUpon>202006111829439_v1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111230503_version2.resx">
-      <DependentUpon>202006111230503_version2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006111831014_v2.resx">
+      <DependentUpon>202006111831014_v2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

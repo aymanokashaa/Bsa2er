@@ -26,6 +26,7 @@ namespace Bsa2er_MVC.Models
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
+
         {
         }
         public virtual DbSet<Book> Books { set; get; }
