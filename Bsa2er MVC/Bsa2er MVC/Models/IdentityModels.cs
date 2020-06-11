@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -27,9 +28,13 @@ namespace Bsa2er_MVC.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public virtual DbSet<Book> Books { set; get; }
+        public virtual DbSet<Booksection> Booksections { set; get;}
 
+        public virtual DbSet<news> News { set; get; }
         public static ApplicationDbContext Create()
         {
+            
             return new ApplicationDbContext();
         }
     }
