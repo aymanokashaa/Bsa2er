@@ -12,6 +12,9 @@ namespace Bsa2er_MVC.Models
     {
         public string Country{set;get;}
         public string Qualification{set;get;}
+
+        public virtual Instructor Instructor { set; get; }
+        public virtual Student Student { set; get; }
            
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
