@@ -140,22 +140,7 @@ namespace Bsa2er_MVC.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-              List<String> Countries = new List<String>();
-            List<String> qualifications = new List<string>();
-            Countries.Add("مصر");
-            Countries.Add("باكستان");
-            Countries.Add("السعودية");
-            Countries.Add("الامارات");
-            Countries.Add("تونس");
-            qualifications.Add("متوسط");
-            qualifications.Add("ثانوي");
-            qualifications.Add("بكالريوس ");
-            qualifications.Add("دراسات عليا ");
-            qualifications.Add("غير ذلك ");
-            SelectList qualification = new SelectList(qualifications);
-            SelectList CountriesNames = new SelectList(Countries);
-            ViewBag.countries = CountriesNames;
-            ViewBag.qualifications = qualification;
+
             return View();
         }
 
@@ -168,7 +153,7 @@ namespace Bsa2er_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email,Country=model.Countries,Qualification=model.Qualifications,PhoneNumber=model.Phonenumber};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿using System.ComponentModel.DataAnnotations;
+=======
+﻿using System.Collections.Generic;
+>>>>>>> 314a48b15a8847697b782934e0ff792795530fcf
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -10,8 +14,9 @@ namespace Bsa2er_MVC.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
-        public string country{set;get;}
-        public string qualification{set;get;}
+        public string Country{set;get;}
+        public string Qualification{set;get;}
+           
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -29,11 +34,16 @@ namespace Bsa2er_MVC.Models
     {
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
+
         {
         }
+        public virtual DbSet<Book> Books { set; get; }
+        public virtual DbSet<Booksection> Booksections { set; get;}
 
+        public virtual DbSet<news> News { set; get; }
         public static ApplicationDbContext Create()
         {
+            
             return new ApplicationDbContext();
         }
         public virtual DbSet<Program> Programs { set; get; }
