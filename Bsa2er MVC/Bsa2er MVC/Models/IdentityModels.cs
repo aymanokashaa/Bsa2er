@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿using System.ComponentModel.DataAnnotations;
+=======
 ﻿using System.Collections.Generic;
+>>>>>>> 314a48b15a8847697b782934e0ff792795530fcf
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -20,6 +24,10 @@ namespace Bsa2er_MVC.Models
             // Add custom user claims here
             return userIdentity;
         }
+       
+        public virtual Student Student { set; get; }
+        public virtual Instructor Instructor { set; get; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -38,5 +46,12 @@ namespace Bsa2er_MVC.Models
             
             return new ApplicationDbContext();
         }
+        public virtual DbSet<Program> Programs { set; get; }
+        public virtual DbSet<Lecture> Lectures { set; get; }
+        public virtual DbSet<Exam> Exams { set; get; }
+        public virtual DbSet<Certification> Certifications { set; get; }
+        public virtual DbSet<Question> Questions { set; get; }
+        public virtual DbSet<Instructor> Instructors { set; get; }
+        public virtual DbSet<Student> Students { set; get; }
     }
 }
