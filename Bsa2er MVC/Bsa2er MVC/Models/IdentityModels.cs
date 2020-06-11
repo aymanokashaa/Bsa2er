@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -18,6 +19,10 @@ namespace Bsa2er_MVC.Models
             // Add custom user claims here
             return userIdentity;
         }
+       
+        public virtual Student Student { set; get; }
+        public virtual Instructor Instructor { set; get; }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -31,5 +36,12 @@ namespace Bsa2er_MVC.Models
         {
             return new ApplicationDbContext();
         }
+        public virtual DbSet<Program> Programs { set; get; }
+        public virtual DbSet<Lecture> Lectures { set; get; }
+        public virtual DbSet<Exam> Exams { set; get; }
+        public virtual DbSet<Certification> Certifications { set; get; }
+        public virtual DbSet<Question> Questions { set; get; }
+        public virtual DbSet<Instructor> Instructors { set; get; }
+        public virtual DbSet<Student> Students { set; get; }
     }
 }
