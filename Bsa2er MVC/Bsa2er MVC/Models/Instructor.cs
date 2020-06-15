@@ -9,13 +9,14 @@ namespace Bsa2er_MVC.Models
 {
     public class Instructor
     {
-        [Key]
-        public int Ins_Id { get; set; }
+       
+       [ForeignKey("ApplicationUser")]
+       [Key]
+        public string InsId { get; set; }
         
-
-    
+        public string Degree { get; set; }
         public virtual ICollection<Program> Programs { get; set; }
-        [Required]
+        
         public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }

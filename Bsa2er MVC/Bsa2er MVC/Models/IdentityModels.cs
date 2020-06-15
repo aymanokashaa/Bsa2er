@@ -13,8 +13,6 @@ namespace Bsa2er_MVC.Models
         public string Country{set;get;}
         public string Qualification{set;get;}
 
-        public virtual Instructor Instructor { set; get; }
-        public virtual Student Student { set; get; }
            
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -32,10 +30,22 @@ namespace Bsa2er_MVC.Models
 
         {
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
         public virtual DbSet<Book> Books { set; get; }
         public virtual DbSet<Booksection> Booksections { set; get;}
 
         public virtual DbSet<news> News { set; get; }
+        public virtual DbSet<Certification> Certifications { set; get; }
+        public virtual DbSet<Exam> Exams { set; get; }
+        public virtual DbSet<Instructor> Instructors { set; get; }
+        public virtual DbSet<Lecture> Lectures { set; get; }
+        public virtual DbSet<LectureFiles> LectureFiles { set; get; }
+        public virtual DbSet<Program> Programs { set; get; }
+        public virtual DbSet<Question> Questions { set; get; }
+        public virtual DbSet<StudentsPrograms> StudentsPrograms { set; get; }
         public static ApplicationDbContext Create()
         {
             

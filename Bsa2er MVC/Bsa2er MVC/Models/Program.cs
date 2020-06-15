@@ -15,14 +15,14 @@ namespace Bsa2er_MVC.Models
         public string Program_Duration { get; set; }
         public string Program_Advantages { get; set; }
         public string Program_Goals { get; set; }
-        public byte[] Program_Image { get; set; }
+        public string Program_ImagePath { get; set; }
         public string Program_VideoLink { get; set; }
         public string Program_TargetGroup { get; set; }
         public ProgramType Program_Type { get; set; }
         public int NumOfLecture { get; set; }
 
         [ForeignKey("Instructor")]
-        public int Ins_Id { get; set; }
+        public string Ins_Id { get; set; }
         public virtual ICollection<Lecture> lectures { get; set; }
 
         [Required]

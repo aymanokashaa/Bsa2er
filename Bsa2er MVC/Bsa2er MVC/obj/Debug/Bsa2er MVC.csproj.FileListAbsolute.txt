@@ -145,7 +145,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.I
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.Compression.ZipFile.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Net.Http.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Net.Sockets.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Reflection.Metadata.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -165,35 +164,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.exe.
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.rsp
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe.config
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Antlr3.Runtime.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\EntityFramework.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\EntityFramework.SqlServer.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.Db.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.GeoIP2.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.Core.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.Owin.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Host.SystemWeb.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Cookies.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Facebook.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Google.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.OAuth.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Twitter.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Web.Infrastructure.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Newtonsoft.Json.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Owin.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Helpers.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Mvc.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Optimization.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Razor.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.Deployment.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.Razor.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\WebGrease.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.Db.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.GeoIP2.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Newtonsoft.Json.xml
@@ -213,7 +183,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNe
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Host.SystemWeb.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Facebook.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Cookies.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Google.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Twitter.xml
@@ -229,3 +198,5 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MV
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.addingModels.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.updatepropertiesinStudentsPrograms.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.update_oneToOne_Relation_between_instructor_Student_and_user.resources

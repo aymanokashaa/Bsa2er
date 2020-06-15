@@ -14,7 +14,7 @@ namespace Bsa2er_MVC.Models
         public int Lecture_Id { get; set; }
 
         [Key,Column(Order =1)]
-        public byte[] File { get; set; }
+        public string FilePath { get; set; }
         public virtual Lecture Lecture { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace Bsa2er_MVC.Models
         public int Cer_Id { get; set; }
         public string Cer_Title { get; set; }
         public string Cer_Body { get; set; }
-        public byte[] Cer_File { get; set; }
+        public string Cer_FilePath { get; set; }
 
      
         public virtual Program Program { get; set; }
