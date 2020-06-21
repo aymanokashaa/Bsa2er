@@ -201,6 +201,10 @@
     <Compile Include="Migrations\202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.Designer.cs">
       <DependentUpon>202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006211111522_Edit_exam_relation_with_program.cs" />
+    <Compile Include="Migrations\202006211111522_Edit_exam_relation_with_program.Designer.cs">
+      <DependentUpon>202006211111522_Edit_exam_relation_with_program.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -563,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.resx">
       <DependentUpon>202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006211111522_Edit_exam_relation_with_program.resx">
+      <DependentUpon>202006211111522_Edit_exam_relation_with_program.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

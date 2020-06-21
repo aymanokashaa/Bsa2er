@@ -28,8 +28,8 @@ namespace Bsa2er_MVC.Models
         [Required]
         public virtual Certification Certification { get; set; }
 
-        [Required]
-        public virtual Exam Exam { get; set; }
+        
+        public virtual ICollection<Exam> Exam { get; set; }
         public virtual Instructor Instructor { get; set; }
         public virtual ICollection<StudentsPrograms> StudentsProgram { get; set; }
     }
