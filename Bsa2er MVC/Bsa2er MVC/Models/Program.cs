@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Bsa2er_MVC.Models
 {
@@ -24,13 +21,13 @@ namespace Bsa2er_MVC.Models
         [ForeignKey("Instructor")]
         public string Ins_Id { get; set; }
         public virtual ICollection<Lecture> lectures { get; set; }
-        
+
         public virtual ICollection<Exam> Exam { get; set; }
         public virtual Instructor Instructor { get; set; }
         public virtual ICollection<StudentsPrograms> StudentsProgram { get; set; }
     }
     public enum ProgramType
     {
-        Private,Public
+        Private, Public
     }
 }

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Bsa2er_MVC.Models;
+using System;
 using System.Data.Entity;
-using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Bsa2er_MVC.Models;
 
 namespace Bsa2er_MVC.Controllers
 {
@@ -47,7 +44,7 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "title,body")] news news,HttpPostedFileBase imageFile)
+        public ActionResult Create([Bind(Include = "title,body")] news news, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
@@ -55,10 +52,10 @@ namespace Bsa2er_MVC.Controllers
                 {
                     string[] arr = imageFile.FileName.Split('.');
                     string filename = Guid.NewGuid().ToString() + "." + arr[arr.Length - 1];
-                    imageFile.SaveAs(Server.MapPath("~/images/News/")+ filename);
+                    imageFile.SaveAs(Server.MapPath("~/images/News/") + filename);
                     news.ImagePath = filename;
                 }
-               
+
                 db.News.Add(news);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -87,7 +84,7 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,title,body,ImagePath")] news news,HttpPostedFileBase imgFile)
+        public ActionResult Edit([Bind(Include = "id,title,body,ImagePath")] news news, HttpPostedFileBase imgFile)
         {
             if (ModelState.IsValid)
             {
@@ -95,7 +92,7 @@ namespace Bsa2er_MVC.Controllers
                 {
                     string[] arr = imgFile.FileName.Split('.');
                     string imageName = Guid.NewGuid().ToString() + "." + arr[arr.Length - 1];
-                   
+
                     if (news.ImagePath != null)
                     {
                         System.IO.File.Delete(Server.MapPath("~/images/News/") + news.ImagePath);

@@ -1,8 +1,7 @@
 namespace Bsa2er_MVC.Migrations
 {
-    using System;
     using System.Data.Entity.Migrations;
-    
+
     public partial class remove_CertificationTable_Edit_studentPrograme : DbMigration
     {
         public override void Up()
@@ -21,20 +20,20 @@ namespace Bsa2er_MVC.Migrations
             AddForeignKey("dbo.Exams", "Program_Id", "dbo.Programs", "Program_Id", cascadeDelete: true);
             DropTable("dbo.Certifications");
         }
-        
+
         public override void Down()
         {
             CreateTable(
                 "dbo.Certifications",
                 c => new
-                    {
-                        Cer_Id = c.Int(nullable: false, identity: true),
-                        Cer_Title = c.String(),
-                        Cer_Body = c.String(),
-                        Cer_FilePath = c.String(),
-                    })
+                {
+                    Cer_Id = c.Int(nullable: false, identity: true),
+                    Cer_Title = c.String(),
+                    Cer_Body = c.String(),
+                    Cer_FilePath = c.String(),
+                })
                 .PrimaryKey(t => t.Cer_Id);
-            
+
             DropForeignKey("dbo.Exams", "Program_Id", "dbo.Programs");
             DropForeignKey("dbo.StudentsPrograms", "Program_Id", "dbo.Programs");
             DropForeignKey("dbo.Lectures", "Program_Id", "dbo.Programs");

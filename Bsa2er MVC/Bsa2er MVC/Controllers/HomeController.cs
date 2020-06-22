@@ -1,8 +1,5 @@
 ﻿using Bsa2er_MVC.Models;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Bsa2er_MVC.Controllers
@@ -64,6 +61,6 @@ namespace Bsa2er_MVC.Controllers
         {
             return View();
         }
-        
+
     }
 }

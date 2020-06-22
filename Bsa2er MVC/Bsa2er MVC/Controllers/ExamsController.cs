@@ -1,14 +1,9 @@
-﻿using System;
+﻿using Bsa2er_MVC.Models;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Net;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
-using Bsa2er_MVC.Models;
-using Microsoft.Ajax.Utilities;
 
 namespace Bsa2er_MVC.Controllers
 {
