@@ -176,36 +176,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006111829439_v1.cs" />
-    <Compile Include="Migrations\202006111829439_v1.Designer.cs">
-      <DependentUpon>202006111829439_v1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006111831014_v2.cs" />
-    <Compile Include="Migrations\202006111831014_v2.Designer.cs">
-      <DependentUpon>202006111831014_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006112036039_addingModels.cs" />
-    <Compile Include="Migrations\202006112036039_addingModels.Designer.cs">
-      <DependentUpon>202006112036039_addingModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006121827021_update properties in StudentsPrograms.cs" />
-    <Compile Include="Migrations\202006121827021_update properties in StudentsPrograms.Designer.cs">
-      <DependentUpon>202006121827021_update properties in StudentsPrograms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.cs" />
-    <Compile Include="Migrations\202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.Designer.cs">
-      <DependentUpon>202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006211111522_Edit_exam_relation_with_program.cs" />
-    <Compile Include="Migrations\202006211111522_Edit_exam_relation_with_program.Designer.cs">
-      <DependentUpon>202006211111522_Edit_exam_relation_with_program.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
@@ -538,6 +514,10 @@
     <Content Include="Views\Home\Program.cshtml" />
     <Content Include="Views\Home\Track.cshtml" />
     <Content Include="Views\Home\Prog.cshtml" />
+    <Content Include="Views\Exams\Create.cshtml" />
+    <Content Include="Views\Exams\Details.cshtml" />
+    <Content Include="Views\Exams\Edit.cshtml" />
+    <Content Include="Views\Exams\TakeExam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -551,26 +531,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006111829439_v1.resx">
-      <DependentUpon>202006111829439_v1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006111831014_v2.resx">
-      <DependentUpon>202006111831014_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006112036039_addingModels.resx">
-      <DependentUpon>202006112036039_addingModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006121827021_update properties in StudentsPrograms.resx">
-      <DependentUpon>202006121827021_update properties in StudentsPrograms.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.resx">
-      <DependentUpon>202006151227559_update_oneToOne_Relation_between_instructor_Student_and_user.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006211111522_Edit_exam_relation_with_program.resx">
-      <DependentUpon>202006211111522_Edit_exam_relation_with_program.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

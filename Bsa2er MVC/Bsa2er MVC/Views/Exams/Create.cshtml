@@ -1,0 +1,166 @@
+﻿@model Bsa2er_MVC.Models.Exam
+
+@{
+    ViewBag.Title = "إنشاء إختبار";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal text-right w-75 mx-auto overflow-hidden">
+        <h2 class="text-center mt-3 mb-3">إنشاء إختبار جديد</h2>
+        <hr />
+
+        @Html.ValidationSummary()
+        <input type="number" value="@ViewBag.Program_Id" hidden name="Program_Id" />
+
+        <div class="form-group my-3 overflow-hidden">
+            <label class="control-label col-md-2 lead">عنوان الأختبار</label>
+            <div class="col-lg-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group my-3 overflow-hidden">
+            <h3>الأسئله</h3>
+            <ul id="questions" style="direction:rtl">
+                <li>
+                    <div class="quesion p-4 text-center" style="border:3px solid #ffd800; border-radius:10%;">
+                        <label>نوع السؤال</label>
+                        <div class="mb-3">
+                            <select class="form-control single-line w-25 m-auto qtype" name="questions[0].QuestionType">
+                                <option value="1">صح أو خطأ</option>
+                                <option value="2">إختياري</option>
+                            </select>
+                        </div>
+                        <label>نص السؤال</label>
+                        <div class="mb-3">
+                            <input class="form-control text-box single-line" type="text" name="questions[0].Q_Header" />
+                        </div>
+                        <label>درجة السؤال</label>
+                        <div class="mb-3">
+                            <input class="form-control single-line w-25 m-auto" type="number" name="questions[0].Q_Marks" />
+                        </div>
+                        <label>الإختيارت</label>
+                        <ol class="pr-3 w-25 mx-auto overflow-hidden mb-3 options" style="list-style:decimal">
+                            <li>
+                                <input class="form-control" type="text" name="questions[0].ChoiceOne" value="صح" readonly />
+                            </li>
+                            <li>
+                                <input class="form-control" type="text" name="questions[0].ChoiceTwo" value="خطأ" readonly />
+                            </li>
+                        </ol>
+                        <label>رقم الإختيار الصحيح</label>
+                        <div class="mb-3">
+                            <select class="form-control single-line w-25 m-auto correct" name="questions[0].Q_Answer">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <input type="button" class="btn btn-success mx-5 my-2" id="addquestion" value="إضافة سؤال" />
+        <div class="form-group">
+            <div>
+                <input type="submit" value="إنشاء" class="btn btn-info btn-block w-25 m-auto text-white" />
+            </div>
+        </div>
+    </div>
+}
+@section scripts 
+{
+    <script>
+        var currentQ = 0;
+        $("#questions").on("change", ".qtype", function () {
+            var questionN = $(this).attr("name").split(".")[0];
+            if (this.value == "2") {
+                $(this).parent().parent().find(".options").html(`
+                    <li>
+                        <input class="form-control" type="text" name="${questionN}.ChoiceOne" />
+                    </li>
+                    <li>
+                        <input class="form-control" type="text" name="${questionN}.ChoiceTwo" />
+                    </li>
+                    <li>
+                        <input class="form-control" type="text" name="${questionN}.ChoiceThree" />
+                    </li>
+                    <li>
+                        <input class="form-control" type="text" name="${questionN}.ChoiceFour" />
+                    </li>
+                `);
+                $(this).parent().parent().find(".correct").html(`
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                `)
+            }
+            else if (this.value == "1") {
+                $(this).parent().parent().find(".options").html(`
+                    <li>
+                        <input class="form-control" type="text" name="${questionN}.ChoiceOne" value="صح" readonly />
+                    </li>
+                    <li>
+                        <input class="form-control" type="text" name="${questionN}.ChoiceTwo" value="خطأ" readonly />
+                    </li>
+                `);
+                $(this).parent().parent().find(".correct").html(`
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                `)
+            }
+        })
+        $("#addquestion").click(function () {
+            currentQ++;
+            $("#questions").append(`
+                 <li>
+                     <hr class="my-3">
+                    <div class="quesion p-4 text-center" style="border:3px solid #ffd800; border-radius:10%;">
+                        <label>نوع السؤال</label>
+                        <div class="mb-3">
+                            <select class="form-control single-line w-25 m-auto qtype" name="questions[${currentQ}].QuestionType">
+                                <option value="1">صح أو خطأ</option>
+                                <option value="2">إختياري</option>
+                            </select>
+                        </div>
+                        <label>نص السؤال</label>
+                        <div class="mb-3">
+                            <input class="form-control text-box single-line" type="text" name="questions[${currentQ}].Q_Header" />
+                        </div>
+                        <label>درجة السؤال</label>
+                        <div class="mb-3">
+                            <input class="form-control single-line w-25 m-auto" type="number" name="questions[${currentQ}].Q_Marks" />
+                        </div>
+                        <label>الإختيارت</label>
+                        <ol class="pr-3 w-25 mx-auto overflow-hidden mb-3 options" style="list-style:decimal">
+                            <li>
+                                <input class="form-control" type="text" name="questions[${currentQ}].ChoiceOne" value="صح" readonly />
+                            </li>
+                            <li>
+                                <input class="form-control" type="text" name="questions[${currentQ}].ChoiceTwo" value="خطأ" readonly />
+                            </li>
+                        </ol>
+                        <label>رقم الإختيار الصحيح</label>
+                        <div class="mb-3">
+                            <select class="form-control single-line w-25 m-auto correct" name="questions[${currentQ}].Q_Answer">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                        <input type="button" class="btn btn-danger removequestion" value="إزالة السؤال" />
+                    </div>
+                </li>
+            `) 
+        })
+        $("#questions").on("click", ".removequestion", function () {
+            $(this).parent().parent().remove();
+        })
+    </script>
+}
