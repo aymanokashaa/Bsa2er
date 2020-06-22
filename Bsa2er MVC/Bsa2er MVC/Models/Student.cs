@@ -18,5 +18,6 @@ namespace Bsa2er_MVC.Models
         public virtual ICollection<StudentsPrograms> StudentPrograms { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
+  
     }
 }

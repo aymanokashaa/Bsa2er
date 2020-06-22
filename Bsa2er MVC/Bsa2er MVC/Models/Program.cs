@@ -24,10 +24,6 @@ namespace Bsa2er_MVC.Models
         [ForeignKey("Instructor")]
         public string Ins_Id { get; set; }
         public virtual ICollection<Lecture> lectures { get; set; }
-
-        [Required]
-        public virtual Certification Certification { get; set; }
-
         
         public virtual ICollection<Exam> Exam { get; set; }
         public virtual Instructor Instructor { get; set; }

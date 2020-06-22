@@ -47,6 +47,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.5\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
     <Reference Include="MaxMind.Db, Version=2.0.0.0, Culture=neutral, PublicKeyToken=66afa4cc5ae853ac, processorArchitecture=MSIL">
       <HintPath>..\packages\MaxMind.Db.2.6.1\lib\net45\MaxMind.Db.dll</HintPath>
     </Reference>
@@ -176,8 +185,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -204,6 +215,10 @@
     <Compile Include="Migrations\202006211111522_Edit_exam_relation_with_program.cs" />
     <Compile Include="Migrations\202006211111522_Edit_exam_relation_with_program.Designer.cs">
       <DependentUpon>202006211111522_Edit_exam_relation_with_program.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.cs" />
+    <Compile Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.Designer.cs">
+      <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -367,6 +382,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\html2canvas.js" />
     <Content Include="Scripts\index.js.flow" />
     <Content Include="Scripts\esm\popper.min.js.map" />
     <Content Include="Scripts\esm\popper.js.map" />
@@ -538,10 +554,18 @@
     <Content Include="Views\Home\Program.cshtml" />
     <Content Include="Views\Home\Track.cshtml" />
     <Content Include="Views\Home\Prog.cshtml" />
+    <Content Include="Views\news\Create.cshtml" />
+    <Content Include="Views\news\Delete.cshtml" />
+    <Content Include="Views\news\Details.cshtml" />
+    <Content Include="Views\news\Edit.cshtml" />
+    <Content Include="Views\news\Index.cshtml" />
+    <Content Include="Views\news\NewsDetails.cshtml" />
+    <Content Include="Views\Certification\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
+    <Folder Include="images\News\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -570,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006211111522_Edit_exam_relation_with_program.resx">
       <DependentUpon>202006211111522_Edit_exam_relation_with_program.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.resx">
+      <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

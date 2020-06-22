@@ -17,6 +17,7 @@ namespace Bsa2er_MVC.Models
         public int Program_Id { get; set; }
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
+        public int ProgramGrade { get; set; }
         public virtual Program Program { get; set; }
         public virtual Student Student { get; set; }
     }

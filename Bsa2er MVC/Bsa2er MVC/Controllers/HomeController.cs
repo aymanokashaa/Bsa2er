@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bsa2er_MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace Bsa2er_MVC.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
             return View();
@@ -30,7 +33,7 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult News()
         {
-            return View();
+            return View(db.News.ToList());
         }
         public ActionResult Library()
         {

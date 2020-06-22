@@ -38,7 +38,6 @@ namespace Bsa2er_MVC.Models
         public virtual DbSet<Booksection> Booksections { set; get;}
 
         public virtual DbSet<news> News { set; get; }
-        public virtual DbSet<Certification> Certifications { set; get; }
         public virtual DbSet<Exam> Exams { set; get; }
         public virtual DbSet<Instructor> Instructors { set; get; }
         public virtual DbSet<Lecture> Lectures { set; get; }
@@ -46,6 +45,7 @@ namespace Bsa2er_MVC.Models
         public virtual DbSet<Program> Programs { set; get; }
         public virtual DbSet<Question> Questions { set; get; }
         public virtual DbSet<StudentsPrograms> StudentsPrograms { set; get; }
+        public virtual DbSet<Student> Students { set; get; }
         public static ApplicationDbContext Create()
         {
             
