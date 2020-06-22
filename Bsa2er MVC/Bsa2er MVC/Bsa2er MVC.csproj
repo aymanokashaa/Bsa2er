@@ -185,13 +185,18 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\CertificationController.cs" />
+=======
+    <Compile Include="Controllers\ExamsController.cs" />
+>>>>>>> 788113939ece2cafc0ff6a0b1a4116e15a9c582e
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\202006111829439_v1.cs" />
     <Compile Include="Migrations\202006111829439_v1.Designer.cs">
       <DependentUpon>202006111829439_v1.cs</DependentUpon>
@@ -221,6 +226,8 @@
       <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+=======
+>>>>>>> 788113939ece2cafc0ff6a0b1a4116e15a9c582e
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
@@ -554,6 +561,7 @@
     <Content Include="Views\Home\Program.cshtml" />
     <Content Include="Views\Home\Track.cshtml" />
     <Content Include="Views\Home\Prog.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\news\Create.cshtml" />
     <Content Include="Views\news\Delete.cshtml" />
     <Content Include="Views\news\Details.cshtml" />
@@ -561,6 +569,12 @@
     <Content Include="Views\news\Index.cshtml" />
     <Content Include="Views\news\NewsDetails.cshtml" />
     <Content Include="Views\Certification\Create.cshtml" />
+=======
+    <Content Include="Views\Exams\Create.cshtml" />
+    <Content Include="Views\Exams\Details.cshtml" />
+    <Content Include="Views\Exams\Edit.cshtml" />
+    <Content Include="Views\Exams\TakeExam.cshtml" />
+>>>>>>> 788113939ece2cafc0ff6a0b1a4116e15a9c582e
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -576,6 +590,7 @@
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006111829439_v1.resx">
       <DependentUpon>202006111829439_v1.cs</DependentUpon>
@@ -599,6 +614,8 @@
       <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+=======
+>>>>>>> 788113939ece2cafc0ff6a0b1a4116e15a9c582e
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

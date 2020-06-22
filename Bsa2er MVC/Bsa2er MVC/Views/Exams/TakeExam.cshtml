@@ -1,0 +1,53 @@
+﻿@model Bsa2er_MVC.Models.Exam
+
+@{
+    ViewBag.Title = "TakeExam";
+}
+
+<h2 class="text-center my-5">@Model.Title</h2>
+<form class="my-5" method="post">
+    @Html.AntiForgeryToken()
+    <table class="table text-right mx-auto w-75 table-active table-hover table-bordered" style="direction:rtl;">
+        <tr class="text-center lead table-secondary">
+            <td>نص السؤال</td>
+            <td colspan="4">الإختيارت</td>
+        </tr>
+        @foreach (var item in Model.Questions)
+        {
+            <tr>
+                <td>@item.Q_Header</td>
+                @if (item.QuestionType == Bsa2er_MVC.Models.QuestionType.TrueOrFalse)
+                {
+                    <td colspan="2">
+                        <input type="radio" name="answers.@item.Q_Id" value="1" />
+                        @item.ChoiceOne
+                    </td>
+                    <td colspan="2">
+                        <input type="radio" name="answers.@item.Q_Id" value="2" />
+                        @item.ChoiceTwo
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <input type="radio" name="answers.@item.Q_Id" value="1" />
+                        @item.ChoiceOne
+                    </td>
+                    <td>
+                        <input type="radio" name="answers.@item.Q_Id" value="2" />
+                        @item.ChoiceTwo
+                    </td>
+                    <td>
+                        <input type="radio" name="answers.@item.Q_Id" value="3" />
+                        @item.ChoiceThree
+                    </td>
+                    <td>
+                        <input type="radio" name="answers.@item.Q_Id" value="4" />
+                        @item.ChoiceFour
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+    <input class="btn btn-success w-25 mx-auto btn-block my-5" type="submit" value="تسليم الإجابه" />
+</form>

@@ -1,0 +1,86 @@
+﻿@model Bsa2er_MVC.Models.Exam
+
+@{
+    ViewBag.Title = "عرض الإختبار";
+}
+
+<div class="text-right w-75 mx-auto">
+    <h2 class="text-center mt-3 mb-3">بيانات الإختبار</h2>
+    <table class="table table-dark" style="direction:rtl">
+        <tr>
+            <td>عنوان البرنامج</td>
+            <td>عنوان الإختبار</td>
+            <td>درجة الإختبار</td>
+            <td>عدد الأسئلة</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.Program.Program_Title)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.grads)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NumberOfQuestions)
+            </td>
+        </tr>
+    </table>
+    <h2 class="text-center mt-3 mb-3">أسئلة الإختبار</h2>
+    <table class="table table-hover" style="direction:rtl">
+        <tr>
+            <td>نوع السؤال</td>
+            <td>نص السؤال</td>
+            <td>درجة السؤال</td>
+            <td>إختيارت السؤال</td>
+            <td>رقم الإختيار الصحيح</td>
+        </tr>
+        @foreach (var item in Model.Questions)
+        {
+        <tr>
+            <td>
+                @if (item.QuestionType == Bsa2er_MVC.Models.QuestionType.TrueOrFalse)
+                {<p>صح أو خطأ</p>}
+                else
+                { <p>إختياري</p>}
+            </td>
+            <td>@item.Q_Header</td>
+            <td>@item.Q_Marks</td>
+            @if (item.QuestionType == Bsa2er_MVC.Models.QuestionType.TrueOrFalse)
+            {
+                <td>- @item.ChoiceOne<br />- @item.ChoiceTwo</td>
+            }
+            else
+            {
+                <td>- @item.ChoiceOne<br />- @item.ChoiceTwo<br />- @item.ChoiceThree<br />- @item.ChoiceFour</td>
+            }
+            <td>@item.Q_Answer</td>
+        </tr>
+        }
+    </table>
+    <div class="text-center">
+        <button type="button" class="btn btn-danger w-25 mx-auto" data-toggle="modal" data-target="#exampleModal">
+            حذف
+        </button>
+        @Html.ActionLink("تعديل", "Edit", new { id = Model.Exam_Id }, new { @class = "btn btn-warning w-25 mx-auto" })
+    </div>
+</div>
+
+<div class="modal fade text-right" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="direction : rtl">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">تأكيد الحذف</h5>
+            </div>
+            <div class="modal-body">
+                هل أنت متأكد من أنك تريد حذف هذا الإختبار ؟
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+                @Html.ActionLink("حذف", "Delete", new { id = Model.Exam_Id }, new { @class = "btn btn-danger" })
+            </div>
+        </div>
+    </div>
+</div>

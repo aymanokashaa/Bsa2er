@@ -34,10 +34,14 @@ namespace Bsa2er_MVC
                 "~/Scripts/popper.js",
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/bootstrap.min.js",
+<<<<<<< HEAD
                 "~/Scripts/jquery.nicescroll.min.js",
                 "~/Scripts/scroll.js",
                 "~/Scripts/show2.js",
                 "~/Scripts/jquery.unobtrusive-ajax.js"
+=======
+                "~/Scripts/show2.js"
+>>>>>>> 788113939ece2cafc0ff6a0b1a4116e15a9c582e
                 ));
         }
     }
