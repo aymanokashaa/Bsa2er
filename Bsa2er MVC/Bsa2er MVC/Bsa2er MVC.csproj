@@ -185,18 +185,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-
     <Compile Include="Controllers\CertificationController.cs" />
-
     <Compile Include="Controllers\ExamsController.cs" />
-
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\202006111829439_v1.cs" />
     <Compile Include="Migrations\202006111829439_v1.Designer.cs">
       <DependentUpon>202006111829439_v1.cs</DependentUpon>
@@ -226,7 +222,6 @@
       <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
@@ -560,7 +555,6 @@
     <Content Include="Views\Home\Program.cshtml" />
     <Content Include="Views\Home\Track.cshtml" />
     <Content Include="Views\Home\Prog.cshtml" />
-
     <Content Include="Views\news\Create.cshtml" />
     <Content Include="Views\news\Delete.cshtml" />
     <Content Include="Views\news\Details.cshtml" />
@@ -568,12 +562,10 @@
     <Content Include="Views\news\Index.cshtml" />
     <Content Include="Views\news\NewsDetails.cshtml" />
     <Content Include="Views\Certification\Create.cshtml" />
-
     <Content Include="Views\Exams\Create.cshtml" />
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\TakeExam.cshtml" />
-
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
