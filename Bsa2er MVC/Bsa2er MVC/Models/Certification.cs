@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace Bsa2er_MVC.Models
 {
     public class Certification
     {
-        [Key]
-        public int Cer_Id { get; set; }
-        public string Cer_Title { get; set; }
-        public string Cer_Body { get; set; }
-        public byte[] Cer_File { get; set; }
 
-     
+        [Key]
+        [ForeignKey("Student")]
+        public string StdId { get; set; }
+
+        [Key]
+        [ForeignKey("Program")]
+        public int program_Id { get; set; }
+
+
+
+        public virtual Student Student { get; set; }
         public virtual Program Program { get; set; }
     }
 }

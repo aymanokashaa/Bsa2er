@@ -1,0 +1,42 @@
+﻿@model Bsa2er_MVC.Models.news
+
+@{
+    ViewBag.Title = "تفاصيل الخبر";
+}
+
+    <h2 class="text-center mb-3" dir="rtl">تفاصيل الخبر</h2>
+
+    <div class=" justify-content-between text-right mr-3" dir="rtl" style="min-height:310px;">
+
+        <dl class="dl-horizontal" dir="rtl">
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.body)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.body)
+            </dd>
+
+            <dt>
+                <lable id="img">صورة الخبر</lable>
+            </dt>
+
+            <dd>
+                <img height="150" width="150" id="img" src="~/images/News/@Model.ImagePath" />
+            </dd>
+
+        </dl>
+        @Html.ActionLink("تعديل الخبر", "Edit", new { id = Model.id }, new { @class = "btn btn-secondary text-center", dir = "rtl" })
+
+    </div>
+<p>
+    @Html.ActionLink("ارجع الى قائمة الاخبار", "Index")
+</p>

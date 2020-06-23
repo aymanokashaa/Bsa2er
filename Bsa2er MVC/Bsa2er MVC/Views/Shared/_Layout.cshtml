@@ -1,13 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html" charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="Target">
     <header id="mob">
         <div class="row">
             <div class="col-xs-4">
@@ -111,7 +111,7 @@
                     <div class="navbar-nav" id="lowerheader">
                         <span class="nav-item"><a class="nav-link" href="index.html">الرئيسة</a></span>
                         <span class="nav-item"><a class="nav-link" href="about.html">عن الأكاديمية</a></span>
-                        <span class="nav-item"><a class="nav-link" href="news.html">الأخبار </a></span>
+                        <span class="nav-item">@Html.ActionLink("الأخبار","News","Home",null,new { @class = "nav-link" })</span>
                         <span class="nav-item"><a class="nav-link" href="PublicProgrames.html">البرامج العامة</a></span>
                         <!-- Default dropright button -->
                         <span class="link-group dropdown mt-2" style="cursor: pointer;">

@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "your certification";
+}
+
+
+
+<section id="mySection">
+    <div style="text-align:center;">
+        you passed the Exam<br />
+        <span>@ViewBag.studentName</span>
+        <span>@ViewBag.programName</span>
+        <span>@ViewBag.grad</span>
+    </div>
+   
+</section>
+
+@section scripts{
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="~/Scripts/html2canvas.js"></script>
+    <script>
+        $(function () {
+
+            html2canvas(document.body, {
+                onrendered: function (canvas) {
+                    var img = canvas.toDataURL("image/jpg", 1.0);
+                    var doc = new jsPDF();
+                    doc.addImage(img, "JPEG", 5, 0, 200, 200);
+                    doc.save("certification.pdf");
+                }
+            });
+
+        });
+
+    </script>
+
+}
+
+
+

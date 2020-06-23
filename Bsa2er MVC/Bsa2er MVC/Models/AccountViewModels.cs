@@ -1,5 +1,4 @@
-﻿using Microsoft.Ajax.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -64,7 +63,7 @@ namespace Bsa2er_MVC.Models
         public bool RememberMe { get; set; }
     }
 
-    
+
     public class RegisterViewModel
     {
         private const string V = "ادخل بريدك الالكتروني";
@@ -72,7 +71,7 @@ namespace Bsa2er_MVC.Models
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-        
+
         [Required(ErrorMessage = "يجب ادخال كلمة المرور")]
         [StringLength(100, ErrorMessage = "كلمة المرور يجب ان تكون 6 حروف علي الاقل", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -82,9 +81,9 @@ namespace Bsa2er_MVC.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "لا تطابق كلمة المرور")]
         public String ConfirmPassword { get; set; }
-        public String  Countries { set;get;}
-        public String Qualifications { set;get;}
-        public  String  Phonenumber { set; get; }
+        public String Countries { set; get; }
+        public String Qualifications { set; get; }
+        public String Phonenumber { set; get; }
     }
 
 

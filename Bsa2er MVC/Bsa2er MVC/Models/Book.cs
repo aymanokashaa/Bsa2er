@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 namespace Bsa2er_MVC.Models
 {
     public class Book
@@ -16,7 +14,7 @@ namespace Bsa2er_MVC.Models
         public HttpPostedFileBase PdfFile { set; get; }
         [NotMapped]
         public HttpPostedFileBase ImageFile { set; get; }
-        
+
         public String PdfFilepath { set; get; }
 
         public string imageFilePath { set; get; }
