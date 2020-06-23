@@ -176,6 +176,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BooksController.cs" />
+    <Compile Include="Controllers\BooksectionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -192,6 +194,14 @@
     <Compile Include="Migrations\202006112036039_addingModels.cs" />
     <Compile Include="Migrations\202006112036039_addingModels.Designer.cs">
       <DependentUpon>202006112036039_addingModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006211937051_v11.cs" />
+    <Compile Include="Migrations\202006211937051_v11.Designer.cs">
+      <DependentUpon>202006211937051_v11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006211940091_v12.cs" />
+    <Compile Include="Migrations\202006211940091_v12.Designer.cs">
+      <DependentUpon>202006211940091_v12.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -419,9 +429,20 @@
     <Content Include="Views\Home\Program.cshtml" />
     <Content Include="Views\Home\Track.cshtml" />
     <Content Include="Views\Home\Prog.cshtml" />
+    <Content Include="Views\Booksections\Create.cshtml" />
+    <Content Include="Views\Booksections\Delete.cshtml" />
+    <Content Include="Views\Booksections\Details.cshtml" />
+    <Content Include="Views\Booksections\Edit.cshtml" />
+    <Content Include="Views\Booksections\Index.cshtml" />
+    <Content Include="Views\Books\Create.cshtml" />
+    <Content Include="Views\Books\Delete.cshtml" />
+    <Content Include="Views\Books\Details.cshtml" />
+    <Content Include="Views\Books\Edit.cshtml" />
+    <Content Include="Views\Books\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+    <Folder Include="texts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -441,6 +462,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006112036039_addingModels.resx">
       <DependentUpon>202006112036039_addingModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006211937051_v11.resx">
+      <DependentUpon>202006211937051_v11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006211940091_v12.resx">
+      <DependentUpon>202006211940091_v12.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
