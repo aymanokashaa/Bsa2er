@@ -113,7 +113,6 @@ C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2e
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v1.resources
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v2.resources
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
@@ -179,8 +178,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MV
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
-<<<<<<< HEAD
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.addingModels.resources
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
@@ -299,5 +296,6 @@ C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debu
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v11.resources
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v12.resources
-=======
->>>>>>> 05886873a20153c2e4b75b72df2e07b50a731559
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v11.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v12.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
