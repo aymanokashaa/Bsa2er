@@ -4,19 +4,18 @@
     ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<h2 class="text-center mb-3" dir="rtl">تعديل الخبر</h2>
 
 @using (Html.BeginForm("Edit","News",FormMethod.Post,new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
-<div class="form-horizontal">
-    <h4>news</h4>
-    <hr />
+<div class="form-horizontal text-right" dir="rtl" style="min-height:310px;">
+    
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.id)
 
-    <div class="form-group">
+    <div class="form-group" style="margin-bottom: 50px;height:50px;">
         @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
@@ -24,22 +23,22 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="height:210px;">
         @Html.LabelFor(model => model.body, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.TextAreaFor(model => model.body, new { @class = "form-control" } )
+            @Html.TextAreaFor(model => model.body, new { @class = "form-control", style = "min-height:200px" } )
             @Html.ValidationMessageFor(model => model.body, "", new { @class = "text-danger" })
         </div>
     </div>
-    <div class="form-group">
-       <label id="img" class = "control-label col-md-2">Image</label>
+    <div class="form-group" style="min-height:170px;">
+       <label id="img" class = "control-label col-md-2">صورة الخبر</label>
        <div class="col-md-10">
-           <img height="150" width="150" id="img" src="~/images/News/@Model.ImagePath" />
+           <img height="150" width="150" id="img" src="~/images/News/@Model.ImagePath" dir="rtl" class="float-right"/>
            @Html.HiddenFor(model => model.ImagePath)
        </div>
     </div>
-    <div class="form-group">
-       <label id="newImg" class = "control-label col-md-2">new Image</label>
+    <div class="form-group" style="min-height:50px;">
+       <label id="newImg" class = "control-label col-md-2">الصورة الجديدة</label>
         <div class="col-md-10">
             <input name="imgFile"  type="file" id="newImg" class = "form-control"/>
         </div>
@@ -47,12 +46,12 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="حفظ الخبر" class="btn btn-secondary" dir="rtl" />
         </div>
     </div>
 </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ارجع الى قائمةالاخبار", "Index")
 </div>

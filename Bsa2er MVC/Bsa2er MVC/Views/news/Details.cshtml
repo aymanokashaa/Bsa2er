@@ -1,42 +1,42 @@
 ﻿@model Bsa2er_MVC.Models.news
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "تفاصيل الخبر";
 }
 
-<h2>Details</h2>
+    <h2 class="text-center mb-3" dir="rtl">تفاصيل الخبر</h2>
 
-<div>
-    <h4>news</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.title)
-        </dt>
+    <div class=" justify-content-between text-right mr-3" dir="rtl" style="min-height:310px;">
 
-        <dd>
-            @Html.DisplayFor(model => model.title)
-        </dd>
+        <dl class="dl-horizontal" dir="rtl">
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.body)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.body)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.body)
+            </dt>
 
-        <dt>
-            <lable id="img">Image</lable>
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.body)
+            </dd>
 
-        <dd>
-            <img height="150" width="150" id="img" src="~/images/News/@Model.ImagePath" />
-        </dd>
+            <dt>
+                <lable id="img">صورة الخبر</lable>
+            </dt>
 
-    </dl>
-</div>
+            <dd>
+                <img height="150" width="150" id="img" src="~/images/News/@Model.ImagePath" />
+            </dd>
+
+        </dl>
+        @Html.ActionLink("تعديل الخبر", "Edit", new { id = Model.id }, new { @class = "btn btn-secondary text-center", dir = "rtl" })
+
+    </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ارجع الى قائمة الاخبار", "Index")
 </p>
