@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Bsa2er_MVC.Models.Program>
+
+@{
+    ViewBag.Title = "الدورات والبرامج";
+}
+    <div class="tracks-box">
+
+        <h2 style="text-align:center" class="m-3">الدورات والبرامج</h2>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="card bg-info text-light">
+                        <div class="img-c">
+                            <img src="@item.Program_ImagePath">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Program_Title</h5>
+                            <p class="card-text">@item.Program_Body</p>
+                            @Html.ActionLink("تعديل", "Edit",null, new { id = item.Program_Id ,@class="btn btn-danger"}) |
+                            @Html.ActionLink("تفاصيل", "Details", null, new { id = item.Program_Id, @class = "btn btn-warning" }) |
+                            @Html.ActionLink("حذف", "Delete", null, new { id = item.Program_Id, @class = "btn btn-secondary" })
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+        @*<table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Instructor.Degree)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_Title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_Duration)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_Advantages)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_Goals)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_ImagePath)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_VideoLink)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_TargetGroup)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Program_Type)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NumOfLecture)
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Instructor.Degree)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_Duration)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_Advantages)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_Goals)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_ImagePath)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_VideoLink)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_TargetGroup)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Program_Type)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NumOfLecture)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Program_Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Program_Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Program_Id })
+                        </td>
+                    </tr>
+                }
+
+            </table>*@
+        <p>
+            @Html.ActionLink("اضافة دورة", "Create", "Create", new { @class = "btn btn-danger", style = "margin-left:550px" })
+        </p>
+

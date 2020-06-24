@@ -188,14 +188,20 @@
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LecturesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.cs" />
-    <Compile Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.Designer.cs">
-      <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
+    <Compile Include="Migrations\202006231956084_mymigration.cs" />
+    <Compile Include="Migrations\202006231956084_mymigration.Designer.cs">
+      <DependentUpon>202006231956084_mymigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006241103480_programbody.cs" />
+    <Compile Include="Migrations\202006241103480_programbody.Designer.cs">
+      <DependentUpon>202006241103480_programbody.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -542,6 +548,17 @@
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\TakeExam.cshtml" />
+    <Content Include="Views\Programs\Create.cshtml" />
+    <Content Include="Views\Programs\Delete.cshtml" />
+    <Content Include="Views\Programs\Details.cshtml" />
+    <Content Include="Views\Programs\Edit.cshtml" />
+    <Content Include="Views\Programs\Index.cshtml" />
+    <Content Include="Views\Lectures\Create.cshtml" />
+    <Content Include="Views\Lectures\Delete.cshtml" />
+    <Content Include="Views\Lectures\Details.cshtml" />
+    <Content Include="Views\Lectures\Edit.cshtml" />
+    <Content Include="Views\Lectures\Index.cshtml" />
+    <Content Include="Views\Programs\IndexAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -558,8 +575,11 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.resx">
-      <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006231956084_mymigration.resx">
+      <DependentUpon>202006231956084_mymigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006241103480_programbody.resx">
+      <DependentUpon>202006241103480_programbody.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

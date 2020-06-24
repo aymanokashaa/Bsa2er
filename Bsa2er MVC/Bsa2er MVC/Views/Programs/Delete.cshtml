@@ -1,0 +1,104 @@
+﻿@model Bsa2er_MVC.Models.Program
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Program</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Instructor.Degree)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instructor.Degree)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Advantages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Advantages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Goals)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Goals)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_ImagePath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_VideoLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_VideoLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_TargetGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_TargetGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOfLecture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOfLecture)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
