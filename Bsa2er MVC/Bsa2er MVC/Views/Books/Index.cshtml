@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Bsa2er_MVC.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<p class="text-center h3">
+    @if (User.IsInRole("instructor"))
+    {
+    @Html.ActionLink(" أنشأ كتاب", "Create", "Books")
+    }
+</p>
+<div class=" container">
+    <div class="row ">
+        @foreach (var item in Model)
+        {
+            <div class="card col-md-4 ml-2 mt-3">
+                <div class="card-header text-center">
+
+                    @Html.DisplayFor(modelItem => item.Title)
+
+
+                </div>
+                <div class="card-body text-center">
+
+                    <div class="card-img ">
+
+                        <img  src="~/images/@item.imageFilePath" />
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        @if (User.IsInRole("instructor"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+
+                        }
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) 
+                    </div>
+
+                </div>
+
+        }
+    </div>
+
+</div>
+

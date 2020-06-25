@@ -9,8 +9,9 @@ namespace Bsa2er_MVC.Models
         [Key]
         public int id { set; get; }
 
+        [Display(Name ="عنوان الخبر")]
         public string title { set; get; }
-
+        [Display(Name ="محتوى الخبر")]
         public string body { set; get; }
 
         [NotMapped]

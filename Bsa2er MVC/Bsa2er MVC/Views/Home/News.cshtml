@@ -4,6 +4,12 @@
 }
 
 <div class="tracks-box">
+    @if (User.IsInRole("Admin"))
+    {
+        <p>
+            @Html.ActionLink("أنشاء خبر جديد", "Create", null, new { dir = "rtl", @class = "btn btn-secondary float-right" })
+        </p>
+    }
     <h1 class="text-center m-4">الاخبار</h1>
 
     <div class="row">
@@ -16,18 +22,32 @@
                     </div>
                     <div class="card-title"> <h5>@item.title</h5></div>
                     <div class="card-body">
-                       
+
                         <p class="card-text"> @item.body.Substring(0, 20) .....</p>
-                        
-                        @Ajax.ActionLink("قراءة المزيد","NewsDetails","News",new {id=item.id },new AjaxOptions() 
-                      {
-                       InsertionMode=InsertionMode.Replace,
-                       UpdateTargetId= "modalBody"
-                      }
-                       ,new {@class= "btn btn-primary", data_toggle = "modal", data_target = "#dnews" })
-                    </div>
+
+                        @{
+                            if (User.IsInRole("Admin"))
+                            {
+
+                                 @Html.ActionLink("تعديل", "Edit", new { id = item.id }, new { @class = "btn btn-primary" }); <span>|</span>
+                                 @Html.ActionLink("التفاصيل", "Details", new { id = item.id }, new { @class = "btn btn-primary" }); <span>|</span>
+                                 @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-primary" });
+
+
+                            }
+                            else
+                            {
+                                  @Ajax.ActionLink("قراءة المزيد", "NewsDetails", "News", new { id = item.id }, new AjaxOptions()
+                                  {
+                                     InsertionMode = InsertionMode.Replace,
+                                     UpdateTargetId = "modalBody"}, new { @class = "btn btn-primary", data_toggle = "modal", data_target = "#dnews" })
+                             }
+
+                          }
+
+</div>
                 </div>
-            </div>
+             </div>
         }
 
         @* <div class="col-md-6 col-lg-4 col-xl-3 p-2">
@@ -52,7 +72,7 @@
                 <h5 class="modal-title text-center col-12 " id="exampleModalLabel" style="text-align: center;"></h5>
             </div>
             <div class="modal-body">
-              
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>

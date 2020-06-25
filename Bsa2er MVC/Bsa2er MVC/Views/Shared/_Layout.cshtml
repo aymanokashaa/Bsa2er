@@ -63,10 +63,15 @@
                 <img id="image2" src="~/images/4.png" />
             </div>
         </div>
-        <div id="sign">
+        <div id="sign" style="text-align:center">
+            <ul class="navbar-nav ml-4">
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+        @*<div id="sign">
             <a class="nav-link text-warning" href="createuser.html"> سجل الان</a>
             <a class="nav-link text-warning" href="login.html"> تسجيل الدخول</a>
-        </div>
+        </div>*@
         <span id="wrapdate" class=" navbar-brand date2 text-primary dt"></span>
 
 
@@ -93,10 +98,14 @@
                     <a class="fa fa-youtube text-danger  btn btn-toolbar mt-2" target="_blank"
                        href="https://github.com/"></a>
                 </ul>
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link text-warning" href="createuser.html"> سجل الان</a></li>
-                    <li class="nav-item"><a class="nav-link text-warning" href="login.html"> تسجيل الدخول</a></li>
+              
+                <ul class="navbar-nav mr-auto " style="text-align:center;">
+                    @Html.Partial("_LoginPartial")
                 </ul>
+                @*<ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link text-warning" href="createuser.html"> سجل الان</a></li>
+            <li class="nav-item"><a class="nav-link text-warning" href="login.html"> تسجيل الدخول</a></li>
+        </ul>*@
                 <span id="wrapdate" class="navbar-brand date d-none d-md-block text-warning"></span>
             </div>
         </nav>

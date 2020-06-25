@@ -1,0 +1,22 @@
+﻿@model Bsa2er_MVC.Models.Booksection
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+    <div class="text-center" style="margin:10% 0px;">
+        <h1>هل تريد حذف هذا القسم</h1>
+
+        <h3 class="mt-5"> @Html.DisplayFor(model => model.title)</h3>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color text-center mt-5">
+                <input type="submit" value="حذف القسم" class="btn btn-primary" /> 
+            </div>
+        }
+    </div>

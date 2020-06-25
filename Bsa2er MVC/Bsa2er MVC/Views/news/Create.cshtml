@@ -1,20 +1,20 @@
 ﻿@model Bsa2er_MVC.Models.news
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "أنشاء خبر";
 }
 
-<h2>Create</h2>
+    <h2 class="text-center mb-3" dir="rtl">أنشاء خبر</h2>
 
 @using (Html.BeginForm("Create","News",FormMethod.Post,new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>news</h4>
-        <hr />
+    <div class="form-horizontal justify-content-between text-right" dir="rtl" style="min-height:310px;">
+       
+       
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group mb-1">
+        <div class="form-group mb-1" style="margin-bottom: 50px;height:50px;">
             @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
@@ -22,17 +22,17 @@
             </div>
         </div>
         
-        <div class="form-group mb-1">
+        <div class="form-group mb-1" style="height:210px;">
             @Html.LabelFor(model => model.body, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 
-                @Html.TextAreaFor(model => model.body, new { @class = "form-control" } )
+                @Html.TextAreaFor(model => model.body, new { @class = "form-control", style = "min-height:200px" } )
                 @Html.ValidationMessageFor(model => model.body, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group mb-1">
-            <label class = "control-label col-md-2" id="img" >image</label>
+        <div class="form-group mb-1" style="margin-bottom: 50px;height:50px;">
+            <label class="control-label col-md-2" id="img">صورة الخبر</label>
             @*@Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
                 <input  type="file" class="form-control" name="imageFile" id="img"/>
@@ -41,14 +41,14 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group" style="direction:rtl">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-secondary" />
+                <input type="submit" value="اضغط لأنشاء الخبر" class="btn btn-secondary text-center" dir="rtl" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ارجع الى قائمة الاخبار", "Index")
 </div>
