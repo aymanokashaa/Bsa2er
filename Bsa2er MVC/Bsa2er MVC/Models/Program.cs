@@ -8,6 +8,8 @@ namespace Bsa2er_MVC.Models
     {
         [Key]
         public int Program_Id { get; set; }
+        [Display(Name = "الصورة الرئيسة")]
+        public string Program_MainImage { get; set; }
         [Display(Name = "عنوان البرنامج")]
         public string Program_Title { get; set; }
         [Display(Name = "مدة البرنامج")]
@@ -16,11 +18,11 @@ namespace Bsa2er_MVC.Models
         public string Program_Advantages { get; set; }
         [Display(Name = "اهداف البرنامج")]
         public string Program_Goals { get; set; }
-        [Display(Name = "اضافة صورة")]
+        [Display(Name = "صورة البرنامج")]
         public string Program_ImagePath { get; set; }
         [Display(Name = "نبذة عن البرنامج")]
         public string Program_Body { set; get; }
-        [Display(Name = "لينك الفيديو الخاص بالبرنامج")]
+        [Display(Name = "لينك الفيديو ")]
         public string Program_VideoLink { get; set; }
         [Display(Name = "الفئة المستهدفة")]
         public string Program_TargetGroup { get; set; }
@@ -40,6 +42,6 @@ namespace Bsa2er_MVC.Models
     }
     public enum ProgramType
     {
-        Private, Public
+        Program,Track, PublicProgram
     }
 }

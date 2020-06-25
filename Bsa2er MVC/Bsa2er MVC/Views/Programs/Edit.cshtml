@@ -4,106 +4,163 @@
     ViewBag.Title = "تعديل";
 }
 
-<h2>تعديل البرنامج</h2>
+<h2 style="text-align:center" class="mt-4">تعديل البرنامج</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Programs", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4 style="text-align:center">تفاصيل البرنامج</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Program_Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_Title, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal  overflow-hidden text-right w-75 mx-auto">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Program_Id)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_Duration, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_Duration, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_Duration, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_Advantages, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_Advantages, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_Advantages, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_Goals, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_Goals, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_Goals, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_ImagePath, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_ImagePath, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_VideoLink, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_VideoLink, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_VideoLink, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_TargetGroup, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Program_TargetGroup, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Program_TargetGroup, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Program_Type, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EnumDropDownListFor(model => model.Program_Type, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Program_Type, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.NumOfLecture, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.NumOfLecture, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NumOfLecture, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Ins_Id, "Ins_Id", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("Ins_Id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Ins_Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="تعديل" class="btn btn-warning mt-2" />
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_Title, htmlAttributes: new { @class = "control-label col-md-2 mt-3" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_Title, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_Title, "", new { @class = "text-danger" })
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("الرجوع الي البرامج", "Index","Index", new { @class = "btn btn-danger  mt-2", style = "margin-left:550px" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_MainImage, htmlAttributes: new { @class = "control-label col-md-2 mt-3 " })
+        <div class="col-md-10">
+            <input type="file" class="form-control mt-3 w-75 mx-auto" name="mainimageFile" id="mainimageFile" value="~/images/Programs/@Model.Program_MainImage" />
+            @Html.ValidationMessageFor(model => model.Program_MainImage, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_Body, htmlAttributes: new { @class = "control-label col-md-2 mt-3" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_Body, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_Body, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_Duration, htmlAttributes: new { @class = "control-label col-md-2 mt-3" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_Duration, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_Duration, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_Advantages, htmlAttributes: new { @class = "control-label col-md-2 mt-3" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_Advantages, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_Advantages, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_Goals, htmlAttributes: new { @class = "control-label col-md-2 mt-3" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_Goals, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_Goals, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group enumtype">
+        @Html.LabelFor(model => model.Program_Type, htmlAttributes: new { @class = "control-label col-md-2 mt-3 " })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.Program_Type, htmlAttributes: new { @class = "form-control mt-3 w-75 mx-auto  progtype" })
+            @Html.ValidationMessageFor(model => model.Program_Type, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  progimg">
+        <label class="control-label col-md-2 mt-3" id="img">صورة البرنامج</label>
+        <div class="col-md-10">
+            <input type="file" class="form-control mt-3 w-75 mx-auto" name="imageFile" id="imageFile" value="~/images/Programs/@ViewBag.Program_ImagePath" />
+            @*@Html.LabelFor(model => model.Program_ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Program_ImagePath, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Program_ImagePath, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+
+    <div class="form-group proglink">
+        @Html.LabelFor(model => model.Program_VideoLink, htmlAttributes: new { @class = "control-label col-md-2 mt-3 " })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_VideoLink, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_VideoLink, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Program_TargetGroup, htmlAttributes: new { @class = "control-label col-md-2 mt-3" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Program_TargetGroup, new { htmlAttributes = new { @class = "form-control mt-3 w-75 mx-auto" } })
+            @Html.ValidationMessageFor(model => model.Program_TargetGroup, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="container lectures ">
+        <div class="form-group my-3 overflow-hidden w-75 mt-5 mx-auto text-right">
+            <h3>المحاضرات</h3>
+            @foreach (var item in Model.lectures)
+            {
+                <div class="lecture p-4 text-right" style="border:3px solid #ffd800; border-radius:10%;">
+                    <label>لينك فيديو المحاضرة </label>
+                    <div class="mb-3">
+                        <input class="form-control text-box single-line" type="text" value="@item.Lecture_VideoLink" name="@item.Lecture_VideoLink" />
+                    </div>
+                    <label>لينك الصوت الخاص بالمحاضرة</label>
+                    <div class="mb-3">
+                        <input class="form-control text-box single-line" type="text" value="@item.Lecture_SoundLink" name="@item.Lecture_VideoLink" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="تعديل" class="btn btn-info btn-block w-25 m-auto text-white" />
+        </div>
+    </div>
 </div>
+}
+@section scripts 
+    {
+    <script>
+
+         
+        if ($(".progtype").val() == "2") {
+                $(".proglink").show();
+                $(".progimg").hide();
+            }
+        else if ($(".progtype").val() == "0" || ($(".progtype").val() == "1" ) {
+                $(".proglink").hide();
+                $(".progimg").show();
+            }
+
+        $("#addlecture").click(function () {
+            currentL++;
+            $(".lectures").append(`
+                        <div class="form-group my-3 overflow-hidden w-75 mx-auto text-right">
+                     <input type="number" value="@Model.Program_Id" hidden name="lectures[${currentL}].Lecture_Id" />
+                            <h3>المحاضرات</h3>
+                            <div class="lecture p-4 text-right" style="border:3px solid #ffd800; border-radius:10%;">
+                                <label>لينك فيديو المحاضرة </label>
+                                <div class="mb-3">
+                                    <input class="form-control text-box single-line" type="text" name="lectures[${currentL}].Lecture_VideoLink" />
+                                </div>
+                                <label>لينك الصوت الخاص بالمحاضرة</label>
+                                <div class="mb-3">
+                                    <input class="form-control text-box single-line" type="text" name="lectures[${currentL}].Lecture_SoundLink" />
+                                </div>
+                                                                <input type="button" class="btn btn-danger removelecture" value="إزالة السؤال" />
+                            </div>
+                            </div>
+                                     `)
+        })
+        $(".lectures").on("click", ".removelecture", function () {
+            $(this).parent().parent().remove();
+        })
+        $(".numoflectures").value = currentL;
+    </script>
+    }

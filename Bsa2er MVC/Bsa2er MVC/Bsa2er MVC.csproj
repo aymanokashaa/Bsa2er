@@ -190,7 +190,6 @@
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LecturesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
@@ -213,6 +212,22 @@
     <Compile Include="Migrations\202006211940091_v12.Designer.cs">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006242032273_soundlecture.cs" />
+    <Compile Include="Migrations\202006242032273_soundlecture.Designer.cs">
+      <DependentUpon>202006242032273_soundlecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006251008019_mainimg.cs" />
+    <Compile Include="Migrations\202006251008019_mainimg.Designer.cs">
+      <DependentUpon>202006251008019_mainimg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006251857019_progtype.cs" />
+    <Compile Include="Migrations\202006251857019_progtype.Designer.cs">
+      <DependentUpon>202006251857019_progtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006252003438_deletefilelec.cs" />
+    <Compile Include="Migrations\202006252003438_deletefilelec.Designer.cs">
+      <DependentUpon>202006252003438_deletefilelec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -222,7 +237,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Lecture.cs" />
-    <Compile Include="Models\LectureFiles.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\news.cs" />
     <Compile Include="Models\Program.cs" />
@@ -546,17 +560,12 @@
     <Content Include="Views\Programs\Details.cshtml" />
     <Content Include="Views\Programs\Edit.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
-    <Content Include="Views\Lectures\Create.cshtml" />
-    <Content Include="Views\Lectures\Delete.cshtml" />
-    <Content Include="Views\Lectures\Details.cshtml" />
-    <Content Include="Views\Lectures\Edit.cshtml" />
-    <Content Include="Views\Lectures\Index.cshtml" />
-    <Content Include="Views\Programs\IndexAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
     <Folder Include="images\News\" />
+    <Folder Include="images\Programs\" />
     <Folder Include="texts\" />
   </ItemGroup>
   <ItemGroup>
@@ -580,6 +589,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006211940091_v12.resx">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006242032273_soundlecture.resx">
+      <DependentUpon>202006242032273_soundlecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006251008019_mainimg.resx">
+      <DependentUpon>202006251008019_mainimg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006251857019_progtype.resx">
+      <DependentUpon>202006251857019_progtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006252003438_deletefilelec.resx">
+      <DependentUpon>202006252003438_deletefilelec.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

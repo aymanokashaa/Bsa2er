@@ -21,12 +21,6 @@ namespace Bsa2er_MVC.Controllers
             var programs = db.Programs.Include(p => p.Instructor);
             return View(await programs.ToListAsync());
         }
-        public ActionResult IndexAll(int id)
-        {
-            Program programs = db.Programs.SingleOrDefault(n => n.Program_Id == id);
-            return PartialView(programs);
-        }
-
         // GET: Programs/Details/5
         public async Task<ActionResult> Details(int? id)
         {
@@ -54,10 +48,22 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Program_Id,Program_Title,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture,Ins_Id")] Program program)
+        public async Task<ActionResult> Create([Bind(Include = "Program_Title,lectures,Program_MainImage,Program_Duration,Program_Body,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture")] Program program,HttpPostedFileBase imageFile, HttpPostedFileBase mainimageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null)
+                {
+                    string[] arr = imageFile.FileName.Split('.');
+                    string filename = Guid.NewGuid().ToString() + "." + arr[arr.Length - 1];
+                    imageFile.SaveAs(Server.MapPath("~/images/Programs/") + filename);
+                    program.Program_ImagePath = filename;
+                    string[] arr2 = mainimageFile.FileName.Split('.');
+                    string filename2 = Guid.NewGuid().ToString() + "." + arr2[arr2.Length - 1];
+                    imageFile.SaveAs(Server.MapPath("~/images/Programs/") + filename2);
+                    program.Program_MainImage = filename2;
+                }
+
                 db.Programs.Add(program);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -88,7 +94,7 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Program_Id,Program_Title,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture,Ins_Id")] Program program)
+        public async Task<ActionResult> Edit([Bind(Include = "Program_Id,Program_Title,Program_MainImage,Program_Body,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture,Ins_Id")] Program program)
         {
             if (ModelState.IsValid)
             {
