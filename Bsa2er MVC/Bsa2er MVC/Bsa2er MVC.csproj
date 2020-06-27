@@ -192,9 +192,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="Migrations\202006241103480_programbody.cs" />
+    <Compile Include="Migrations\202006241103480_programbody.Designer.cs">
+      <DependentUpon>202006241103480_programbody.cs</DependentUpon>
+    </Compile>
+>>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     <Compile Include="Migrations\202006211937051_v11.cs" />
     <Compile Include="Migrations\202006211937051_v11.Designer.cs">
       <DependentUpon>202006211937051_v11.cs</DependentUpon>
@@ -203,6 +211,7 @@
     <Compile Include="Migrations\202006211940091_v12.Designer.cs">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\202006232045242_v.cs" />
     <Compile Include="Migrations\202006232045242_v.Designer.cs">
       <DependentUpon>202006232045242_v.cs</DependentUpon>
@@ -226,6 +235,23 @@
     <Compile Include="Migrations\202006271355449_k.cs" />
     <Compile Include="Migrations\202006271355449_k.Designer.cs">
       <DependentUpon>202006271355449_k.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\202006242032273_soundlecture.cs" />
+    <Compile Include="Migrations\202006242032273_soundlecture.Designer.cs">
+      <DependentUpon>202006242032273_soundlecture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006251008019_mainimg.cs" />
+    <Compile Include="Migrations\202006251008019_mainimg.Designer.cs">
+      <DependentUpon>202006251008019_mainimg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006251857019_progtype.cs" />
+    <Compile Include="Migrations\202006251857019_progtype.Designer.cs">
+      <DependentUpon>202006251857019_progtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006252003438_deletefilelec.cs" />
+    <Compile Include="Migrations\202006252003438_deletefilelec.Designer.cs">
+      <DependentUpon>202006252003438_deletefilelec.cs</DependentUpon>
+>>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -236,7 +262,6 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Lecture.cs" />
-    <Compile Include="Models\LectureFiles.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\news.cs" />
     <Compile Include="Models\Program.cs" />
@@ -248,46 +273,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Antlr3.Runtime.dll" />
-    <Content Include="bin\Antlr3.Runtime.pdb" />
     <Content Include="bin\Bsa2er MVC.dll" />
     <Content Include="bin\Bsa2er MVC.pdb" />
     <Content Include="bin\EntityFramework.dll" />
     <Content Include="bin\EntityFramework.SqlServer.dll" />
-    <Content Include="bin\EntityFramework.SqlServer.xml" />
-    <Content Include="bin\EntityFramework.xml" />
     <Content Include="bin\MaxMind.Db.dll" />
-    <Content Include="bin\MaxMind.Db.xml" />
     <Content Include="bin\MaxMind.GeoIP2.dll" />
-    <Content Include="bin\MaxMind.GeoIP2.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.xml" />
     <Content Include="bin\Microsoft.AspNet.Identity.Owin.dll" />
-    <Content Include="bin\Microsoft.AspNet.Identity.Owin.xml" />
     <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
     <Content Include="bin\Microsoft.Owin.dll" />
     <Content Include="bin\Microsoft.Owin.Host.SystemWeb.dll" />
-    <Content Include="bin\Microsoft.Owin.Host.SystemWeb.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Cookies.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Cookies.xml" />
     <Content Include="bin\Microsoft.Owin.Security.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Facebook.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Google.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Google.xml" />
     <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.MicrosoftAccount.xml" />
     <Content Include="bin\Microsoft.Owin.Security.OAuth.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.OAuth.xml" />
     <Content Include="bin\Microsoft.Owin.Security.Twitter.dll" />
-    <Content Include="bin\Microsoft.Owin.Security.Twitter.xml" />
-    <Content Include="bin\Microsoft.Owin.Security.xml" />
-    <Content Include="bin\Microsoft.Owin.xml" />
     <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
     <Content Include="bin\Newtonsoft.Json.dll" />
-    <Content Include="bin\Newtonsoft.Json.xml" />
     <Content Include="bin\Owin.dll" />
     <Content Include="bin\roslyn\csc.exe" />
     <Content Include="bin\roslyn\csi.exe" />
@@ -329,20 +334,14 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="bin\System.Web.Helpers.dll" />
-    <Content Include="bin\System.Web.Helpers.xml" />
     <Content Include="bin\System.Web.Mvc.dll" />
-    <Content Include="bin\System.Web.Mvc.xml" />
     <Content Include="bin\System.Web.Optimization.dll" />
-    <Content Include="bin\System.Web.Optimization.xml" />
     <Content Include="bin\System.Web.Razor.dll" />
-    <Content Include="bin\System.Web.Razor.xml" />
     <Content Include="bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="bin\System.Web.WebPages.Deployment.xml" />
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="bin\System.Web.WebPages.Razor.xml" />
-    <Content Include="bin\System.Web.WebPages.xml" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Content\adminlte.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -351,13 +350,20 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carouselStyle.css" />
+    <Content Include="Content\daterangepicker.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\Gallery.css" />
     <Content Include="Content\headerfooter.css" />
+    <Content Include="Content\icheck-bootstrap.min.css" />
+    <Content Include="Content\ionicons.min.css" />
+    <Content Include="Content\jqvmap.min.css" />
     <Content Include="Content\Library.css" />
     <Content Include="Content\News.css" />
+    <Content Include="Content\OverlayScrollbars.min.css" />
     <Content Include="Content\Program.css" />
     <Content Include="Content\PublicProgames.css" />
+    <Content Include="Content\summernote-bs4.css" />
+    <Content Include="Content\tempusdominus-bootstrap-4.min.css" />
     <Content Include="Content\Track.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -371,6 +377,8 @@
     <Content Include="images\7.jpg" />
     <Content Include="images\7.png" />
     <Content Include="images\bsaer.png" />
+    <Content Include="images\DashBoard\edit-button.svg" />
+    <Content Include="images\DashBoard\user.png" />
     <Content Include="images\library\1.jpeg" />
     <Content Include="images\library\2.jpeg" />
     <Content Include="images\library\3.jpeg" />
@@ -582,13 +590,27 @@
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\TakeExam.cshtml" />
+<<<<<<< HEAD
+=======
+    <Content Include="Views\Programs\Create.cshtml" />
+    <Content Include="Views\Programs\Delete.cshtml" />
+    <Content Include="Views\Programs\Details.cshtml" />
+    <Content Include="Views\Programs\Edit.cshtml" />
+    <Content Include="Views\Programs\Index.cshtml" />
+    <Content Include="Views\Manage\DashBoard.cshtml" />
+>>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
+<<<<<<< HEAD
     <Folder Include="images\Booksections\" />
     <Folder Include="images\Books\" />
     <Folder Include="images\News\" />
+=======
+    <Folder Include="images\News\" />
+    <Folder Include="images\Programs\" />
+>>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     <Folder Include="texts\" />
   </ItemGroup>
   <ItemGroup>
@@ -601,12 +623,19 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="Migrations\202006241103480_programbody.resx">
+      <DependentUpon>202006241103480_programbody.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     <EmbeddedResource Include="Migrations\202006211937051_v11.resx">
       <DependentUpon>202006211937051_v11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006211940091_v12.resx">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\202006232045242_v.resx">
       <DependentUpon>202006232045242_v.cs</DependentUpon>
     </EmbeddedResource>
@@ -624,6 +653,19 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006271355449_k.resx">
       <DependentUpon>202006271355449_k.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\202006242032273_soundlecture.resx">
+      <DependentUpon>202006242032273_soundlecture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006251008019_mainimg.resx">
+      <DependentUpon>202006251008019_mainimg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006251857019_progtype.resx">
+      <DependentUpon>202006251857019_progtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006252003438_deletefilelec.resx">
+      <DependentUpon>202006252003438_deletefilelec.cs</DependentUpon>
+>>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

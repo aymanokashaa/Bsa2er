@@ -51,7 +51,7 @@ namespace Bsa2er_MVC.Models
         public virtual DbSet<Exam> Exams { set; get; }
         public virtual DbSet<Instructor> Instructors { set; get; }
         public virtual DbSet<Lecture> Lectures { set; get; }
-        public virtual DbSet<LectureFiles> LectureFiles { set; get; }
+ 
         public virtual DbSet<Program> Programs { set; get; }
         public virtual DbSet<Question> Questions { set; get; }
         public virtual DbSet<StudentsPrograms> StudentsPrograms { set; get; }
