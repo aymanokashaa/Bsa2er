@@ -375,3 +375,4 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MV
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.mainimg.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.progtype.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.deletefilelec.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
