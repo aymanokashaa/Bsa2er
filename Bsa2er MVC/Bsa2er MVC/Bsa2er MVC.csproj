@@ -196,13 +196,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-=======
     <Compile Include="Migrations\202006241103480_programbody.cs" />
     <Compile Include="Migrations\202006241103480_programbody.Designer.cs">
       <DependentUpon>202006241103480_programbody.cs</DependentUpon>
     </Compile>
->>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     <Compile Include="Migrations\202006211937051_v11.cs" />
     <Compile Include="Migrations\202006211937051_v11.Designer.cs">
       <DependentUpon>202006211937051_v11.cs</DependentUpon>
@@ -210,11 +207,6 @@
     <Compile Include="Migrations\202006211940091_v12.cs" />
     <Compile Include="Migrations\202006211940091_v12.Designer.cs">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
-    </Compile>
-<<<<<<< HEAD
-    <Compile Include="Migrations\202006232045242_v.cs" />
-    <Compile Include="Migrations\202006232045242_v.Designer.cs">
-      <DependentUpon>202006232045242_v.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202006271221288_v1.cs" />
     <Compile Include="Migrations\202006271221288_v1.Designer.cs">
@@ -235,7 +227,7 @@
     <Compile Include="Migrations\202006271355449_k.cs" />
     <Compile Include="Migrations\202006271355449_k.Designer.cs">
       <DependentUpon>202006271355449_k.cs</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Migrations\202006242032273_soundlecture.cs" />
     <Compile Include="Migrations\202006242032273_soundlecture.Designer.cs">
       <DependentUpon>202006242032273_soundlecture.cs</DependentUpon>
@@ -251,7 +243,10 @@
     <Compile Include="Migrations\202006252003438_deletefilelec.cs" />
     <Compile Include="Migrations\202006252003438_deletefilelec.Designer.cs">
       <DependentUpon>202006252003438_deletefilelec.cs</DependentUpon>
->>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
+    </Compile>
+    <Compile Include="Migrations\202006272304465_reseting.cs" />
+    <Compile Include="Migrations\202006272304465_reseting.Designer.cs">
+      <DependentUpon>202006272304465_reseting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -590,27 +585,21 @@
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\TakeExam.cshtml" />
-<<<<<<< HEAD
-=======
     <Content Include="Views\Programs\Create.cshtml" />
     <Content Include="Views\Programs\Delete.cshtml" />
     <Content Include="Views\Programs\Details.cshtml" />
     <Content Include="Views\Programs\Edit.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Manage\DashBoard.cshtml" />
->>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
+    <Content Include="Views\Account\StudentDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
-<<<<<<< HEAD
     <Folder Include="images\Booksections\" />
     <Folder Include="images\Books\" />
     <Folder Include="images\News\" />
-=======
-    <Folder Include="images\News\" />
     <Folder Include="images\Programs\" />
->>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     <Folder Include="texts\" />
   </ItemGroup>
   <ItemGroup>
@@ -623,21 +612,14 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-=======
     <EmbeddedResource Include="Migrations\202006241103480_programbody.resx">
       <DependentUpon>202006241103480_programbody.cs</DependentUpon>
     </EmbeddedResource>
->>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
     <EmbeddedResource Include="Migrations\202006211937051_v11.resx">
       <DependentUpon>202006211937051_v11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006211940091_v12.resx">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
-    </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Migrations\202006232045242_v.resx">
-      <DependentUpon>202006232045242_v.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006271221288_v1.resx">
       <DependentUpon>202006271221288_v1.cs</DependentUpon>
@@ -653,7 +635,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006271355449_k.resx">
       <DependentUpon>202006271355449_k.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006242032273_soundlecture.resx">
       <DependentUpon>202006242032273_soundlecture.cs</DependentUpon>
     </EmbeddedResource>
@@ -665,7 +647,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006252003438_deletefilelec.resx">
       <DependentUpon>202006252003438_deletefilelec.cs</DependentUpon>
->>>>>>> 27b9de2dc54f61557737ae0f4e3197ad76cd7240
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006272304465_reseting.resx">
+      <DependentUpon>202006272304465_reseting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

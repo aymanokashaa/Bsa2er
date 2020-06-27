@@ -12,6 +12,7 @@ namespace Bsa2er_MVC.Controllers
     [Authorize]
     public class AccountController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -149,8 +150,7 @@ namespace Bsa2er_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                var user = new ApplicationUser { UserName = model.Username,fullname=model.fullname ,Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber,dateofbirth=model.day+"/"+model.month+"/"+model.year,gender=model.gender.ToString() };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -400,6 +400,13 @@ namespace Bsa2er_MVC.Controllers
         public ActionResult ExternalLoginFailure()
         {
             return View();
+        }
+
+        public ActionResult StudentDashboard()
+        {
+            var userID = User.Identity.GetUserId();
+            var user = db.Students.Find(userID);
+            return View(user);
         }
 
         protected override void Dispose(bool disposing)
