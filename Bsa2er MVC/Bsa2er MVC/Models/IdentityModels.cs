@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -11,6 +12,16 @@ namespace Bsa2er_MVC.Models
     {
         public string Country { set; get; }
         public string Qualification { set; get; }
+        public string dateofbirth { set; get; }
+
+        public string imagepath { set; get; }
+        
+        public string gender { set; get; }
+
+
+        public string fullname { set; get;}
+
+
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)

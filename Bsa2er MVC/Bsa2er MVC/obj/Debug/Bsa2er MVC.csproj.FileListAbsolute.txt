@@ -179,7 +179,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MV
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
-<<<<<<< HEAD
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.addingModels.resources
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
@@ -213,7 +212,6 @@ C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\rosl
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.Compression.ZipFile.dll
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.dll
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Net.Http.dll
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Net.Sockets.dll
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Reflection.Metadata.dll
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -233,65 +231,6 @@ C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\rosl
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.rsp
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Antlr3.Runtime.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\EntityFramework.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\EntityFramework.SqlServer.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.Db.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.GeoIP2.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.Owin.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Twitter.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Newtonsoft.Json.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Owin.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Helpers.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Mvc.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Optimization.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Razor.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.Razor.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\WebGrease.dll
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.Db.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\MaxMind.GeoIP2.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Newtonsoft.Json.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Helpers.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Mvc.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Optimization.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.Razor.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\System.Web.WebPages.Razor.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Antlr3.Runtime.pdb
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\EntityFramework.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\EntityFramework.SqlServer.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v1.resources
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v2.resources
-C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.addingModels.resources
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.cache
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
@@ -299,5 +238,18 @@ C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debu
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v11.resources
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v12.resources
-=======
->>>>>>> 05886873a20153c2e4b75b72df2e07b50a731559
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.dll
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.dll
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.dll
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.xml
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.pdb
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.xml
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.pdb
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.xml
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v.resources
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v1.resources
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v2.resources
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v3.resources
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v31.resources
+C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.k.resources

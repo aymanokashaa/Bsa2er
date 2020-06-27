@@ -7,13 +7,13 @@ namespace Bsa2er_MVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class remove_CertificationTable_Edit_studentPrograme : IMigrationMetadata
+    public sealed partial class v : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(remove_CertificationTable_Edit_studentPrograme));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(v));
         
         string IMigrationMetadata.Id
         {
-            get { return "202006221951118_remove_CertificationTable_Edit_studentPrograme"; }
+            get { return "202006232045242_v"; }
         }
         
         string IMigrationMetadata.Source

@@ -50,12 +50,14 @@ namespace Bsa2er_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (booksection.Image != null)
+                {
 
-      
-                String[] array = booksection.Image.FileName.Split('.');
-                String filename = Guid.NewGuid() + "." + array[array.Length - 1];
-                booksection.Image.SaveAs(Server.MapPath("~/images/") + filename);
-                booksection.imagepath = filename;
+                    String[] array = booksection.Image.FileName.Split('.');
+                    String filename = Guid.NewGuid() + "." + array[array.Length - 1];
+                    booksection.Image.SaveAs(Server.MapPath("~/images/Booksections/")+filename);
+                    booksection.imagepath = filename;
+                }
                 db.Booksections.Add(booksection);
                 db.SaveChanges();
                 return RedirectToAction("Index");

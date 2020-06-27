@@ -185,22 +185,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-<<<<<<< HEAD
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\BooksectionsController.cs" />
-=======
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
->>>>>>> 05886873a20153c2e4b75b72df2e07b50a731559
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.cs" />
-    <Compile Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.Designer.cs">
-      <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202006211937051_v11.cs" />
     <Compile Include="Migrations\202006211937051_v11.Designer.cs">
@@ -209,6 +202,30 @@
     <Compile Include="Migrations\202006211940091_v12.cs" />
     <Compile Include="Migrations\202006211940091_v12.Designer.cs">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006232045242_v.cs" />
+    <Compile Include="Migrations\202006232045242_v.Designer.cs">
+      <DependentUpon>202006232045242_v.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006271221288_v1.cs" />
+    <Compile Include="Migrations\202006271221288_v1.Designer.cs">
+      <DependentUpon>202006271221288_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006271316544_v2.cs" />
+    <Compile Include="Migrations\202006271316544_v2.Designer.cs">
+      <DependentUpon>202006271316544_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006271331176_v3.cs" />
+    <Compile Include="Migrations\202006271331176_v3.Designer.cs">
+      <DependentUpon>202006271331176_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006271337309_v31.cs" />
+    <Compile Include="Migrations\202006271337309_v31.Designer.cs">
+      <DependentUpon>202006271337309_v31.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006271355449_k.cs" />
+    <Compile Include="Migrations\202006271355449_k.Designer.cs">
+      <DependentUpon>202006271355449_k.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -544,7 +561,6 @@
     <Content Include="Views\Home\Program.cshtml" />
     <Content Include="Views\Home\Track.cshtml" />
     <Content Include="Views\Home\Prog.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Booksections\Create.cshtml" />
     <Content Include="Views\Booksections\Delete.cshtml" />
     <Content Include="Views\Booksections\Details.cshtml" />
@@ -555,7 +571,6 @@
     <Content Include="Views\Books\Details.cshtml" />
     <Content Include="Views\Books\Edit.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
-=======
     <Content Include="Views\news\Create.cshtml" />
     <Content Include="Views\news\Delete.cshtml" />
     <Content Include="Views\news\Details.cshtml" />
@@ -567,16 +582,14 @@
     <Content Include="Views\Exams\Details.cshtml" />
     <Content Include="Views\Exams\Edit.cshtml" />
     <Content Include="Views\Exams\TakeExam.cshtml" />
->>>>>>> 05886873a20153c2e4b75b72df2e07b50a731559
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
-<<<<<<< HEAD
-    <Folder Include="texts\" />
-=======
+    <Folder Include="images\Booksections\" />
+    <Folder Include="images\Books\" />
     <Folder Include="images\News\" />
->>>>>>> 05886873a20153c2e4b75b72df2e07b50a731559
+    <Folder Include="texts\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -588,14 +601,29 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006221951118_remove_CertificationTable_Edit_studentPrograme.resx">
-      <DependentUpon>202006221951118_remove_CertificationTable_Edit_studentPrograme.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006211937051_v11.resx">
       <DependentUpon>202006211937051_v11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006211940091_v12.resx">
       <DependentUpon>202006211940091_v12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006232045242_v.resx">
+      <DependentUpon>202006232045242_v.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271221288_v1.resx">
+      <DependentUpon>202006271221288_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271316544_v2.resx">
+      <DependentUpon>202006271316544_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271331176_v3.resx">
+      <DependentUpon>202006271331176_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271337309_v31.resx">
+      <DependentUpon>202006271337309_v31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006271355449_k.resx">
+      <DependentUpon>202006271355449_k.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

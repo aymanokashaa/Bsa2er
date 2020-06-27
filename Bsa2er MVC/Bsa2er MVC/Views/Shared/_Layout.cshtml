@@ -65,7 +65,15 @@
         </div>
         <div id="sign">
             <a class="nav-link text-warning" href="createuser.html"> سجل الان</a>
+            @if(User.Identity.IsAuthenticated)
+            {
+                <a class="nav-link text-warning" href="/Account/LogOff"> تسجيل الخروج</a>
+
+            }
+            else
+            {
             <a class="nav-link text-warning" href="login.html"> تسجيل الدخول</a>
+            }
         </div>
         <span id="wrapdate" class=" navbar-brand date2 text-primary dt"></span>
 

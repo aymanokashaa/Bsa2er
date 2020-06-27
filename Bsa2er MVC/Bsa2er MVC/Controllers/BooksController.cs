@@ -52,7 +52,7 @@ namespace Bsa2er_MVC.Controllers
             {
                 String[] array = book.ImageFile.FileName.Split('.');
                 String filename = Guid.NewGuid() + "." + array[array.Length - 1];
-                book.ImageFile.SaveAs(Server.MapPath("~/images/") + filename);
+                book.ImageFile.SaveAs(Server.MapPath("~/images/Books/") + filename);
                 book.imageFilePath = filename;
                 String[] array1 = book.PdfFile.FileName.Split('.');
                 String filename1 = Guid.NewGuid() + "." + array1[array1.Length - 1];

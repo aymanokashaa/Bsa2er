@@ -66,6 +66,9 @@ namespace Bsa2er_MVC.Models
 
     public class RegisterViewModel
     {
+        public Gender gender { set; get; }
+        public string Username { set; get; }
+        public string fullname { set; get; }
         private const string V = "ادخل بريدك الالكتروني";
         [Required(ErrorMessage = V)]
         [EmailAddress]
@@ -73,7 +76,7 @@ namespace Bsa2er_MVC.Models
         public string Email { get; set; }
 
         [Required(ErrorMessage = "يجب ادخال كلمة المرور")]
-        [StringLength(100, ErrorMessage = "كلمة المرور يجب ان تكون 6 حروف علي الاقل", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "كلمة المرور يجب ان تكون 10 أرقام علي الاقل", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -84,6 +87,19 @@ namespace Bsa2er_MVC.Models
         public String Countries { set; get; }
         public String Qualifications { set; get; }
         public String Phonenumber { set; get; }
+       
+        public string month { set; get; }
+        
+        public string year { set; get; }
+       
+        public string day { set; get; }
+
+        
+    }
+    public enum Gender
+    {
+        male,
+        female
     }
 
 
