@@ -12,7 +12,7 @@
                 @Html.ValidationSummary("", new { @class = "text-danger" })
                 <div class="form-row">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         @Html.TextBoxFor(a => a.Email, new { @class = "form-control" })
                     </div>
                     <div class="col-2">
@@ -21,7 +21,7 @@
                 </div>
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         @Html.TextBoxFor(a => a.Username, new { @class = "form-control" })
                     </div>
                     <div class="col-2">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         @Html.TextBoxFor(a => a.fullname, new { @class = "form-control" })
                     </div>
                     <div class="col-2">
@@ -39,8 +39,8 @@
                 </div>
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
-                        <select name="gender"style="direction:rtl;" class="form-control">
+                    <div class="offset-5 col-3">
+                        <select name="gender" style="direction:rtl;" class="form-control">
                             <option selected="selected" value="male">طالب</option>
                             <option value="female">طالبة</option>
 
@@ -48,13 +48,13 @@
 
                     </div>
                     <div class="col-2">
-                        @Html.LabelFor(a => a.gender," نوع الطالب", new { @class = "form-label" })
+                        @Html.LabelFor(a => a.gender, " نوع الطالب", new { @class = "form-label" })
                     </div>
                 </div>
 
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
                     </div>
                     <div class="col-2">
@@ -64,7 +64,7 @@
 
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         @Html.PasswordFor(a => a.ConfirmPassword, new { @class = "form-control" })
                     </div>
                     <div class="col-2">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         @Html.TextBoxFor(a => a.Phonenumber, new { @class = "form-control" })
                     </div>
                     <div class="col-2">
@@ -82,7 +82,16 @@
                 </div>
                 <div class="form-row mt-5">
 
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
+                        @Html.TextBoxFor(a => a.countryofbirth, new { @class = "form-control" })
+                    </div>
+                    <div class="col-2">
+                        @Html.LabelFor(a => a.countryofbirth, "الجنسية ", new { @class = "form-label" })
+                    </div>
+                </div>
+                <div class="form-row mt-5">
+
+                    <div class="offset-5 col-3">
                         <select style="direction:rtl;" name="Countries" class="form-control">
                             <option value="EG">مصر</option>
                             <option value="SA">المملكة العربية السعودية</option>
@@ -335,7 +344,7 @@
                     </div>
                 </div>
                 <div class="form-row mt-5">
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         <select style="direction:rtl;" name="Qualifications" class="form-control">
                             <option value="متوسط">متوسط</option>
                             <option value="ثانوي"> ثانوي</option>
@@ -348,19 +357,19 @@
                     </div>
                 </div>
                 <div class="form-row mt-4">
-                    <div class="offset-3 col-6">
+                    <div class="offset-5 col-3">
                         <div class="form-row">
                             <div class="col-4">
                                 <select class="form-control" name="day" class="mr-4">
-                                    <option value="1" selected="selected">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
+                                    <option value="01" selected="selected">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
@@ -387,15 +396,15 @@
                             </div>
                             <div class="col-4">
                                 <select name="month" class="form-control mr-4">
-                                    <option value="1" selected="selected">يناير</option>
-                                    <option value="2">فبراير</option>
-                                    <option value="3">مارس</option>
-                                    <option value="4">أبريل</option>
-                                    <option value="5">مايو</option>
-                                    <option value="6">يونيو</option>
-                                    <option value="7">يوليو</option>
-                                    <option value="8">أغسطس</option>
-                                    <option value="9">سبتمبر</option>
+                                    <option value="01" selected="selected">يناير</option>
+                                    <option value="02">فبراير</option>
+                                    <option value="03">مارس</option>
+                                    <option value="04">أبريل</option>
+                                    <option value="05">مايو</option>
+                                    <option value="06">يونيو</option>
+                                    <option value="07">يوليو</option>
+                                    <option value="08">أغسطس</option>
+                                    <option value="09">سبتمبر</option>
                                     <option value="10">أكتوبر</option>
                                     <option value="11">نوفمبر</option>
                                     <option value="12">ديسمبر</option>

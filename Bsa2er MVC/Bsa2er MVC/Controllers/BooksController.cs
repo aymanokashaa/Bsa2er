@@ -15,9 +15,14 @@ namespace Bsa2er_MVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Books
-        public ActionResult Index()
+        public ActionResult Index(int ? id)
         {
-            return View(db.Books.ToList());
+            if (id == null)
+                return View(db.Books.ToList());
+            else
+            {
+                return View(db.Booksections.Include(a => a.Books).FirstOrDefault(a => a.id == id).Books);
+                        }
         }
 
         // GET: Books/Details/5
@@ -86,10 +91,18 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Title,PdfFilepath,imageFilePath")] Book book)
+        public ActionResult Edit( Book book)
         {
             if (ModelState.IsValid)
             {
+                String[] array = book.ImageFile.FileName.Split('.');
+                String filename = Guid.NewGuid() + "." + array[array.Length - 1];
+                book.ImageFile.SaveAs(Server.MapPath("~/images/Books/") + filename);
+                book.imageFilePath = filename;
+                String[] array1 = book.PdfFile.FileName.Split('.');
+                String filename1 = Guid.NewGuid() + "." + array1[array1.Length - 1];
+                book.PdfFile.SaveAs(Server.MapPath("~/texts/") + filename1);
+                book.PdfFilepath = filename1;
                 db.Entry(book).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

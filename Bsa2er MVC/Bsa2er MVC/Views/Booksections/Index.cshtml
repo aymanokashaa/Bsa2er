@@ -14,26 +14,28 @@
     <div class="row ">
         @foreach (var item in Model)
         {
-            <div class="card col-md-3 ml-2 mt-3">
+            <div class="card col-md-4 ml-2 mt-3">
                 <div class="card-header text-center">
                     @Html.DisplayFor(modelItem => item.title)
 
-
                 </div>
                 <div class="card-body text-center">
-                    <div class="card-img">
-                        <img width="100" src="~/images/Booksections/@item.imagepath" />
-                    </div>
+
+                        <img class="card-img" src="~/images/Booksections/@item.imagepath" />
+                    
 
                 </div>
-                <div class="card-footer text-center">
+                <div class="card-footer text-center ">
                     @if (User.IsInRole("instructor"))
                     {
-                        @Html.ActionLink("حذف", "Delete", new { id = item.id })
-                        @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, null)
+
 
                     }
-                    @Html.ActionLink("تفاصيل", "Details", new { id = item.id })
+                    @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.id }, new { @class = "btn btn-dark " })
+                    @Html.ActionLink("الكتب", "Index","Books",new{ id = item.id }, new { @class = "btn btn-dark mt-md-2" })
+
                 </div>
 
 

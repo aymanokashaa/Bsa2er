@@ -2,6 +2,7 @@
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -149,8 +150,8 @@ namespace Bsa2er_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                
-                var user = new ApplicationUser { UserName = model.Username,fullname=model.fullname ,Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber,dateofbirth=model.day+"/"+model.month+"/"+model.year,gender=model.gender.ToString() };
+                string date = model.year+"-"+ model.month +"-"+ model.day;
+                var user = new ApplicationUser { UserName = model.Username,pathofimage="/images/4.jpg",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

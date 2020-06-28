@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing;
 
 namespace Bsa2er_MVC.Models
 {
@@ -75,6 +77,8 @@ namespace Bsa2er_MVC.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
+        public string imagepath { set; get; }
+
         [Required(ErrorMessage = "يجب ادخال كلمة المرور")]
         [StringLength(100, ErrorMessage = "كلمة المرور يجب ان تكون 10 أرقام علي الاقل", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -93,6 +97,8 @@ namespace Bsa2er_MVC.Models
         public string year { set; get; }
        
         public string day { set; get; }
+
+        public string countryofbirth { set; get; }
 
         
     }

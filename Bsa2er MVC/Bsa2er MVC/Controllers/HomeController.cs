@@ -32,10 +32,7 @@ namespace Bsa2er_MVC.Controllers
         {
             return View(db.News.ToList());
         }
-        public ActionResult Library()
-        {
-            return View();
-        }
+
         public ActionResult PublicProgarms()
         {
             return View();

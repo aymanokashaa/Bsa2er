@@ -90,6 +90,10 @@ namespace Bsa2er_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
+                String[] array = booksection.Image.FileName.Split('.');
+                String filename = Guid.NewGuid() + "." + array[array.Length - 1];
+                booksection.Image.SaveAs(Server.MapPath("~/images/Booksections/") + filename);
+                booksection.imagepath = filename;
                 db.Entry(booksection).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

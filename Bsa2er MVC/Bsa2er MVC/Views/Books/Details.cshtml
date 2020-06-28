@@ -3,40 +3,38 @@
 @{
     ViewBag.Title = "Details";
 }
+    <div class="text-center">
 
-<h2>Details</h2>
+        <h2 class="text-center">التفاصيل</h2>
 
-<div class="text-center">
-    <h4>Book</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+        <hr />
+        <dl class="dl-horizontal">
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+            <dt>
+                اسم الكتاب
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PdfFilepath)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.PdfFilepath)
-        </dd>
+            <dt>
+رابط نحميل الكتاب
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.imageFilePath)
-        </dt>
+            <dd>
+                <a class="btn btn-primary" href="~/texts/@Model.PdfFilepath" target="_blank">تحميل الكتاب</a>
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.imageFilePath)
-        </dd>
+            <dt>
+                <img width="70" src="~/images/Books/@Model.imageFilePath"/>
+            </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+
+
+        </dl>
+    </div>
+<p class="text-center">
+    @Html.ActionLink("تعديل الكتاب", "Edit", new { id = Model.Id },new {@class="btn btn-primary"}) 
+    @Html.ActionLink("الرجوع الي قائمة الكتب", "Index",null,new {@class="btn btn-success"})
 </p>
