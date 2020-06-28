@@ -1,4 +1,6 @@
 ﻿using Bsa2er_MVC.Models;
+using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -109,7 +111,6 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> TakeExam(int id, Dictionary<string, string> answers)
         {
-            Exam exam = await db.Exams.FindAsync(id);
             int grade = 0;
             foreach (var item in answers)
             {
@@ -120,11 +121,16 @@ namespace Bsa2er_MVC.Controllers
                 }
                 catch
                 {
-                    return Content($"{grade} of {exam.grads}");
+                    return RedirectToAction("StudentDashboard", "Account", null);
                 }
             }
-            string result = $"{grade} of {exam.grads}";
-            return Content(result);
+            var stdId = User.Identity.GetUserId();
+            var exam = await db.Exams.FindAsync(id);
+            var stdprog = db.StudentsPrograms.FirstOrDefault(sp => sp.Program_Id == exam.Program_Id && sp.Std_Id == stdId);
+            stdprog.ProgramGrade = grade;
+            stdprog.EndDateTime = DateTime.Now;
+            await db.SaveChangesAsync();
+            return RedirectToAction("StudentDashboard", "Account", null);
         }
 
         public async Task<ActionResult> Delete(int? id)

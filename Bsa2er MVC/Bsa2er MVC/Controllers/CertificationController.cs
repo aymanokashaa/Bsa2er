@@ -17,15 +17,12 @@ namespace Bsa2er_MVC.Controllers
 
         }
        
-        public ActionResult Create(/*string progId,int stdId*/)
+        public ActionResult Create(int progId,string stdId)
         {
-            /* var studentprogramInformation = db.StudentsPrograms.SingleOrDefault(s => s.Program_Id == progId && s.Std_Id == StdId);
-             ViewBag.studentName = studentprogramInformation.Student.ApplicationUser.UserName;
-             ViewBag.programName = studentprogramInformation.Program.Program_Title;
-             ViewBag.grad = studentprogramInformation.ProgramGrade;*/
-            ViewBag.studentName = "Ahmed";
-            ViewBag.programName = "Full stack";
-            ViewBag.grad = 100;
+            var studentprogramInformation = db.StudentsPrograms.FirstOrDefault(s => s.Program_Id == progId && s.Std_Id == stdId);
+            ViewBag.studentName = studentprogramInformation.Student.ApplicationUser.UserName;
+            ViewBag.programName = studentprogramInformation.Program.Program_Title;
+            ViewBag.grad = studentprogramInformation.ProgramGrade;
          
             return View();
         }
