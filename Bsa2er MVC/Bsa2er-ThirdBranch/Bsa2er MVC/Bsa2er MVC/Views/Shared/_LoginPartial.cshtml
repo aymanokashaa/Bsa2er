@@ -1,0 +1,31 @@
+﻿@using Bsa2er_MVC.Models;
+@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
+@using System;
+@using System.Linq;
+@using System.Threading.Tasks;
+@using System.Web;
+@using System.Web.Mvc;
+
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+@Html.AntiForgeryToken()
+
+
+            <li class="nav-item">
+                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link text-warning" })
+            </li>
+                        <li class="nav-item"><a class="nav-link text-warning" href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a></li>
+                                    <li class="nav-item">
+
+                                        @Html.ActionLink("تغيير كلمة السر", "changepassword", "manage",null, new { @class = "nav-link text-warning" })
+                                    </li> }
+                            }
+                            else
+                            {
+
+                        <li class="nav-item">@Html.ActionLink("سجل الان", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link text-warning" })</li>
+                                <li class="nav-item">@Html.ActionLink("تسجيل الدخول", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link text-warning" })</li>}

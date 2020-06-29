@@ -1,0 +1,427 @@
+﻿@model Bsa2er_MVC.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="~/Content/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
+    <style>
+        /* ------------------------------------------------------------Global-------------------------------------------------------------------- */
+        body {
+            background-image: url(/images/6.jpg);
+            font-family: "Changa", sans-serif;
+        }
+
+        .profile-box {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .aside,
+        .link {
+            border: 1px solid;
+            border-radius: 2em;
+            background-color: #15A299;
+            color: #f8f9fa;
+        }
+
+        a {
+            color: #f8f9fa;
+        }
+
+            a:hover {
+                text-decoration: none !important;
+                color: #000;
+            }
+
+        @@media (min-width: 768px) {
+            .links {
+                border-right: 1px solid;
+            }
+        }
+
+        /* ------------------------------------------------------------Aside-------------------------------------------------------------------- */
+        .aside:first-child > div {
+            padding: 3%;
+            border-bottom: 1px solid;
+        }
+
+            .aside:first-child > div:last-child {
+                border: none;
+            }
+
+        .info .lead {
+            line-height: 4.5;
+        }
+
+        .img-cont img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-cont {
+            height: 90px;
+            width: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .select .selection {
+            cursor: pointer;
+        }
+
+            .select .selection:hover {
+                color: #555;
+            }
+
+        .activeS {
+            color: #555;
+            cursor: default !important;
+        }
+
+        /* ------------------------------------------------------------Content-------------------------------------------------------------------- */
+        /* ----------------------------------Personal-------------------------------------- */
+        .personal table {
+            border-radius: 1em;
+        }
+
+            .personal table th {
+                border: none;
+            }
+
+        .content .section {
+            border-bottom: 1px solid;
+        }
+
+        /* ----------------------------------Edit-------------------------------------- */
+        .card-body {
+            background-color: #15A299;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row profile-box m-3">
+        <div class="col-md-3 aside">
+            <div class="info row">
+                <div class="lead col-8 col-md-12 col-xl-8">@Model.ApplicationUser.fullname</div>
+                <div class="img-cont col-4 col-md-12 col-xl-4 p-0">
+                    <img src="@Model.ApplicationUser.pathofimage">
+                </div>
+            </div>
+            <div class="c-pw"><a href="#" data-toggle="modal" data-target="#dinfo">تغيير البيانات الشخصية</a></div>
+            <div class="c-pw"><a href="#" data-toggle="modal" data-target="#dpass">تغيير كلمة المرور</a></div>
+            <div class="l-out"><form method="post" action="LogOff">@Html.AntiForgeryToken() <input type="submit" value="تسجيل الخروج" class="btn btn-link text-danger" /></form></div>
+            <div class="select">
+                <div class="row mb-3 mt-3 selection activeS" data-toggle="collapse" aria-expanded="true"
+                     aria-controls="cont-personal" data-target="#cont-personal">
+                    <div class="col">عرض الملف الشخصي</div>
+                    <div class="fa fa-chevron-left fa-lg "></div>
+                </div>
+                <div class="row mb-3 mt-3 selection menu" data-toggle="collapse" data-target="#coll1"
+                     aria-expanded="false">
+                    <div class="col ">البرامج و الدورات</div>
+                    <div class="fa fa-chevron-down fa-lg col-2"></div>
+                </div>
+                <div class="collapse" id="coll1">
+                    @foreach (var item in Model.StudentPrograms.Select((x, i) => new { Value = x, Index = i }))
+                    {
+                        <div class="card card-body selection" data-toggle="collapse" aria-expanded="false"
+                             aria-controls="cont-prog-@item.Index" data-target="#cont-prog-@item.Index">
+                            <a class="link d-block  h4 text-center">@item.Value.Program.Program_Title</a>
+                        </div>
+                    }
+                </div>
+                <div class="row mb-3 mt-3 selection menu" data-toggle="collapse" data-target="#coll2"
+                     aria-expanded="false" aria-controls="coll2">
+                    <div class="col ">الأختبارات</div>
+                    <div class="fa fa-chevron-down fa-lg col-2"></div>
+                </div>
+                <div class="collapse" id="coll2">
+                    @foreach (var item in Model.StudentPrograms)
+                    {
+                        if (item.ProgramGrade == 0 && item.Program.Exam.Count > 0)
+                        {
+                            <div class="card card-body selection">
+                                <a class="link d-block h4 text-center" href="/Exams/TakeExam/@item.Program.Exam.FirstOrDefault(e => e.Active == true).Exam_Id">@item.Program.Exam.FirstOrDefault(e => e.Active == true).Title</a>
+                            </div>
+                        }
+                    }
+                </div>
+                <div class="row mb-3 mt-3 selection" data-toggle="collapse" aria-expanded="true"
+                     aria-controls="cont-rewards" data-target="#cont-rewards">
+                    <div class="col ">الشهادات</div>
+                    <div class="fa fa-chevron-left fa-lg "></div>
+                </div>
+                <div class="row mb-3 mt-3 selection" data-toggle="collapse" aria-expanded="true"
+                     aria-controls="cont-grades" data-target="#cont-grades">
+                    <div class="col ">الدرجات</div>
+                    <div class="fa fa-chevron-left fa-lg "></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 content" id="content">
+            <div class="collapse multi-collapse personal show" id="cont-personal" data-parent="#content">
+                <div class="section pt-3 pb-3">
+                    <h2 class="text-center mb-3 text-dark">البيانات الشخصية</h2>
+                    <table class="table table-hover table-dark w-75 text-center m-auto">
+                        <tbody>
+                            <tr class="d-flex">
+                                <td class="col-3 border-top-0">الأسم بالكامل</td>
+                                <td class="col-9 border-top-0">@Model.ApplicationUser.fullname</td>
+                            </tr>
+                            <tr class="d-flex">
+                                <td class="col-3">محل الأقامة</td>
+                                <td class="col-9">@Model.ApplicationUser.Country</td>
+                            </tr>
+                            <tr class="d-flex">
+                                <td class="col-3">الجنسية</td>
+                                <td class="col-9">@Model.ApplicationUser.birthcountry</td>
+                            </tr>
+                            @if (Model.ApplicationUser.dateofbirth != null)
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-3">العمر</td>
+                                    <td class="col-9">@(DateTime.Now.Year - Model.ApplicationUser.dateofbirth.Value.Year)</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="section pt-3 pb-3">
+                    <h2 class="text-center mb-3 text-dark">البرامج و الدورات المسجلة</h2>
+                    <table class="table table-striped w-75 text-center m-auto">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class="col-1">#</th>
+                                <th class="col-11">إسم الدورة / البرنامج</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade == 0).Select((x, i) => new { Value = x, Index = i + 1 }))
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-1">@item.Index</td>
+                                    <td class="col-11">@item.Value.Program.Program_Title</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="section pt-3 pb-3 border-bottom-0">
+                    <h2 class="text-center mb-3 text-dark">البرامج و الدورات المكتملة</h2>
+                    <table class="table table-striped w-75 text-center center m-auto">
+                        <thead>
+                            <tr class="d-flex">
+                                <th class="col-1">#</th>
+                                <th class="col-5">إسم الدورة / البرنامج</th>
+                                <th class="col-3">الدرجة</th>
+                                <th class="col-3">تاريخ الإتمام</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0).Select((x, i) => new { Value = x, Index = i + 1 }))
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-1">@item.Index</td>
+                                    <td class="col-5">@item.Value.Program.Program_Title</td>
+                                    <td class="col-3">@item.Value.ProgramGrade</td>
+                                    <td class="col-3">@item.Value.EndDateTime</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            @foreach (var item in Model.StudentPrograms.Select((x, i) => new { Value = x, Index = i }))
+            {
+                <div class="collapse multi-collapse" id="cont-prog-@item.Index" data-parent="#content">
+                    <div class="section pt-3 pb-3">
+                        <h2 class="text-center mb-3">البرنامج / الدورة</h2>
+                        <div class="row">
+                            <iframe class="col-12 mx-auto mb-3 lecture-video" height="600" src="@item.Value.Program.lectures.First().Lecture_VideoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            @Html.Raw(item.Value.Program.lectures.First().Lecture_SoundLink)
+                        </div>
+                        <h4 class="text-center my-3">إختيار الدرس</h4>
+                        <div class="row">
+                            @foreach (var lecture in item.Value.Program.lectures.Select((x, i) => new { Value = x, Index = i + 1 }))
+                            {
+                                <button class="btn btn-info col mx-3 lecture-change" data-video="@lecture.Value.Lecture_VideoLink" data-audio="@lecture.Value.Lecture_SoundLink">الدرس @lecture.Index</button>
+                            }
+                        </div>
+                    </div>
+                    <div class="section pt-3 pb-3">
+                        <h2 class="text-center mb-3">الدروس المكتملة</h2>
+                        <table class="table table-striped text-center">
+                            <tbody>
+                                @foreach (var lecture in item.Value.Program.lectures.Select((x, i) => new { Value = x, Index = i + 1 }))
+                                {
+                                    <tr class="d-flex">
+                                        <td class="col-6 text-center">الدرس @lecture.Index</td>
+                                        <td class="col-6 text-center">
+                                            <span class="fa fa-square fa-lg text-success ml-2"></span>تم
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="section pt-3 pb-3 border-bottom-0">
+                        <h3 class="text-dark mb-3">تنبيهات :</h3>
+                        <table class="table">
+                            <tbody>
+                                <tr class="d-flex">
+                                    <td class="col-1 border-top-0 lead">1 -</td>
+                                    <td class="col-11 border-top-0">
+                                        يجب سماع جميع الدروس والتحضير لكل درس حتى يتم فتح
+                                        الاختبار المخصص للبرنامج أو الدورة
+                                        وفقكم الله لما يحب ويرضى
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+            <div class="collapse multi-collapse selection" id="cont-grades" data-parent="#content">
+                <div class="section pt-3 pb-3 border-bottom-0">
+                    <h2 class="text-center text-dark">
+                        الدرجات
+                    </h2>
+                    <table class="table table-striped w-75 m-auto text-center">
+                        <thead>
+                            <tr class="d-flex">
+                                <td class="col-6 border-top-0">البرنامج</td>
+                                <td class="col-6 border-top-0">الدرجة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-6">@item.Program.Program_Title</td>
+                                    <td class="col-6">@item.ProgramGrade</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row mt-3">
+                        <a class="btn btn-success text-white mx-auto">بيان الدرجات</a>
+                    </div>
+                </div>
+            </div>
+            <div class="collapse multi-collapse selection" id="cont-rewards" data-parent="#content">
+                <div class="section pt-3 pb-3 border-bottom-0">
+                    <h2 class="text-center text-dark">
+                        الشهادات
+                    </h2>
+                    <table class="table table-striped w-75 m-auto text-center">
+                        <thead>
+                            <tr class="d-flex">
+                                <td class="col-6 border-top-0">البرنامج</td>
+                                <td class="col-6 border-top-0">الشهاده</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-6">@item.Program.Program_Title</td>
+                                    <td class="col-6">
+                                        <a href="/Certification/Create?progId=@item.Program_Id&&stdId=@Model.StdId" class="btn btn-info">تحميل الشهاده</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2 links text-center p-3 aside">
+            <a href="index.html">
+                <div class="m-auto" style="max-width: 350px; margin-top:auto">
+                    <img src="/images/4.png"
+                         style="width: 100%; height: 100%;">
+                </div>
+            </a>
+            <div class="date  h6 mb-3"></div>
+            <a href="/Home/News" class="link d-block mb-3 h3">الأخبار</a>
+            <a href="/Home/Library" class="link d-block h3">المكتبة</a>
+        </div>
+    </div>
+
+    <!-- Password Change Modal -->
+    <div class="modal fade" id="dpass" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-center col-12" id="exampleModalLabel">تغيير كلمة المرور</h5>
+                </div>
+                <div class="model-body col-sm-12 mb-5 mt-5 text-right">
+                    <div style="margin:0 auto;width:70%;">
+                        <form method="post" class="myl">
+                            <div class="form-group">
+                                <span class="text-right mb-4">كلمة المرور القديمة </span>
+                                <input type="password" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <span>كلمة المرور الجديدة </span>
+                                <input type="password" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <span>تأكيد كلمة المرور الجديدة</span>
+                                <input type="password" class="form-control" />
+                            </div>
+                            <button type="submit" class="btn btn-primary center"> تغيير كلمة المرور</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary center" data-dismiss="modal">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/date.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        $(function () {
+            function setSelection() {
+                $(".activeS").removeClass("activeS");
+                if (this.getAttribute("aria-expanded") == "false") $(this).addClass("activeS");
+            }
+
+            $(".selection").not(".menu").each(function () {
+                $(this).click(setSelection);
+            })
+
+            $(".fa-square").click(function () { $(this).addClass("fa-check-square") })
+
+            $(".lecture-change").each(function () {
+                $(this).click(function () {
+                    $(this).parent().parent().find(".lecture-video").attr("src", $(this).data("video"));
+                    $(this).parent().parent().find("iframe:nth-of-type(2)").next().remove();
+                    $(this).parent().parent().find("iframe:nth-of-type(2)").remove();
+                    $(this).parent().parent().children("div:first-of-type").append($(this).data("audio"));
+                })
+            })
+        });
+    </script>
+</body>
+
+</html>
