@@ -115,9 +115,9 @@
     <div class="row profile-box m-3">
         <div class="col-md-3 aside">
             <div class="info row">
-                <div class="lead col-8 col-md-12 col-xl-8">@Model.ApplicationUser.UserName</div>
+                <div class="lead col-8 col-md-12 col-xl-8">@Model.ApplicationUser.fullname</div>
                 <div class="img-cont col-4 col-md-12 col-xl-4 p-0">
-                    <img src="/images/4.jpg">
+                    <img src="@Model.ApplicationUser.pathofimage">
                 </div>
             </div>
             <div class="c-pw"><a href="#" data-toggle="modal" data-target="#dinfo">تغيير البيانات الشخصية</a></div>
@@ -151,7 +151,7 @@
                 <div class="collapse" id="coll2">
                     @foreach (var item in Model.StudentPrograms)
                     {
-                        if (item.ProgramGrade == 0)
+                        if (item.ProgramGrade == 0 && item.Program.Exam.Count > 0)
                         {
                             <div class="card card-body selection">
                                 <a class="link d-block h4 text-center" href="/Exams/TakeExam/@item.Program.Exam.FirstOrDefault(e => e.Active == true).Exam_Id">@item.Program.Exam.FirstOrDefault(e => e.Active == true).Title</a>
@@ -164,6 +164,11 @@
                     <div class="col ">الشهادات</div>
                     <div class="fa fa-chevron-left fa-lg "></div>
                 </div>
+                <div class="row mb-3 mt-3 selection" data-toggle="collapse" aria-expanded="true"
+                     aria-controls="cont-grades" data-target="#cont-grades">
+                    <div class="col ">الدرجات</div>
+                    <div class="fa fa-chevron-left fa-lg "></div>
+                </div>
             </div>
         </div>
         <div class="col-md-7 content" id="content">
@@ -174,7 +179,7 @@
                         <tbody>
                             <tr class="d-flex">
                                 <td class="col-3 border-top-0">الأسم بالكامل</td>
-                                <td class="col-9 border-top-0">@Model.ApplicationUser.UserName</td>
+                                <td class="col-9 border-top-0">@Model.ApplicationUser.fullname</td>
                             </tr>
                             <tr class="d-flex">
                                 <td class="col-3">محل الأقامة</td>
@@ -182,12 +187,15 @@
                             </tr>
                             <tr class="d-flex">
                                 <td class="col-3">الجنسية</td>
-                                <td class="col-9">@Model.ApplicationUser.Country</td>
+                                <td class="col-9">@Model.ApplicationUser.birthcountry</td>
                             </tr>
-                            <tr class="d-flex">
-                                <td class="col-3">العمر</td>
-                                <td class="col-9">24</td>
-                            </tr>
+                            @if (Model.ApplicationUser.dateofbirth != null)
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-3">العمر</td>
+                                    <td class="col-9">@(DateTime.Now.Year - Model.ApplicationUser.dateofbirth.Value.Year)</td>
+                                </tr>
+                            }
                         </tbody>
                     </table>
                 </div>
@@ -242,31 +250,30 @@
                     <div class="section pt-3 pb-3">
                         <h2 class="text-center mb-3">البرنامج / الدورة</h2>
                         <div class="row">
-                            <video class="col-12 m-auto" src="/video/1.mp4" controls></video>
+                            <iframe class="col-12 mx-auto mb-3 lecture-video" height="600" src="@item.Value.Program.lectures.First().Lecture_VideoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            @Html.Raw(item.Value.Program.lectures.First().Lecture_SoundLink)
+                        </div>
+                        <h4 class="text-center my-3">إختيار الدرس</h4>
+                        <div class="row">
+                            @foreach (var lecture in item.Value.Program.lectures.Select((x, i) => new { Value = x, Index = i + 1 }))
+                            {
+                                <button class="btn btn-info col mx-3 lecture-change" data-video="@lecture.Value.Lecture_VideoLink" data-audio="@lecture.Value.Lecture_SoundLink">الدرس @lecture.Index</button>
+                            }
                         </div>
                     </div>
                     <div class="section pt-3 pb-3">
                         <h2 class="text-center mb-3">الدروس المكتملة</h2>
                         <table class="table table-striped text-center">
                             <tbody>
-                                <tr class="d-flex">
-                                    <td class="col-6 text-center">الدرس الأول</td>
-                                    <td class="col-6 text-center">
-                                        <span class="fa fa-square fa-lg text-success ml-2"></span>تم
-                                    </td>
-                                </tr>
-                                <tr class="d-flex">
-                                    <td class="col-6 text-center">الدرس الثاني</td>
-                                    <td class="col-6 text-center">
-                                        <span class="fa fa-square fa-lg text-success ml-2"></span>تم
-                                    </td>
-                                </tr>
-                                <tr class="d-flex">
-                                    <td class="col-6 text-center">الدرس الثالث</td>
-                                    <td class="col-6 text-center">
-                                        <span class="fa fa-square fa-lg text-success ml-2"></span>تم
-                                    </td>
-                                </tr>
+                                @foreach (var lecture in item.Value.Program.lectures.Select((x, i) => new { Value = x, Index = i + 1 }))
+                                {
+                                    <tr class="d-flex">
+                                        <td class="col-6 text-center">الدرس @lecture.Index</td>
+                                        <td class="col-6 text-center">
+                                            <span class="fa fa-square fa-lg text-success ml-2"></span>تم
+                                        </td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -287,6 +294,33 @@
                     </div>
                 </div>
             }
+            <div class="collapse multi-collapse selection" id="cont-grades" data-parent="#content">
+                <div class="section pt-3 pb-3 border-bottom-0">
+                    <h2 class="text-center text-dark">
+                        الدرجات
+                    </h2>
+                    <table class="table table-striped w-75 m-auto text-center">
+                        <thead>
+                            <tr class="d-flex">
+                                <td class="col-6 border-top-0">البرنامج</td>
+                                <td class="col-6 border-top-0">الدرجة</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
+                            {
+                                <tr class="d-flex">
+                                    <td class="col-6">@item.Program.Program_Title</td>
+                                    <td class="col-6">@item.ProgramGrade</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div class="row mt-3">
+                        <a class="btn btn-success text-white mx-auto">بيان الدرجات</a>
+                    </div>
+                </div>
+            </div>
             <div class="collapse multi-collapse selection" id="cont-rewards" data-parent="#content">
                 <div class="section pt-3 pb-3 border-bottom-0">
                     <h2 class="text-center text-dark">
@@ -295,24 +329,23 @@
                     <table class="table table-striped w-75 m-auto text-center">
                         <thead>
                             <tr class="d-flex">
-                                <td class="col-4 border-top-0">البرنامج</td>
-                                <td class="col-4 border-top-0">الدرجة</td>
-                                <td class="col-4 border-top-0">الشهاده</td>
+                                <td class="col-6 border-top-0">البرنامج</td>
+                                <td class="col-6 border-top-0">الشهاده</td>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
                             {
                                 <tr class="d-flex">
-                                    <td class="col-4">@item.Program.Program_Title</td>
-                                    <td class="col-4">@item.ProgramGrade</td>
-                                    <td class="col-4">
+                                    <td class="col-6">@item.Program.Program_Title</td>
+                                    <td class="col-6">
                                         <a href="/Certification/Create?progId=@item.Program_Id&&stdId=@Model.StdId" class="btn btn-info">تحميل الشهاده</a>
                                     </td>
                                 </tr>
                             }
                         </tbody>
                     </table>
+
                 </div>
             </div>
         </div>
@@ -339,7 +372,7 @@
                 </div>
                 <div class="model-body col-sm-12 mb-5 mt-5 text-right">
                     <div style="margin:0 auto;width:70%;">
-                        <form method="GET" class="myl">
+                        <form method="post" class="myl">
                             <div class="form-group">
                                 <span class="text-right mb-4">كلمة المرور القديمة </span>
                                 <input type="password" class="form-control" />
@@ -378,6 +411,15 @@
             })
 
             $(".fa-square").click(function () { $(this).addClass("fa-check-square") })
+
+            $(".lecture-change").each(function () {
+                $(this).click(function () {
+                    $(this).parent().parent().find(".lecture-video").attr("src", $(this).data("video"));
+                    $(this).parent().parent().find("iframe:nth-of-type(2)").next().remove();
+                    $(this).parent().parent().find("iframe:nth-of-type(2)").remove();
+                    $(this).parent().parent().children("div:first-of-type").append($(this).data("audio"));
+                })
+            })
         });
     </script>
 </body>

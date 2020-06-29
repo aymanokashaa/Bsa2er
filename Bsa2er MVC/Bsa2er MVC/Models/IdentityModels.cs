@@ -15,7 +15,7 @@ namespace Bsa2er_MVC.Models
 
         public string Country { set; get; }
         public string Qualification { set; get; }
-        public DateTime dateofbirth { set; get; }
+        public DateTime? dateofbirth { set; get; }
 
         [DefaultValue("/images/4.jpg")]
         public string pathofimage { set; get; }

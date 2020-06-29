@@ -151,12 +151,8 @@ namespace Bsa2er_MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-<<<<<<< HEAD
                 string date = model.year+"-"+ model.month +"-"+ model.day;
                 var user = new ApplicationUser { UserName = model.Username,pathofimage="/images/4.jpg",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() };
-=======
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber };
->>>>>>> b161b7b56dd12735e832c7c8e7978dacec4643bc
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
