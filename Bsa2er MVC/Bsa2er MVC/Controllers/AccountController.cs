@@ -80,6 +80,11 @@ namespace Bsa2er_MVC.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    var user = UserManager.Users.SingleOrDefault(u => u.Email == model.Email);
+                    if (user.Roles.Any(r=>r.RoleId=="1")||user.Roles.Any(r=>r.RoleId=="2"))
+                    {
+                        return RedirectToAction("DashBoardPage","DashBoard");
+                    }
                  return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
