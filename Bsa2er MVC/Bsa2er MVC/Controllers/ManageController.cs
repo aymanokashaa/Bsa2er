@@ -321,10 +321,7 @@ namespace Bsa2er_MVC.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
-        public ActionResult DashBoard()
-        {
-            return View();
-        }
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)

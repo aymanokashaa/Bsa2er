@@ -15,7 +15,12 @@ namespace Bsa2er_MVC.Models
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
         public int ProgramGrade { get; set; }
+        public ProgramStatus Program_Status { get; set; }
         public virtual Program Program { get; set; }
         public virtual Student Student { get; set; }
+    }
+    public enum ProgramStatus
+    {
+        Finished,Continuous
     }
 }

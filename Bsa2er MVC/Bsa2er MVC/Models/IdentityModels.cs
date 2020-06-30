@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -7,9 +8,12 @@ using System.Threading.Tasks;
 namespace Bsa2er_MVC.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
+    [MetadataType(typeof(HelperClass))]
     public class ApplicationUser : IdentityUser
     {
+        [Display(Name ="البلد")]
         public string Country { set; get; }
+        [Display(Name ="المؤهل")]
         public string Qualification { set; get; }
 
 
@@ -20,6 +24,19 @@ namespace Bsa2er_MVC.Models
             // Add custom user claims here
             return userIdentity;
         }
+    }
+
+    
+    public class HelperClass
+    {
+        [Display(Name ="البريد الالكترونى")]
+        public virtual string Email { get; set; }
+        [Display(Name = "رقم الهاتف")]
+        public virtual string PhoneNumber { get; set; }
+        [Display(Name = "هل أكد رقم الهاتف")]
+        public virtual bool PhoneNumberConfirmed { get; set; }
+        [Display(Name = "أسم المستخدم")]
+        public virtual string UserName { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

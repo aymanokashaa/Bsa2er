@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-@if (User.IsInRole("instructor"))
+@if (User.IsInRole("Instructor")|| User.IsInRole("Admin"))
 {
     <p class="text-center h1">
         @Html.ActionLink("أنشأ قسم جديد", "Create")
@@ -27,7 +27,7 @@
 
                 </div>
                 <div class="card-footer text-center">
-                    @if (User.IsInRole("instructor"))
+                    @if (User.IsInRole("Instructor")|| User.IsInRole("Admin"))
                     {
                         @Html.ActionLink("حذف", "Delete", new { id = item.id })
                         @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, null)

@@ -32,12 +32,12 @@
                         </li>
                         <li><span class="nav-item"><a class="nav-link text-warning" href="index.html">الرئيسة</a></span></li>
                         <li> <span class="nav-item"><a class="nav-link text-warning" href="about.html">عن الأكاديمية</a></span></li>
-                        <li> <span class="nav-item"><a class="nav-link text-warning" href="news.html">الأخبار </a></span></li>
+                        <li> <span class="nav-item"><a class="nav-link text-warning" href="news.html">@Html.ActionLink("الأخبار", "News", "Home", null, new { @class = "nav-link" }) </a></span></li>
                         <li> <span class="nav-item"><a class="nav-link text-warning" href="PublicProgrames.html">البرامج العامة</a></span></li>
                         <li>
                             <span class="nav-item">
                                 <a class="nav-link text-warning" id="mytracks" style="cursor: pointer;">الدورات والبرامج العلمية</a>
-                                <ul id="alltracks">
+                                <ul id="alltracks" style="z-index:10;">
                                     <li><span class="nav-item"><a class="nav-link" href="progs.html">البرامج العلمية </a></span></li>
                                     <li><span class="nav-item"><a class="nav-link" href="Tracks.html">الدورات العلمية  </a></span></li>
                                 </ul>
@@ -46,6 +46,11 @@
                         <li> <span class="nav-item"><a class="nav-link text-warning" href="Gallery.html">البوم الصور</a></span></li>
                         <li> <span class="nav-item"><a class="nav-link text-warning" href="Library.html">المكتبة</a></span></li>
                         <li> <span class="nav-item"><a class="nav-link text-warning" href="contactus.html">اتصل بنا</a></span></li>
+                        @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                        {
+                            <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> DashBoard</a></span></li>
+                        }
+
                         <li style="display: flex;">
                             <a class="fa fa-facebook text-primary  btn btn-toolbar" target="_blank"
                                href="https://www.facebook.com/"></a>
@@ -120,14 +125,14 @@
                     <div class="navbar-nav" id="lowerheader">
                         <span class="nav-item"><a class="nav-link" href="index.html">الرئيسة</a></span>
                         <span class="nav-item"><a class="nav-link" href="about.html">عن الأكاديمية</a></span>
-                        <span class="nav-item">@Html.ActionLink("الأخبار","News","Home",null,new { @class = "nav-link" })</span>
+                        <span class="nav-item">@Html.ActionLink("الأخبار", "News", "Home", null, new { @class = "nav-link" })</span>
                         <span class="nav-item"><a class="nav-link" href="PublicProgrames.html">البرامج العامة</a></span>
                         <!-- Default dropright button -->
                         <span class="link-group dropdown mt-2" style="cursor: pointer;">
                             <a class="link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 الدورات والبرامج العلمية
                             </a>
-                            <div class="dropdown-menu bg-light">
+                            <div class="dropdown-menu bg-light" style="z-index:10;">
                                 <span class="nav-item"><a class="nav-link" href="progs.html">البرامج العلمية </a></span>
                                 <span class="nav-item"><a class="nav-link" href="Tracks.html">الدورات العلمية  </a></span>
                                 <!-- Dropdown menu links -->
@@ -136,6 +141,10 @@
                         <span class="nav-item"><a class="nav-link" href="Gallery.html">البوم الصور</a></span>
                         <span class="nav-item"><a class="nav-link" href="Library.html">المكتبة</a></span>
                         <span class="nav-item"><a class="nav-link" href="contactus.html">اتصل بنا</a></span>
+                        @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                        {
+                            <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">To DashBoard</a></span>
+                        }
                     </div>
                 </div>
             </nav>

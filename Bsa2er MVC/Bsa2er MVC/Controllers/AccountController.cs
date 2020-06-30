@@ -1,5 +1,6 @@
 ﻿using Bsa2er_MVC.Models;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System.Linq;
@@ -76,6 +77,11 @@ namespace Bsa2er_MVC.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    var user = UserManager.Users.SingleOrDefault(s => s.Email == model.Email);
+                    if (user.Roles.Any(r=>r.RoleId=="2")||user.Roles.Any(r=>r.RoleId=="1"))
+                    {
+                        return RedirectToAction("DashBoardPage", "DashBoard");
+                    }
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");

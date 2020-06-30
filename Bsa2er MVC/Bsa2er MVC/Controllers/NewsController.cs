@@ -13,10 +13,10 @@ namespace Bsa2er_MVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: news
-        public ActionResult Index()
+       /* public ActionResult Index()
         {
             return View(db.News.ToList());
-        }
+        }*/
 
         // GET: news/Details/5
         public ActionResult Details(int? id)
