@@ -185,8 +185,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DashBoardController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\BooksectionsController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
@@ -198,33 +196,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006281345364_v.cs" />
-    <Compile Include="Migrations\202006281345364_v.Designer.cs">
-      <DependentUpon>202006281345364_v.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006281359327_g.cs" />
-    <Compile Include="Migrations\202006281359327_g.Designer.cs">
-      <DependentUpon>202006281359327_g.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006281414081_l.cs" />
-    <Compile Include="Migrations\202006281414081_l.Designer.cs">
-      <DependentUpon>202006281414081_l.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006281416202_h.cs" />
-    <Compile Include="Migrations\202006281416202_h.Designer.cs">
-      <DependentUpon>202006281416202_h.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006272304465_reseting.cs" />
-    <Compile Include="Migrations\202006272304465_reseting.Designer.cs">
-      <DependentUpon>202006272304465_reseting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006281714039_reset.cs" />
-    <Compile Include="Migrations\202006281714039_reset.Designer.cs">
-      <DependentUpon>202006281714039_reset.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006272133439_update.cs" />
-    <Compile Include="Migrations\202006272133439_update.Designer.cs">
-      <DependentUpon>202006272133439_update.cs</DependentUpon>
+    <Compile Include="Migrations\202006290016374_s.cs" />
+    <Compile Include="Migrations\202006290016374_s.Designer.cs">
+      <DependentUpon>202006290016374_s.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -331,7 +305,6 @@
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jqvmap.min.css" />
     <Content Include="Content\Library.css" />
-    <Content Include="Content\DashBoardNews.css" />
     <Content Include="Content\News.css" />
     <Content Include="Content\OverlayScrollbars.min.css" />
     <Content Include="Content\Program.css" />
@@ -352,7 +325,6 @@
     <Content Include="images\7.png" />
     <Content Include="images\bsaer.png" />
     <Content Include="images\DashBoard\edit-button.svg" />
-    <Content Include="images\DashBoard\Loading.gif" />
     <Content Include="images\DashBoard\user.png" />
     <Content Include="images\library\1.jpeg" />
     <Content Include="images\library\2.jpeg" />
@@ -570,13 +542,6 @@
     <Content Include="Views\Programs\Details.cshtml" />
     <Content Include="Views\Programs\Edit.cshtml" />
     <Content Include="Views\Programs\Index.cshtml" />
-    <Content Include="Views\DashBoard\DashBoardPage.cshtml" />
-    <Content Include="Views\User\Create.cshtml" />
-    <Content Include="Views\User\Delete.cshtml" />
-    <Content Include="Views\User\Details.cshtml" />
-    <Content Include="Views\User\Edit.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\DashBoard\News.cshtml" />
     <Content Include="Views\Manage\DashBoard.cshtml" />
     <Content Include="Views\Account\StudentDashboard.cshtml" />
   </ItemGroup>
@@ -599,26 +564,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006281345364_v.resx">
-      <DependentUpon>202006281345364_v.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006281359327_g.resx">
-      <DependentUpon>202006281359327_g.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006281414081_l.resx">
-      <DependentUpon>202006281414081_l.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006281416202_h.resx">
-      <DependentUpon>202006281416202_h.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006272304465_reseting.resx">
-      <DependentUpon>202006272304465_reseting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006281714039_reset.resx">
-      <DependentUpon>202006281714039_reset.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006272133439_update.resx">
-      <DependentUpon>202006272133439_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006290016374_s.resx">
+      <DependentUpon>202006290016374_s.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

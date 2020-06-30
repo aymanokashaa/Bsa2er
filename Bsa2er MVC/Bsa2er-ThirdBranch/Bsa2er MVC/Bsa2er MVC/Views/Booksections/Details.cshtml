@@ -1,0 +1,36 @@
+﻿@model Bsa2er_MVC.Models.Booksection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+    <div class="text-center">
+        <h4>تفاصيل القسم</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                اسم القسم
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
+
+            <dt>
+                صورة القسم
+            </dt>
+
+            <dd>
+                <div class="text-center"></div>      
+                    <img  src="~/images/Booksections/@Model.imagepath" />
+                
+                </dd>
+
+        </dl>
+        <p>
+            @Html.ActionLink("تعديل", "Edit", new { id = Model.id }, new { @class = "btn btn-primary" }) 
+            @Html.ActionLink("الرجوع الي القائمة", "Index", null, new {@class="btn btn-success"})
+        </p>
+
+    </div>

@@ -1,0 +1,40 @@
+﻿@model Bsa2er_MVC.Models.Book
+
+@{
+    ViewBag.Title = "Details";
+}
+    <div class="text-center">
+
+        <h2 class="text-center">التفاصيل</h2>
+
+        <hr />
+        <dl class="dl-horizontal">
+
+            <dt>
+                اسم الكتاب
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+رابط نحميل الكتاب
+            </dt>
+
+            <dd>
+                <a class="btn btn-primary" href="~/texts/@Model.PdfFilepath" target="_blank">تحميل الكتاب</a>
+            </dd>
+
+            <dt>
+                <img width="70" src="~/images/Books/@Model.imageFilePath"/>
+            </dt>
+
+
+
+        </dl>
+    </div>
+<p class="text-center">
+    @Html.ActionLink("تعديل الكتاب", "Edit", new { id = Model.Id },new {@class="btn btn-primary"}) 
+    @Html.ActionLink("الرجوع الي قائمة الكتب", "Index",null,new {@class="btn btn-success"})
+</p>
