@@ -198,9 +198,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006290016374_s.cs" />
-    <Compile Include="Migrations\202006290016374_s.Designer.cs">
-      <DependentUpon>202006290016374_s.cs</DependentUpon>
+    <Compile Include="Migrations\202006302212446_v1.cs" />
+    <Compile Include="Migrations\202006302212446_v1.Designer.cs">
+      <DependentUpon>202006302212446_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -217,6 +217,7 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentsPrograms.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -299,6 +300,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\carouselStyle.css" />
+    <Content Include="Content\DashBoardNews.css" />
     <Content Include="Content\daterangepicker.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\Gallery.css" />
@@ -546,6 +548,13 @@
     <Content Include="Views\Programs\Index.cshtml" />
     <Content Include="Views\Manage\DashBoard.cshtml" />
     <Content Include="Views\Account\StudentDashboard.cshtml" />
+    <Content Include="Views\DashBoard\DashBoardPage.cshtml" />
+    <Content Include="Views\DashBoard\News.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -566,8 +575,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006290016374_s.resx">
-      <DependentUpon>202006290016374_s.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202006302212446_v1.resx">
+      <DependentUpon>202006302212446_v1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
