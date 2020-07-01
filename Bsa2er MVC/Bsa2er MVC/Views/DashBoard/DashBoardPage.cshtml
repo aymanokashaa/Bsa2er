@@ -1,0 +1,459 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dash Board</title>
+    <link rel="icon" type="images/png" href="~/images/bsaer.png" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Awesome -->
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/ionicons.min.css">
+    <!-- Tempusdominus Bbootstrap 4 -->
+    <link rel="stylesheet" href="~/Content/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/Content/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/Content/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/Content/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/Content/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Content/summernote-bs4.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!--news Style-->
+    <link href="~/Content/DashBoardNews.css" rel="stylesheet" />
+    <style>
+
+        .Usercard {
+            position: relative;
+            width: 250px; /* Remove for full width */
+            height: 295px; /* Remove for full width */
+            margin-bottom: 5px auto;
+            box-shadow: 0 0 100px rgba(0,0,0, .3);
+        }
+
+        .Usercard-header {
+            position: relative;
+            height: 200px;
+            background-size: cover;
+            background-position: top;
+        }
+
+            .Usercard-header:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to top, rgb(5,85,134), rgba(181,181,181, 0.1));
+            }
+
+        .Usercard-header-bar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .Usersr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            clip: rect(0,0,0,0);
+            border: none;
+            overflow: hidden;
+        }
+
+        .Userbtn-message {
+            display: inline-block;
+            background: url(images/logout.svg) no-repeat;
+            width: 35px;
+            height: 35px;
+            margin-right: 5px;
+            margin-top: -15px;
+        }
+
+        .Userbtn-menu {
+            display: inline-block;
+            background: url(images/rsz_back.png) no-repeat;
+            width: 32px;
+            height: 32px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        svg .Userpolygon {
+            fill: #fff;
+        }
+
+        .Usercard-header-slanted-edge {
+            position: absolute;
+            bottom: -3px;
+            z-index: 1;
+            width: 100%;
+            right: 0;
+            left: 0;
+        }
+
+        .Userbtn-follow {
+            position: absolute;
+            top: -15px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(to left, #2D77C1, #68FAC2);
+            border-radius: 100%;
+            box-shadow: 0 10px 15px rgba(110,221,235, .53);
+        }
+
+            .Userbtn-follow:after {
+                content: '';
+                position: absolute;
+                background: url(../../images/DashBoard/edit-button.svg) no-repeat;
+                width: 17px;
+                height: 17px;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+        .Usercard-body {
+            text-align: center;
+            padding-left: 10px;
+            background-color: white;
+            color: black;
+        }
+
+        .Username {
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 0 auto;
+        }
+
+        .Userjob-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-top: 3px;
+            color: #919191;
+        }
+        #BasaerLogo:hover {
+            transform: scale(1.4);
+        }
+        #BasaerLogo{
+            transition:all 1s;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-maroon elevation-4 ">
+            <!-- Brand Logo -->
+            <div class="Usercard">
+                <div class="Usercard-header" style="background-image: url(../../images/7.png)">
+                    <div class="Usercard-header-slanted-edge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path class="Userpolygon" d="M-20,200,1000,0V200Z"></path></svg>
+
+                        <a href="#" class="Userbtn-follow"><span class="Usersr-only">الصفحة الشخصية</span></a>
+                    </div>
+                </div>
+                <div class="Usercard-body">
+                    <div class="image">
+                        <img src="~/images/DashBoard/user.png" class=" elevation-2 img-circle" width="50" height="50" alt="User Image">
+                    </div>
+                    <h2 class="Username">@User.Identity.Name</h2>
+
+                    @if (User.IsInRole("Owner"))
+                    {
+                        <h4 class="Userjob-title"> مالك </h4>
+                    }
+                    else if (User.IsInRole("Admin"))
+                    {
+                        <h4 class="Userjob-title"> مشرف </h4>
+                    }
+
+
+                </div>
+
+            </div>
+
+
+            <!-- Sidebar -->
+
+            <div class="sidebar mt-3">
+                <!-- Sidebar Menu -->
+                <nav class="mt-0">
+                    <ul class="nav nav-pills nav-sidebar flex-column  text-right" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class
+                    with font-awesome or any other icon font library -->
+                        <li class="nav-item has-treeview">
+                            <a href="/DashBoard/DashBoardPage" class="nav-link active">
+                                <p>
+                                    Dashboard
+
+                                </p>
+                                <i class="fa fa-tachometer float-left" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        @if (User.IsInRole("Owner"))
+                        {
+                            <li class="nav-item has-treeview">
+                                @Ajax.ActionLink(" ", "Index", "User", new { roleId = "2" },
+                                 new AjaxOptions()
+                                 {
+                                     HttpMethod = "GET",
+                                     InsertionMode = InsertionMode.Replace,
+                                     UpdateTargetId = "ContentSection"
+                                 }, new { @class = "nav-link", id = "AjaxLinkOne" })
+
+                                <!--<a href='/User/Index?roleId="2"' class="nav-link">
+                                    <p>
+                                        إدارة المشرفين
+
+                                    </p>
+                                    <i class="float-left fa fa-vcard"></i>
+                                </a>-->
+                            </li>
+                        }
+
+                        <li class="nav-item has-treeview">
+                            @Ajax.ActionLink(" ", "Index", "User", new { roleId = "3" },
+                            new AjaxOptions()
+                            {
+                                HttpMethod = "GET",
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "ContentSection"
+                            }, new { @class = "nav-link", id = "AjaxLinkTwo" })
+                            <!--<a href="" class="nav-link">
+                                <p>
+                                    إدارة المعلمين
+
+                                </p>
+                                <i class="float-left fa fa-user-circle-o"></i>
+                            </a-->
+                        </li>
+                        <li class="nav-item has-treeview">
+                            @Ajax.ActionLink(" ", "Index", "User", new { roleId = "4" },
+                     new AjaxOptions()
+                     {
+                         HttpMethod = "GET",
+                         InsertionMode = InsertionMode.Replace,
+                         UpdateTargetId = "ContentSection"
+                     }, new { @class = "nav-link", id = "AjaxLinkThree" })
+                            <!--<a href='/User/Index?roleId="4"' class="nav-link">
+                            <p>
+
+                                إدارة الطلاب
+
+                            </p>
+                            <i class="float-left fa fa-graduation-cap"></i>
+                        </a>-->
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Programs/Index" class="nav-link">
+                                <p>
+                                    إدارة البرامج
+
+                                </p>
+                                <i class="float-left fa fa-video-camera"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            @Ajax.ActionLink(" ", "News", "DashBoard", null,
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "GET",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "ContentSection"
+                    }, new { @class = "nav-link", id = "AjaxLinkNews" })
+                            <!--<a href="/News/Index" class="nav-link">
+                                    <p>
+                                        إدارة الأخبار
+
+                                    </p>
+                                    <i class="float-left fa fa-newspaper-o"></i>
+                                </a>-->
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="/Booksections/Index" class="nav-link">
+                                <p>
+                                    إدارة الكتب
+
+                                </p>
+                                <i class="float-left fa fa-book"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    إدارة الصور
+
+                                </p>
+                                <i class="float-left fa fa-image"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="background-image: url(../../images/6.jpg)">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0 text-dark" style="font-size: 2.5rem;">Dashboard</h1>
+                        </div><!-- /.col -->
+
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><img src="~/images/7.png" width="200" id="BasaerLogo" alt="Basaer Logo"></li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <section class="content">
+                <div class="container-fluid">
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>150</h3>
+
+                                    <p style="font-size: 25px;">عدد الطلاب</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-graduation-cap"></i>
+                                </div>
+                                <!-- <a href="projects.html" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box  bg-info">
+                                <div class="inner">
+                                    <h3>53</h3>
+
+                                    <p style="font-size: 25px;">الطلاب الجدد</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-user-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box  bg-olive">
+                                <div class="inner">
+                                    <h3>44</h3>
+
+                                    <p style="font-size: 25px;">عدد الدورات</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-video-camera"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-teal">
+                                <div class="inner">
+                                    <h3>65</h3>
+
+                                    <p style="font-size: 25px;">عدد الزائرين</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-user-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- Main row -->
+                    <div class="row">
+                        <div class="container-fluid float-right">
+                            <!-- Left col -->
+                            <section id="ContentSection" class="col-lg-12 connectedSortable text-right float-right" dir="rtl">
+                                <!-- Custom tabs (Charts with tabs)-->
+                                <div class="card w-100 " style="display:none">
+                                    <div class="card-header">
+                                        <h3 class="card-title text-right float-right">
+                                        </h3>
+                                    </div> <!--card-header-->
+                                    <div class="card-body">
+                                        <div class="tab-content p-0">
+                                            <img src="~/images/DashBoard/Loading.gif" width="100" height="100" />
+                                        </div>
+                                    </div>  <!--card-body-->
+                                    <div class="card-footer clearfix">
+
+                                    </div>
+                                </div>
+                                <!-- /.card -->
+
+
+                            </section>
+
+                        </div>
+                    </div>
+                    <!-- /.row (main row) -->
+                </div><!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+
+
+
+
+        </div>
+
+
+        <!-- /.content-wrapper -->
+        <footer class="main-footer" >
+            <strong>Copyright &copy; 2020 <a href="#">Basear</a>.</strong>
+            All rights reserved.
+        </footer>
+
+
+
+    </div>
+    <!-- ./wrapper -->
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        $("#AjaxLinkTwo").html('<p>إدارة المعلمين</p ><i class="float-left fa fa-user-circle-o"></i>').on("click", function () { $(".card").css("display", "block") });
+        $("#AjaxLinkOne").html('<p>إدارة المشرفين</p ><i class="float-left fa fa-vcard"></i>').on("click", function () { $(".card").css("display", "block") });
+        $("#AjaxLinkThree").html('<p>إدارة الطلاب</p ><i class="float-left fa fa-graduation-cap"></i>').on("click", function () { $(".card").css("display", "block") });
+        $("#AjaxLinkNews").html('<p>إدارة الأخبار</p ><i class="float-left fa fa-newspaper-o"></i>').on("click", function () { $(".card").css("display", "block") });
+    </script>
+
+</body>
+</html>
+

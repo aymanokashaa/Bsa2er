@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Bsa2er_MVC.Models.news>
+
+<div class="card w-100 " >
+    <div class="card-header">
+        <h1 class="card-title text-right float-right">
+            الأخبار
+        </h1>
+    </div> <!--card-header-->
+    <div class="card-body">
+        <div class="tracks-box">
+            <p class="text-center">
+                @Html.ActionLink("أنشاء خبر جديد", "Create", null, new { dir = "rtl", @class = "btn btn-secondary float-right" })
+            </p>
+            <h1 class="text-center m-4 ">الأخبار</h1>
+            <div class="row ">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-lg-3 col-xl-4 p-2">
+                        <div class="card bg-info text-light cardStyle">
+                            <div class="img-c">
+                                <img width="150" height="150" src="~/images/News/@item.ImagePath">
+                            </div>
+                            <div class="card-title"> <h6>@item.title</h6></div>
+                            <div class="card-body card-bodyStyle">
+
+                                <p class="card-text"> @item.body.Substring(0, 20) .....</p>
+
+                                @Html.ActionLink("تعديل", "Edit", "News", new { id = item.id }, new { @class = "btn btn-primary mt-1" }) |
+                                @Html.ActionLink("التفاصيل", "Details", "News", new { id = item.id }, new { @class = "btn btn-primary mt-1" }) |
+                                @Html.ActionLink("حذف", "Delete", "News", new { id = item.id }, new { @class = "btn btn-primary mt-1" })
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </div>  <!--card-body-->
+    <div class="card-footer clearfix">
+
+    </div>
+</div>

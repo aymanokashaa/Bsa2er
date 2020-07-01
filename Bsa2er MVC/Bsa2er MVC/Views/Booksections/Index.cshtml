@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Bsa2er_MVC.Models.Booksection>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@if (User.IsInRole("Instructor")|| User.IsInRole("Admin"))
+{
+    <p class="text-center h1">
+        @Html.ActionLink("أنشأ قسم جديد", "Create")
+    </p>
+}
+<div class=" container">
+    <div class="row ">
+        @foreach (var item in Model)
+        {
+            <div class="card col-md-4 ml-2 mt-3">
+                <div class="card-header text-center">
+                    @Html.DisplayFor(modelItem => item.title)
+
+                </div>
+                <div class="card-body text-center">
+
+                        <img class="card-img" src="~/images/Booksections/@item.imagepath" />
+                    
+
+                </div>
+                <div class="card-footer text-center">
+                    @if (User.IsInRole("Instructor")|| User.IsInRole("Admin"))
+                    {
+
+                @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, new { @class = "btn btn-success" })}
+
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.id }, new { @class = "btn btn-dark " })
+                    @Html.ActionLink("الكتب", "Index", "Books", new { id = item.id }, new { @class = "btn btn-dark mt-md-2" })
+
+                </div>
+
+
+            </div>
+
+         
+
+
+        }
+    </div>
+
+</div>
+
