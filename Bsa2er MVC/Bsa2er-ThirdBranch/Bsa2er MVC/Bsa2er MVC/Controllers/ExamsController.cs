@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Bsa2er_MVC.Controllers
 {
+    [Authorize]
     public class ExamsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

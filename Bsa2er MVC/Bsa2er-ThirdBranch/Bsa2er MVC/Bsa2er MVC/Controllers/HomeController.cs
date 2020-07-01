@@ -2,6 +2,9 @@
 using Microsoft.AspNet.Identity;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Helpers;
+using System.Net.Mail;
+using System.Net;
 
 namespace Bsa2er_MVC.Controllers
 {
@@ -19,12 +22,31 @@ namespace Bsa2er_MVC.Controllers
         {
             return View();
         }
-
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult Contact(message Message)
+        {
+            SmtpClient client = new SmtpClient()
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
+                Credentials = new NetworkCredential("mvclect@gmail.com", "Eman2005$")
+            };
+            MailMessage m = new MailMessage("mvclect@gmail.com", "Youssefhatem270@gmail.com")
+            {
+                Body = Message.body,
+                Subject = Message.subject
+            };
+            client.Send(m);
+
+            return RedirectToAction("Index");
         }
         public ActionResult Gallery()
         {

@@ -1,6 +1,5 @@
-﻿@{
-    ViewBag.Title = "اتصل بنا";
-}
+﻿
+@model message
 <div class="container ">
     <div class="row mt-2">
         <div class="col-12 col-lg-6" style="text-align:center;">
@@ -16,25 +15,27 @@
         </div>
 
         <div class="col-lg-6  col-12">
-            <form method="Get"style="direction: rtl;text-align: center;">
+            @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { @class = "form-horizontal text-center", direction = "rtl", role = "form" }))
+
+            {
                 <div class="form-group ">
-                    <span> الاسم بالكامل</span>
-                    <input placeholder="الاسم بالكامل" type="text" class="form-control" />
-                </div>
-                <div class="form-group ">
-                    <span> البريد الالكتروني</span>
-                    <input placeholder="البريد الالكتروني" type="text" class="form-control" />
-                </div>
-                <div class="form-group ">
-                    <span> موضوع الرسالة</span>
-                    <input placeholder="موضوع الرسالة" type="text" class="form-control" />
-                </div>
-                <div class="form-group ">
-                    <span> رسالتك</span>
-                    <textarea placeholder="مضمون الرسالة" type="text" class="form-control" rows="8" style="resize: none;"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary"> ارسال الرسالة</button>
-            </form>
+            <span> الاسم بالكامل</span>
+            <input placeholder="الاسم بالكامل" name="username" type="text" class="form-control" />
+        </div>
+            <div class="form-group ">
+                <span> البريد الالكتروني</span>
+                <input placeholder="البريد الالكتروني" name="emailaddress" type="text" class="form-control" />
+            </div>
+            <div class="form-group ">
+                <span> موضوع الرسالة</span>
+                <input placeholder="موضوع الرسالة" name="subject" type="text" class="form-control" />
+            </div>
+            <div class="form-group ">
+                <span> رسالتك</span>
+                <textarea placeholder="مضمون الرسالة" name="body" type="text" class="form-control" rows="8" style="resize: none;"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"> ارسال الرسالة</button>
+            }
         </div>
     </div>
 </div>

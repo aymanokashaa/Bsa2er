@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Bsa2er_MVC.Controllers
 {
+    
     public class NewsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

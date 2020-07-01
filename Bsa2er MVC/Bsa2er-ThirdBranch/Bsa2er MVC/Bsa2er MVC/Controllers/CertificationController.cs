@@ -6,6 +6,7 @@ using static System.Net.WebRequestMethods;
 
 namespace Bsa2er_MVC.Controllers
 {
+    [Authorize]
     public class CertificationController : Controller
     {
         ApplicationDbContext db;

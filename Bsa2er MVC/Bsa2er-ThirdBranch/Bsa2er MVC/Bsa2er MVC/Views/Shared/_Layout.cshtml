@@ -116,7 +116,9 @@
                 <div class="collapse navbar-collapse" style="direction: rtl;" id="navbarToggleExternalContent">
                     <div class="navbar-nav" id="lowerheader">
                         <span class="nav-item"><a class="nav-link" href="index.html">الرئيسة</a></span>
-                        <span class="nav-item"><a class="nav-link" href="about.html">عن الأكاديمية</a></span>
+                        <span class="nav-item">
+                        @Html.ActionLink("عن الاكاديمية","about","Home",null,new {@class="nav-link" })
+                        </span>
                         <span class="nav-item">@Html.ActionLink("الأخبار","News","Home",null,new { @class = "nav-link" })</span>
                         <span class="nav-item"><a class="nav-link" href="PublicProgrames.html">البرامج العامة</a></span>
                         <!-- Default dropright button -->
@@ -132,7 +134,7 @@
                         </span>
                         <span class="nav-item"><a class="nav-link" href="Gallery.html">البوم الصور</a></span>
                         <span class="nav-item">@Html.ActionLink("المكتبة", "Index", "Booksections", null, new { @class = "nav-link" }) </span>
-                        <span class="nav-item"><a class="nav-link" href="contactus.html">اتصل بنا</a></span>
+                        <span class="nav-item">@Html.ActionLink("اتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span>
                     </div>
                 </div>
             </nav>
