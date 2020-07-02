@@ -193,15 +193,16 @@
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\message.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ProgramsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006302212446_v1.cs" />
-    <Compile Include="Migrations\202006302212446_v1.Designer.cs">
-      <DependentUpon>202006302212446_v1.cs</DependentUpon>
+    <Compile Include="Migrations\202007021639244_v.cs" />
+    <Compile Include="Migrations\202007021639244_v.Designer.cs">
+      <DependentUpon>202007021639244_v.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202006302322045_add Gallary Table.cs" />
     <Compile Include="Migrations\202006302322045_add Gallary Table.Designer.cs">
@@ -616,8 +617,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006302212446_v1.resx">
-      <DependentUpon>202006302212446_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007021639244_v.resx">
+      <DependentUpon>202007021639244_v.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202006302322045_add Gallary Table.resx">
       <DependentUpon>202006302322045_add Gallary Table.cs</DependentUpon>

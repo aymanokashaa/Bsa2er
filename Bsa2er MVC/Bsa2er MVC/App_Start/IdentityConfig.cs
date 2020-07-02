@@ -5,6 +5,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using System;
+using System.Net;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -14,6 +16,20 @@ namespace Bsa2er_MVC
     {
         public Task SendAsync(IdentityMessage message)
         {
+            SmtpClient client = new SmtpClient()
+            {
+                   Host="smtp.gmail.com",
+                   Port=587,
+                   EnableSsl=true,
+                   DeliveryMethod=System.Net.Mail.SmtpDeliveryMethod.Network,
+                   Credentials=new NetworkCredential("mvclect@gmail.com","Eman2005$")
+            };
+            MailMessage m = new MailMessage("mvclect@gmail.com", message.Destination)
+            {
+                Body = message.Body,
+                Subject = message.Subject
+            };
+            client.Send(m);
             // Plug in your email service here to send an email.
             return Task.FromResult(0);
         }
@@ -79,6 +95,8 @@ namespace Bsa2er_MVC
             }
             return manager;
         }
+
+
     }
 
     // Configure the application sign-in manager which is used in this application.

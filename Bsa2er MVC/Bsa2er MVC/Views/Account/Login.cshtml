@@ -12,52 +12,58 @@
         @Html.AntiForgeryToken()
                         <h4 class="text-center pr-2">تسجيل الدخول</h4>
                                         <hr />
-                                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                                                        <div class="form-row mt-5">
+                                                                        <div class="row">
+                                                                            <div class="col-xs-12 text-center">
+                                                                                @Html.ValidationSummary(true,"", new { @class = "text-danger" })
 
-                                                                            <div class="offset-4 col-3">
-                                                                                @Html.TextBoxFor(m => m.username, new { @class = "form-control" })
-                                                                                @Html.ValidationMessageFor(m => m.username, "", new { @class = "text-danger" })
-                                                                            </div>
-                                                                            <div class="col-1">
-                                                                                @Html.LabelFor(m => m.username, "اسم المستخدم ", new { @class = "col-md-2 control-label" })
                                                                             </div>
                                                                         </div>
+
                                                                                         <div class="form-row mt-5">
 
                                                                                             <div class="offset-4 col-3">
-                                                                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                                                                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                                                                @Html.TextBoxFor(m => m.username, new { @class = "form-control" })
+                                                                                                @Html.ValidationMessageFor(m => m.username, "", new { @class = "text-danger" })
                                                                                             </div>
                                                                                             <div class="col-1">
-                                                                                                @Html.LabelFor(m => m.Email, "البريد الالكتروني  ", new { @class = "col-md-2 control-label" })
+                                                                                                @Html.LabelFor(m => m.username, "اسم المستخدم ", new { @class = "control-label" })
                                                                                             </div>
                                                                                         </div>
                                                                                                         <div class="form-row mt-5">
+
                                                                                                             <div class="offset-4 col-3">
-                                                                                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                                                                                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                                                                                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                                                                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                                                                                             </div>
                                                                                                             <div class="col-1">
-                                                                                                                @Html.LabelFor(m => m.Password, "كلمة السر", new { @class = "col-md-2 control-label" })
+                                                                                                                @Html.LabelFor(m => m.Email, "البريد الالكتروني  ", new { @class = "control-label" })
                                                                                                             </div>
-
                                                                                                         </div>
-
-                                                                                                                        <div class="form-group">
-                                                                                                                            <div class="text-center ">
-
-                                                                                                                                <input class="btn btn-success ml-6" type="submit" value="Log in" />
-                                                                                                                                @Html.LabelFor(m => m.RememberMe, "تذكرني", null)
-                                                                                                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                                                                                        <div class="form-row mt-5">
+                                                                                                                            <div class="offset-4 col-3">
+                                                                                                                                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                                                                                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                                                                                                             </div>
+                                                                                                                            <div class="col-1">
+                                                                                                                                @Html.LabelFor(m => m.Password, "كلمة السر", new { @class = "control-label" })
+                                                                                                                            </div>
+
                                                                                                                         </div>
-                                                                                                                                        <p class="text-center">
-                                                                                                                                            @Html.ActionLink("الدخول بحساب جديد", "Register", null, new { @class = "btn btn-primary" })
-                                                                                                                                        </p> @* Enable this once you have account confirmation enabled for password reset functionality
-                                                                                                                                    <p>
-                                                                                                                                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                                                                                                                                    </p>*@}
+
+                                                                                                                                        <div class="form-group mt-2">
+                                                                                                                                            <div class="text-center ">
+
+                                                                                                                                                <input class="btn btn-success ml-6" type="submit" value="Log in" />
+                                                                                                                                                @Html.LabelFor(m => m.RememberMe, "تذكرني", null)
+                                                                                                                                                @Html.CheckBoxFor(m => m.RememberMe)
+                                                                                                                                            </div>
+                                                                                                                                        </div>
+                                                                                                                                                        <p class="text-center">
+                                                                                                                                                            @Html.ActionLink("الدخول بحساب جديد", "Register", null, new { @class = "btn btn-primary" })
+                                                                                                                                                        </p> @* Enable this once you have account confirmation enabled for password reset functionality
+                                                                                                                                                    <p>
+                                                                                                                                                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                                                                                                                                    </p>*@}
         </section>
     </div>
     <!--<div class="col-md-4">

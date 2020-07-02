@@ -43,8 +43,8 @@
                                 </ul>
                             </span>
                         </li>
-                        <li> <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link text-warning" })</span></li>
-                        <li> <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link text-warning" })</span></li>
+                        <li> <span class="nav-item"><a class="nav-link text-warning" href="Gallery.html">البوم الصور</a></span></li>
+                        <li> <span class="nav-item"><a class="nav-link text-warning" href="Library.html">المكتبة</a></span></li>
                         <li> <span class="nav-item"><a class="nav-link text-warning" href="contactus.html">اتصل بنا</a></span></li>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {
@@ -135,8 +135,8 @@
                                 <!-- Dropdown menu links -->
                             </div>
                         </span>
-                        <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link" })</span>
-                        <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span>
+                        <span class="nav-item"><a class="nav-link" href="Gallery.html">البوم الصور</a></span>
+                        <span class="nav-item">@Html.ActionLink("المكتبة", "Index", "Booksections", null, new { @class = "nav-link" }) </span>
                         <span class="nav-item"><a class="nav-link" href="contactus.html">اتصل بنا</a></span>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {

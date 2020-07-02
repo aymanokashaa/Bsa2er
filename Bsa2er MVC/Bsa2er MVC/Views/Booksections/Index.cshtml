@@ -29,12 +29,11 @@
                     @if (User.IsInRole("Instructor")|| User.IsInRole("Admin"))
                     {
 
+                @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, new { @class = "btn btn-success" })}
 
-                    }
-                    @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
-                    @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, new { @class = "btn btn-success" })
                     @Html.ActionLink("تفاصيل", "Details", new { id = item.id }, new { @class = "btn btn-dark " })
-                    @Html.ActionLink("الكتب", "Index","Books",new{ id = item.id }, new { @class = "btn btn-dark mt-md-2" })
+                    @Html.ActionLink("الكتب", "Index", "Books", new { id = item.id }, new { @class = "btn btn-dark mt-md-2" })
 
                 </div>
 

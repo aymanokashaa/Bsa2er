@@ -10,6 +10,7 @@ using Bsa2er_MVC.Models;
 
 namespace Bsa2er_MVC.Controllers
 {
+    [Authorize]
     public class BooksectionsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

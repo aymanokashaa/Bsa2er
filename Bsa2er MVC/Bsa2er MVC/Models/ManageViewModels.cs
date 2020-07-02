@@ -54,7 +54,7 @@ namespace Bsa2er_MVC.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Compare("NewPassword", ErrorMessage = "كلمة المرور وتاكيد كلمة المرور غير متطابقين")]
         public string ConfirmPassword { get; set; }
     }
 
