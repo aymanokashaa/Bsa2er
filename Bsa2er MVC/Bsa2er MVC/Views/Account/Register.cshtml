@@ -46,8 +46,22 @@
 
                                                                                                             <div class="offset-5 col-3">
                                                                                                                 <select name="gender" style="direction:rtl;" class="form-control">
-                                                                                                                    <option selected="selected" value="male">طالب</option>
-                                                                                                                    <option value="female">طالبة</option>
+                                                                                                                    @if (ViewBag.id == 1)
+                                                                                                                    {
+                                                                                                                        <option selected="selected" value="male">مدير</option>
+                                                                                                                        <option value="female">مديرة</option>
+                                                                                                                    }
+                                                                                                                    else if (ViewBag.id == 2)
+
+                                                                                                                    {
+                                                                                                                        <option selected="selected" value="male">معلم</option>
+                                                                                                                        <option value="female">معلمة</option>
+                                                                                                                    }
+                                                                                                                    else
+                                                                                                                    {
+                                                                                                                        <option selected="selected" value="male">طالب </option>
+                                                                                                                        <option value="female">طالبة</option>
+                                                                                                                    }
 
                                                                                                                 </select>
 
