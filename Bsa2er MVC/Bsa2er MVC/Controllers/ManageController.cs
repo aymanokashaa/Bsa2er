@@ -71,6 +71,15 @@ namespace Bsa2er_MVC.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+
+            ApplicationDbContext db = new ApplicationDbContext();
+            var userID = User.Identity.GetUserId();
+            var user = db.Users.Find(userID);
+            if (user.Roles.Any(r => r.RoleId == "4"))
+            {
+                return RedirectToAction("StudentDashboard", "Account");
+            }
+
             return View(model);
         }
 

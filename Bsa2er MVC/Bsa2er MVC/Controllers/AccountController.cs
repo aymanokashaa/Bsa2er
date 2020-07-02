@@ -85,7 +85,11 @@ namespace Bsa2er_MVC.Controllers
                     {
                         return RedirectToAction("DashBoardPage","DashBoard");
                     }
-                 return RedirectToLocal(returnUrl);
+                    else if (user.Roles.Any(r => r.RoleId == "4"))
+                    {
+                        return RedirectToAction("StudentDashboard");
+                    }
+                    return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -432,6 +436,45 @@ namespace Bsa2er_MVC.Controllers
             var userID = User.Identity.GetUserId();
             var user = db.Students.Find(userID);
             return View(user);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangeInfo(Student newUser)
+        {
+            if (ModelState.IsValid)
+            {
+                var userID = User.Identity.GetUserId();
+                var user = db.Students.Find(userID);
+                user.ApplicationUser.fullname = newUser.ApplicationUser.fullname;
+                user.ApplicationUser.PhoneNumber = newUser.ApplicationUser.PhoneNumber;
+                user.ApplicationUser.birthcountry = newUser.ApplicationUser.birthcountry;
+                user.ApplicationUser.Country = newUser.ApplicationUser.Country;
+                user.ApplicationUser.Qualification = newUser.ApplicationUser.Qualification;
+                db.SaveChanges();
+                return RedirectToAction("StudentDashboard");
+            }
+            return RedirectToAction("StudentDashboard");
+        }
+
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePic(HttpPostedFileBase image)
+        {
+            var userID = User.Identity.GetUserId();
+            var user = db.Students.Find(userID);
+            var userImage = user.ApplicationUser.pathofimage;
+
+            if (userImage != "/images/4.jpg")
+            {
+                System.IO.File.Delete(Server.MapPath(userImage));
+            }
+
+            var arr = image.FileName.Split('.');
+            string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
+            user.ApplicationUser.pathofimage = $"/images/{filename}";
+            image.SaveAs(Server.MapPath("~/images/") + filename);
+            db.SaveChanges();
+            return RedirectToAction("StudentDashboard");
         }
 
         protected override void Dispose(bool disposing)

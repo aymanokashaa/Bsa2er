@@ -428,17 +428,12 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.pdb
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v.resources
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.g.resources
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.l.resources
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.h.resources
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.reseting.resources
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.cache
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.reset.resources
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
