@@ -170,28 +170,32 @@ namespace Bsa2er_MVC.Controllers
                     if(id==db.Roles.SingleOrDefault(r=>r.Name=="Admin").Id)
                     {
                         await UserManager.AddToRolesAsync(user.Id,"Admin");
-                        return RedirectToAction("DashBoardPage", "DashBoard");
+
                     }
                     else if(id == db.Roles.SingleOrDefault(r => r.Name == "Instructor").Id)
                     {
                         await UserManager.AddToRolesAsync(user.Id,"Instructor");
-                        return RedirectToAction("DashBoardPage", "DashBoard");
+                        db.Instructors.Add(new Instructor() { InsId = user.Id, Degree = user.Qualification });
+                        db.SaveChanges();
+
 
                     }
                     else if(id == db.Roles.SingleOrDefault(r => r.Name == "Student").Id)
                     {
                        await UserManager.AddToRolesAsync(user.Id,"Student");
-                        string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                        var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                        await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+                        db.Students.Add(new Student() { StdId = user.Id });
+                        db.SaveChanges();
                     }
-
-
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-               
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
 
-                    return RedirectToAction("Index", "Home");
+                    if (id == "4")
+                        return RedirectToAction("GoConfirmYourEmail");
+
+                    return RedirectToAction("DashBoardPage", "DashBoard");
                 }
                 AddErrors(result);
             }
@@ -211,6 +215,10 @@ namespace Bsa2er_MVC.Controllers
             }
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
+        public ActionResult GoConfirmYourEmail()
+        {
+            return View();
         }
 
         //

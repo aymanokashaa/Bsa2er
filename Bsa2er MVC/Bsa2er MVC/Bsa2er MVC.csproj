@@ -598,6 +598,7 @@
     <Content Include="Views\DashBoard\ProgramsPage.cshtml" />
     <Content Include="Views\DashBoard\BookSectionPage.cshtml" />
     <Content Include="Views\Home\BookSection.cshtml" />
+    <Content Include="Views\Account\GoConfirmYourEmail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
