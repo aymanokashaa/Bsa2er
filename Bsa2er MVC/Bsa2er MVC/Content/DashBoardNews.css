@@ -20,6 +20,7 @@
 .img-c,
 .card-bodyStyle {
     height: 50%;
+    direction:rtl;
 }
 
     .img-c img {

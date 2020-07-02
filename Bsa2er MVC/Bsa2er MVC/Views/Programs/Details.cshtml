@@ -7,7 +7,7 @@
 <h2 style="text-align:center">تفاصيل البرنامج</h2>
 <div class="container">
     <div class="imgContainer mt-5">
-        <img src="~/images/Programs/@ViewBag.Program_MainImage">
+        <img src="~/images/Programs/@Model.Program_MainImage">
     </div>
     <div class="row">
         <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
@@ -154,5 +154,5 @@
         </dl>
     </div>*@
 <p>
-    @Html.ActionLink("تعديل", "Edit", new { id = Model.Program_Id }, new { @class = "btn btn-info btn-block w-25 m-auto text-white" }) |
+    @Html.ActionLink("تعديل", "Edit", new { id = Model.ProgramId }, new { @class = "btn btn-info btn-block w-25 m-auto text-white" }) |
 </p>

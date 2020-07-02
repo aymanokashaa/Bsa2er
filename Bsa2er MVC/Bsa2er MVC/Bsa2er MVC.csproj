@@ -190,6 +190,7 @@
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -202,12 +203,41 @@
     <Compile Include="Migrations\202006302212446_v1.Designer.cs">
       <DependentUpon>202006302212446_v1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202006302322045_add Gallary Table.cs" />
+    <Compile Include="Migrations\202006302322045_add Gallary Table.Designer.cs">
+      <DependentUpon>202006302322045_add Gallary Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007011746494_v2.cs" />
+    <Compile Include="Migrations\202007011746494_v2.Designer.cs">
+      <DependentUpon>202007011746494_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007011750520_v3.cs" />
+    <Compile Include="Migrations\202007011750520_v3.Designer.cs">
+      <DependentUpon>202007011750520_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007011911475_v4.cs" />
+    <Compile Include="Migrations\202007011911475_v4.Designer.cs">
+      <DependentUpon>202007011911475_v4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007012357513_v5.cs" />
+    <Compile Include="Migrations\202007012357513_v5.Designer.cs">
+      <DependentUpon>202007012357513_v5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007012359028_v6.cs" />
+    <Compile Include="Migrations\202007012359028_v6.Designer.cs">
+      <DependentUpon>202007012359028_v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007021612010_add track Visitors Models.cs" />
+    <Compile Include="Migrations\202007021612010_add track Visitors Models.Designer.cs">
+      <DependentUpon>202007021612010_add track Visitors Models.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
     <Compile Include="Models\Certification.cs" />
     <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instructor.cs" />
     <Compile Include="Models\Lecture.cs" />
@@ -217,6 +247,8 @@
     <Compile Include="Models\Question.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentsPrograms.cs" />
+    <Compile Include="Models\Visitor.cs" />
+    <Compile Include="Models\VisitorOperations.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -330,6 +362,7 @@
     <Content Include="images\bsaer.png" />
     <Content Include="images\DashBoard\edit-button.svg" />
     <Content Include="images\DashBoard\user.png" />
+    <Content Include="images\Gallery\default.jpg" />
     <Content Include="images\library\1.jpeg" />
     <Content Include="images\library\2.jpeg" />
     <Content Include="images\library\3.jpeg" />
@@ -555,6 +588,14 @@
     <Content Include="Views\User\Details.cshtml" />
     <Content Include="Views\User\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Gallery\Create.cshtml" />
+    <Content Include="Views\Gallery\Delete.cshtml" />
+    <Content Include="Views\Gallery\Details.cshtml" />
+    <Content Include="Views\Gallery\Edit.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
+    <Content Include="Views\DashBoard\PicturesPage.cshtml" />
+    <Content Include="Views\DashBoard\ProgramsPage.cshtml" />
+    <Content Include="Views\DashBoard\BookSectionPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -577,6 +618,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202006302212446_v1.resx">
       <DependentUpon>202006302212446_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006302322045_add Gallary Table.resx">
+      <DependentUpon>202006302322045_add Gallary Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007011746494_v2.resx">
+      <DependentUpon>202007011746494_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007011750520_v3.resx">
+      <DependentUpon>202007011750520_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007011911475_v4.resx">
+      <DependentUpon>202007011911475_v4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007012357513_v5.resx">
+      <DependentUpon>202007012357513_v5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007012359028_v6.resx">
+      <DependentUpon>202007012359028_v6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007021612010_add track Visitors Models.resx">
+      <DependentUpon>202007021612010_add track Visitors Models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

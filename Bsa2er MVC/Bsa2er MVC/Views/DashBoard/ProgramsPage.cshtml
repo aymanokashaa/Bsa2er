@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Bsa2er_MVC.Models.Program>
+
+    <div class="card w-100 " style="display:block">
+        <div class="card-header">
+            <h3 class="card-title text-right float-right">
+                @if (Model.Any(p => p.Program_Type == Bsa2er_MVC.Models.ProgramType.Program))
+                {
+                    <span>البرامج العلمية</span>
+                }
+                else if (Model.Any(p=>p.Program_Type==Bsa2er_MVC.Models.ProgramType.PublicProgram))
+                {
+                    <span>البرامج العامة</span>
+                }
+                else if (Model.Any(p=>p.Program_Type==Bsa2er_MVC.Models.ProgramType.Track))
+                {
+                    <span>الدورات العلمية</span>
+                }
+            </h3>
+        </div>
+        <div class="card-body">
+            <div class="tab-content p-0">
+                <p>
+                    @Html.ActionLink("اضافة دورة", "Create", "Programs",null, new { @class = "btn btn-info btn-block w-25 m-auto text-white" })
+                </p> 
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-6 col-lg-4 col-xl-4 p-2 tracks-box">
+                            <div class="card bg-info text-light cardStyle">
+                                <div class="img-c">
+                                    <img src="~/images/Programs/@item.Program_ImagePath">
+                                </div>
+                                <div class="card-body card-bodyStyle">
+                                    <h5 class="card-title">@item.Program_Title</h5>
+                                    <p class="card-text">@item.Program_Body</p>
+                                    @Html.ActionLink("تعديل", "Edit", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-danger" }) |
+                                    @Html.ActionLink("تفاصيل", "Details", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-warning" }) |
+                                    @Html.ActionLink("حذف", "Delete", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-secondary" })
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="card-footer clearfix">
+
+        </div>
+    </div>

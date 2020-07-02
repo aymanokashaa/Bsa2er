@@ -1,5 +1,6 @@
 ﻿using Bsa2er_MVC.Models;
 using Microsoft.AspNet.Identity;
+using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -8,10 +9,8 @@ namespace Bsa2er_MVC.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
         public ActionResult Index()
         {
-   
             return View();
         }
 
@@ -28,7 +27,7 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult Gallery()
         {
-            return View();
+            return View(db.Galleries.ToList());
         }
         public ActionResult News()
         {
@@ -37,7 +36,7 @@ namespace Bsa2er_MVC.Controllers
 
         public ActionResult PublicProgarms()
         {
-            return View();
+            return View(db.Programs.Where(p=>p.Program_Type==ProgramType.PublicProgram));
         }
         public ActionResult Program()
         {
@@ -46,7 +45,7 @@ namespace Bsa2er_MVC.Controllers
 
         public ActionResult Tracks()
         {
-            return View();
+            return View(db.Programs.Where(p => p.Program_Type == ProgramType.Track));
         }
         public ActionResult Track()
         {
@@ -54,9 +53,13 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult Progs()
         {
-            return View();
+            return View(db.Programs.Where(p => p.Program_Type == ProgramType.Program));
         }
         public ActionResult Prog()
+        {
+            return View();
+        }
+        public ActionResult BookSection()
         {
             return View();
         }

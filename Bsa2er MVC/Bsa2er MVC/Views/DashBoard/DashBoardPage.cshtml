@@ -34,19 +34,23 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!--news Style-->
     <link href="~/Content/DashBoardNews.css" rel="stylesheet" />
+    <link href="~/Content/Gallery.css" rel="stylesheet" />
+    <link href="~/Content/Program.css" rel="stylesheet" />
+   
+    <link href="~/Content/Track.css" rel="stylesheet" />
     <style>
 
         .Usercard {
             position: relative;
             width: 250px; /* Remove for full width */
-            height: 295px; /* Remove for full width */
+            height: 170px; /* Remove for full width */
             margin-bottom: 5px auto;
             box-shadow: 0 0 100px rgba(0,0,0, .3);
         }
 
         .Usercard-header {
             position: relative;
-            height: 200px;
+            height: 80px;
             background-size: cover;
             background-position: top;
         }
@@ -134,6 +138,7 @@
             padding-left: 10px;
             background-color: white;
             color: black;
+  
         }
 
         .Username {
@@ -155,15 +160,25 @@
         #BasaerLogo{
             transition:all 1s;
         }
+        .dispnon{
+            display:none;
+        }
+        #drop{
+            transition:all 1s;
+        }
+        #dropLink:hover {
+            cursor: pointer;
+        }
+     
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-maroon elevation-4 ">
+        <aside class="main-sidebar sidebar-dark-maroon elevation-4 " id="side">
             <!-- Brand Logo -->
-            <div class="Usercard">
-                <div class="Usercard-header" style="background-image: url(../../images/7.png)">
+            <div class="Usercard w-100">
+                <div class="Usercard-header" style="background-image: url(../../images/7.png);background-size:contain;background-repeat:no-repeat;">
                     <div class="Usercard-header-slanted-edge">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path class="Userpolygon" d="M-20,200,1000,0V200Z"></path></svg>
 
@@ -172,13 +187,13 @@
                 </div>
                 <div class="Usercard-body">
                     <div class="image">
-                        <img src="~/images/DashBoard/user.png" class=" elevation-2 img-circle" width="50" height="50" alt="User Image">
+                        <img src="~/@ViewBag.img" class=" elevation-2 img-circle" width="50" height="50" alt="User Image">
                     </div>
                     <h2 class="Username">@User.Identity.Name</h2>
 
                     @if (User.IsInRole("Owner"))
                     {
-                        <h4 class="Userjob-title"> مالك </h4>
+                        <h4 class="Userjob-title"> المالك </h4>
                     }
                     else if (User.IsInRole("Admin"))
                     {
@@ -196,7 +211,7 @@
             <div class="sidebar mt-3">
                 <!-- Sidebar Menu -->
                 <nav class="mt-0">
-                    <ul class="nav nav-pills nav-sidebar flex-column  text-right" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column text-right overflow-auto"  data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                     with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
@@ -263,13 +278,66 @@
                         </a>-->
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Programs/Index" class="nav-link">
+                            <a id="dropLink" class="nav-link" >
+                                <svg style="display: inline;width:20px;height:20px;" fill="black" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+
                                 <p>
                                     إدارة البرامج
 
                                 </p>
+
                                 <i class="float-left fa fa-video-camera"></i>
                             </a>
+                            <ul class="nav nav-pills nav-sidebar flex-column text-right dispnon" id="drop" >
+                                <li>
+                                    @Ajax.ActionLink("البرامج العامة", "ProgramsPage", "DashBoard", new { type = Bsa2er_MVC.Models.ProgramType.PublicProgram },
+                                       new AjaxOptions()
+                                       {
+                                           HttpMethod = "GET",
+                                           InsertionMode = InsertionMode.Replace,
+                                           UpdateTargetId = "ContentSection"
+                                       }, new { @class = "nav-link" })
+                                    @*<a href="/Programs/Index" class="nav-link">
+                                        <p>
+                                            البرامج العامة
+
+                                        </p>
+
+                                    </a>*@
+                                </li>
+                                <li>
+                                    @Ajax.ActionLink("البرامج العلمية", "ProgramsPage", "DashBoard", new { type = Bsa2er_MVC.Models.ProgramType.Program },
+                                       new AjaxOptions()
+                                       {
+                                           HttpMethod = "GET",
+                                           InsertionMode = InsertionMode.Replace,
+                                           UpdateTargetId = "ContentSection"
+                                       }, new { @class = "nav-link" })
+                                    @*<a href="/Programs/Index" class="nav-link">
+                                            <p>
+                                                البرامج العلمية
+
+                                            </p>
+
+                                        </a>*@
+                                </li>
+                                <li>
+                                    @Ajax.ActionLink("الدورات العلمية", "ProgramsPage", "DashBoard", new { type = Bsa2er_MVC.Models.ProgramType.Track },
+                                       new AjaxOptions()
+                                       {
+                                           HttpMethod = "GET",
+                                           InsertionMode = InsertionMode.Replace,
+                                           UpdateTargetId = "ContentSection"
+                                       }, new { @class = "nav-link" })
+                                    @*<a href="/Programs/Index" class="nav-link">
+                                        <p>
+                                            الدورات العلمية
+
+                                        </p>
+                                      
+                                    </a>*@
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item has-treeview">
                             @Ajax.ActionLink(" ", "News", "DashBoard", null,
@@ -288,22 +356,36 @@
                                 </a>-->
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Booksections/Index" class="nav-link">
+                            @Ajax.ActionLink("إدارة الكتب", "BookSectionPage", "DashBoard", null,
+                               new AjaxOptions()
+                               {
+                                   HttpMethod = "GET",
+                                   InsertionMode = InsertionMode.Replace,
+                                   UpdateTargetId = "ContentSection"
+                               }, new { @class = "nav-link", id = "AjaxLinkBooks" })
+                            @*<a href="/Booksections/Index" class="nav-link">
                                 <p>
                                     إدارة الكتب
 
                                 </p>
                                 <i class="float-left fa fa-book"></i>
-                            </a>
+                            </a>*@
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            @Ajax.ActionLink("إدارة الصور", "PicturesPage", "DashBoard", null,
+                                 new AjaxOptions()
+                                 {
+                                     HttpMethod = "GET",
+                                     InsertionMode = InsertionMode.Replace,
+                                     UpdateTargetId = "ContentSection"
+                                 }, new { @class = "nav-link", id = "AjaxLinkGallery" })
+                            @*<a href="#" class="nav-link">
                                 <p>
                                     إدارة الصور
 
                                 </p>
                                 <i class="float-left fa fa-image"></i>
-                            </a>
+                            </a>*@
                         </li>
                     </ul>
                 </nav>
@@ -313,13 +395,18 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="background-image: url(../../images/6.jpg)">
+        <div class="content-wrapper " style="background-image: url(../../images/6.jpg)">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1 class="m-0 text-dark" style="font-size: 2.5rem;">Dashboard</h1>
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                            @Html.AntiForgeryToken()
+                            <a class="brand-link text-danger" href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a>
+                            }
                         </div><!-- /.col -->
 
                         <div class="col-sm-6">
@@ -336,11 +423,11 @@
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>150</h3>
+                                    <h3>@ViewBag.NumOfStudents</h3>
 
                                     <p style="font-size: 25px;">عدد الطلاب</p>
                                 </div>
@@ -351,11 +438,11 @@
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box  bg-info">
                                 <div class="inner">
-                                    <h3>53</h3>
+                                    <h3>@ViewBag.NumOfNewStudents</h3>
 
                                     <p style="font-size: 25px;">الطلاب الجدد</p>
                                 </div>
@@ -365,11 +452,11 @@
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-4 col-6">
                             <!-- small box -->
                             <div class="small-box  bg-olive">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3>@ViewBag.NumOfProgram</h3>
 
                                     <p style="font-size: 25px;">عدد الدورات</p>
                                 </div>
@@ -379,13 +466,27 @@
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-6 col-6">
                             <!-- small box -->
                             <div class="small-box bg-teal">
                                 <div class="inner">
-                                    <h3>65</h3>
+                                    <h3>@ViewBag.NumOfAllVisitors</h3>
 
-                                    <p style="font-size: 25px;">عدد الزائرين</p>
+                                    <p style="font-size: 25px;"> عدد الزائرين الكلى</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-user-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-6 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-teal">
+                                <div class="inner">
+                                    <h3>@ViewBag.NumOfTodayVisitors</h3>
+
+                                    <p style="font-size: 25px;">عدد الزائرين اليوم</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fa fa-user-circle"></i>
@@ -452,6 +553,20 @@
         $("#AjaxLinkOne").html('<p>إدارة المشرفين</p ><i class="float-left fa fa-vcard"></i>').on("click", function () { $(".card").css("display", "block") });
         $("#AjaxLinkThree").html('<p>إدارة الطلاب</p ><i class="float-left fa fa-graduation-cap"></i>').on("click", function () { $(".card").css("display", "block") });
         $("#AjaxLinkNews").html('<p>إدارة الأخبار</p ><i class="float-left fa fa-newspaper-o"></i>').on("click", function () { $(".card").css("display", "block") });
+        $("#AjaxLinkGallery").html('<p>إدارة الصور</p ><i class="float-left fa fa-image"></i>').on("click", function () { $(".card").css("display", "block") });
+        $("#AjaxLinkBooks").html('<p>إدارة الكتب</p ><i class="float-left fa fa-book"></i>').on("click", function () { $(".card").css("display", "block") });
+
+        $("#dropLink").on("click", function () {
+
+            $("#drop").toggleClass("dispnon");
+        });
+        window.onresize = function () {
+            if (window.innerWidth <= 500) {
+                $("#side").removeClass("main-sidebar");
+            } else {
+                $("#side").addClass("main-sidebar");
+            }
+        };
     </script>
 
 </body>

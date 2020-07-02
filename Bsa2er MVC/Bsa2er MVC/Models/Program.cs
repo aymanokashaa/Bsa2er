@@ -7,7 +7,8 @@ namespace Bsa2er_MVC.Models
     public class Program
     {
         [Key]
-        public int Program_Id { get; set; }
+        [Column(Order =0)]
+        public int ProgramId { get; set; }
         [Display(Name = "الصورة الرئيسة")]
         public string Program_MainImage { get; set; }
         [Display(Name = "عنوان البرنامج")]

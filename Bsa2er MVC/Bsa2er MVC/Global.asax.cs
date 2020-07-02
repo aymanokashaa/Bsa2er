@@ -1,3 +1,5 @@
+using Bsa2er_MVC.Models;
+using System;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -12,6 +14,10 @@ namespace Bsa2er_MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+        protected void Application_BeginRequest()
+        {
+            VisitorOperations.AddVisitor(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
         }
     }
 }

@@ -94,7 +94,7 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Program_Id,Program_Title,Program_MainImage,Program_Body,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture,Ins_Id")] Program program)
+        public async Task<ActionResult> Edit([Bind(Include = "ProgramId,Program_Title,Program_MainImage,Program_Body,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture,Ins_Id")] Program program)
         {
             if (ModelState.IsValid)
             {

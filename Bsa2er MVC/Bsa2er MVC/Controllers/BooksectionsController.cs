@@ -60,7 +60,7 @@ namespace Bsa2er_MVC.Controllers
                 }
                 db.Booksections.Add(booksection);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DashBoardPage","DashBoard");
             }
 
             return View(booksection);
@@ -96,7 +96,7 @@ namespace Bsa2er_MVC.Controllers
                 booksection.imagepath = filename;
                 db.Entry(booksection).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("DashBoardPage", "DashBoard");
             }
             return View(booksection);
         }
@@ -124,7 +124,7 @@ namespace Bsa2er_MVC.Controllers
             Booksection booksection = db.Booksections.Include(a=>a.Books).FirstOrDefault(a=>a.id==id);
             db.Booksections.Remove(booksection);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("DashBoardPage", "DashBoard");
         }
 
         protected override void Dispose(bool disposing)

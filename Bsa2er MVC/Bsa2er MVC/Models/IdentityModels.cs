@@ -14,6 +14,7 @@ namespace Bsa2er_MVC.Models
     [MetadataType(typeof(HelperClass))]
     public class ApplicationUser : IdentityUser
     {
+        [Display(Name ="البلد")]
         public string Country { set; get; }
         [Display(Name ="المؤهل")]
         public string Qualification { set; get; }
@@ -28,6 +29,8 @@ namespace Bsa2er_MVC.Models
         public string fullname { set; get;}
 
        public string birthcountry { set; get; }
+        [Display(Name ="تاريخ التسجيل ")]
+        public DateTime dataOfRegister { set; get; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
@@ -74,6 +77,8 @@ namespace Bsa2er_MVC.Models
         public virtual DbSet<Question> Questions { set; get; }
         public virtual DbSet<StudentsPrograms> StudentsPrograms { set; get; }
         public virtual DbSet<Student> Students { set; get; }
+        public virtual DbSet<Gallery> Galleries { set; get; }
+        public virtual DbSet<Visitor> Visitors { set; get; }
         public static ApplicationDbContext Create()
         {
 

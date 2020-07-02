@@ -8,10 +8,7 @@
     </div> <!--card-header-->
     <div class="card-body">
         <div class="tracks-box">
-            <p class="text-center">
-                @Html.ActionLink("أنشاء خبر جديد", "Create", null, new { dir = "rtl", @class = "btn btn-secondary float-right" })
-            </p>
-            <h1 class="text-center m-4 ">الأخبار</h1>
+
             <div class="row ">
                 @foreach (var item in Model)
                 {
@@ -34,6 +31,9 @@
                     </div>
                 }
             </div>
+            <p class="text-center">
+                @Html.ActionLink("أنشاء خبر جديد", "Create","News", null, new { dir = "rtl", @class = "btn btn-secondary float-right" })
+            </p>
         </div>
 
     </div>  <!--card-body-->
