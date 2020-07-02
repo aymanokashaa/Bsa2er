@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Bsa2er_MVC
+﻿namespace Bsa2er_MVC.Controllers
 {
     public class message
     {
