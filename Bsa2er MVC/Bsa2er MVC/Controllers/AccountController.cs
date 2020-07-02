@@ -477,6 +477,21 @@ namespace Bsa2er_MVC.Controllers
             return RedirectToAction("StudentDashboard");
         }
 
+        public ActionResult AddProgram(int id)
+        {
+            var userID = User.Identity.GetUserId();
+            try
+            {
+                db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
+                db.SaveChanges();
+            }
+            catch
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
