@@ -1,94 +1,25 @@
-﻿
+﻿@model IEnumerable<Bsa2er_MVC.Models.Program>
 @{
     ViewBag.Title = "البرامج العامة";
 }
     <div class="tracks-box">
       <h1 class="text-center m-4">البرامج العامة</h1>
       <div class="row">
-          <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-              <div class="card bg-info text-light">
-                  <div class="img-c">
-                      <img src="https://via.placeholder.com/150">
+          @foreach (var item in Model)
+          {
+              <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                  <div class="card bg-info text-light">
+                      <div class="img-c">
+                          <img src="@item.Program_MainImage">
+                      </div>
+                      <div class="card-body">
+                          <h5 class="card-title">@item.Program_Title</h5>
+                          <p class="card-text">@item.Program_Body</p>
+                          <a href="/Home/Program/@item.Program_Id" class="btn btn-dark">تفاصيل البرنامج</a>
+                      </div>
                   </div>
-                  <div class="card-body">
-                      <h5 class="card-title">اسم البرنامج</h5>
-                      <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-                      <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-                    </div>
               </div>
-          </div>
-          <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-            <div class="card bg-info text-light">
-                <div class="img-c">
-                    <img src="https://via.placeholder.com/150">
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">اسم البرنامج</h5>
-                    <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-                    <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-          <div class="card bg-info text-light">
-              <div class="img-c">
-                  <img src="https://via.placeholder.com/150">
-              </div>
-              <div class="card-body">
-                  <h5 class="card-title">اسم البرنامج</h5>
-                  <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-                  <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-                </div>
-          </div>
+          }
       </div>
-      <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-        <div class="card bg-info text-light">
-            <div class="img-c">
-                <img src="https://via.placeholder.com/150">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">اسم البرنامج</h5>
-                <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-                <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-      <div class="card bg-info text-light">
-          <div class="img-c">
-              <img src="https://via.placeholder.com/150">
-          </div>
-          <div class="card-body">
-              <h5 class="card-title">اسم البرنامج</h5>
-              <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-              <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-            </div>
-      </div>
-  </div>
-  <div class="col-md-6 col-lg-4 col-xl-3 p-2">
-    <div class="card bg-info text-light">
-        <div class="img-c">
-            <img src="https://via.placeholder.com/150">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">اسم البرنامج</h5>
-            <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-            <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-        </div>
-    </div>
-</div>
-<div class="col-md-6 col-lg-4 col-xl-3 p-2">
-  <div class="card bg-info text-light">
-      <div class="img-c">
-          <img src="https://via.placeholder.com/150">
-      </div>
-      <div class="card-body">
-          <h5 class="card-title">اسم البرنامج</h5>
-          <p class="card-text">تلخيص عن ما يدرس في البرنامج.</p>
-                <a href="program.html" class="btn btn-dark">تفاصيل البرنامج</a>
-        </div>
-    </div>
-        </div>
-    </div>
  </div>
 

@@ -59,28 +59,34 @@ namespace Bsa2er_MVC.Controllers
 
         public ActionResult PublicProgarms()
         {
-            return View(db.Programs.Where(p=>p.Program_Type==ProgramType.PublicProgram));
+            var progs = db.Programs.Where(p => p.Program_Type == ProgramType.PublicProgram);
+            return View(progs);
         }
-        public ActionResult Program()
+        public ActionResult Program(int id)
         {
-            return View();
+            var prog = db.Programs.FirstOrDefault(p => p.ProgramId == id);
+            return View(prog);
         }
 
         public ActionResult Tracks()
         {
-            return View(db.Programs.Where(p => p.Program_Type == ProgramType.Track));
+            var progs = db.Programs.Where(p => p.Program_Type == ProgramType.Track);
+            return View(progs);
         }
-        public ActionResult Track()
+        public ActionResult Track(int id)
         {
-            return View();
+            var prog = db.Programs.FirstOrDefault(p => p.ProgramId == id);
+            return View(prog);
         }
         public ActionResult Progs()
         {
-            return View(db.Programs.Where(p => p.Program_Type == ProgramType.Program));
+            var progs = db.Programs.Where(p => p.Program_Type == ProgramType.Program);
+            return View(progs);
         }
-        public ActionResult Prog()
+        public ActionResult Prog(int id)
         {
-            return View();
+            var prog = db.Programs.FirstOrDefault(p => p.ProgramId == id);
+            return View(prog);
         }
         public ActionResult BookSection()
         {
