@@ -199,9 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006302212446_v1.cs" />
-    <Compile Include="Migrations\202006302212446_v1.Designer.cs">
-      <DependentUpon>202006302212446_v1.cs</DependentUpon>
+    <Compile Include="Migrations\202007021639244_v.cs" />
+    <Compile Include="Migrations\202007021639244_v.Designer.cs">
+      <DependentUpon>202007021639244_v.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -576,8 +576,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202006302212446_v1.resx">
-      <DependentUpon>202006302212446_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007021639244_v.resx">
+      <DependentUpon>202007021639244_v.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
