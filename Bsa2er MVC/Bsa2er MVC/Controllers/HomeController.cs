@@ -84,7 +84,7 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult BookSection()
         {
-            return View();
+            return View(db.Booksections.ToList());
         }
 
     }

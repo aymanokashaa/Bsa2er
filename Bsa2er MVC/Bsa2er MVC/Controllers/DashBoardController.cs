@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Bsa2er_MVC.Controllers
 {
-    [Authorize(Roles ="Admin"),Authorize(Roles ="Owner")]
+    [Authorize(Roles ="Admin,Owner")]
     public class DashBoardController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

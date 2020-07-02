@@ -147,7 +147,7 @@ namespace Bsa2er_MVC.Controllers
         //
         // GET: /Account/Register
         [AllowAnonymous]
-        public ActionResult Register(int ?id)
+        public ActionResult Register(string id)
         {
             ViewBag.id = id;
             return View();
@@ -158,27 +158,27 @@ namespace Bsa2er_MVC.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(int ?id,RegisterViewModel model)
+        public async Task<ActionResult> Register(string id,RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
                 string date = model.year+"-"+ model.month +"-"+ model.day;
-                var user = new ApplicationUser { UserName = model.Username,pathofimage="images/4.jpg",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
+                var user = new ApplicationUser { UserName = model.Username,pathofimage="images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    if(id==1)
+                    if(id==db.Roles.SingleOrDefault(r=>r.Name=="Admin").Id)
                     {
                         await UserManager.AddToRolesAsync(user.Id,"Admin");
                         return RedirectToAction("DashBoardPage", "DashBoard");
                     }
-                    else if(id==2)
+                    else if(id == db.Roles.SingleOrDefault(r => r.Name == "Instructor").Id)
                     {
                         await UserManager.AddToRolesAsync(user.Id,"Instructor");
                         return RedirectToAction("DashBoardPage", "DashBoard");
 
                     }
-                    else
+                    else if(id == db.Roles.SingleOrDefault(r => r.Name == "Student").Id)
                     {
                        await UserManager.AddToRolesAsync(user.Id,"Student");
                         string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
