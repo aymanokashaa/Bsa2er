@@ -536,7 +536,19 @@ namespace Bsa2er_MVC.Controllers
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                if(error.StartsWith("Name"))
+                {
+                    ModelState.AddModelError("", "اسم المستخدم مسجل من قبل");
+                }
+                else if(error.StartsWith("Email"))
+                {
+                    ModelState.AddModelError("", "البريد الالكتروني مسجل من قبل");
+                }
+                else
+                {
+                    ModelState.AddModelError("", error);
+
+                }
             }
         }
 

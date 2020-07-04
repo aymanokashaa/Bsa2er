@@ -200,37 +200,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007021639244_v.cs" />
-    <Compile Include="Migrations\202007021639244_v.Designer.cs">
-      <DependentUpon>202007021639244_v.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202006302322045_add Gallary Table.cs" />
-    <Compile Include="Migrations\202006302322045_add Gallary Table.Designer.cs">
-      <DependentUpon>202006302322045_add Gallary Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007011746494_v2.cs" />
-    <Compile Include="Migrations\202007011746494_v2.Designer.cs">
-      <DependentUpon>202007011746494_v2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007011750520_v3.cs" />
-    <Compile Include="Migrations\202007011750520_v3.Designer.cs">
-      <DependentUpon>202007011750520_v3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007011911475_v4.cs" />
-    <Compile Include="Migrations\202007011911475_v4.Designer.cs">
-      <DependentUpon>202007011911475_v4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007012357513_v5.cs" />
-    <Compile Include="Migrations\202007012357513_v5.Designer.cs">
-      <DependentUpon>202007012357513_v5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007012359028_v6.cs" />
-    <Compile Include="Migrations\202007012359028_v6.Designer.cs">
-      <DependentUpon>202007012359028_v6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007021612010_add track Visitors Models.cs" />
-    <Compile Include="Migrations\202007021612010_add track Visitors Models.Designer.cs">
-      <DependentUpon>202007021612010_add track Visitors Models.cs</DependentUpon>
+    <Compile Include="Migrations\202007041356492_v.cs" />
+    <Compile Include="Migrations\202007041356492_v.Designer.cs">
+      <DependentUpon>202007041356492_v.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -619,29 +591,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007021639244_v.resx">
-      <DependentUpon>202007021639244_v.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202006302322045_add Gallary Table.resx">
-      <DependentUpon>202006302322045_add Gallary Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007011746494_v2.resx">
-      <DependentUpon>202007011746494_v2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007011750520_v3.resx">
-      <DependentUpon>202007011750520_v3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007011911475_v4.resx">
-      <DependentUpon>202007011911475_v4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007012357513_v5.resx">
-      <DependentUpon>202007012357513_v5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007012359028_v6.resx">
-      <DependentUpon>202007012359028_v6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007021612010_add track Visitors Models.resx">
-      <DependentUpon>202007021612010_add track Visitors Models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007041356492_v.resx">
+      <DependentUpon>202007041356492_v.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
