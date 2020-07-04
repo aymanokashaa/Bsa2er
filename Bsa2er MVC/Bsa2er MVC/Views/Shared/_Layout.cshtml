@@ -33,19 +33,19 @@
                         <li><span class="nav-item">@Html.ActionLink("الرئيسة", "Index", "Home", null, new { @class = "nav-link text-warning" })</span></li>
                         <li> <span class="nav-item">@Html.ActionLink("عن الأكاديمية", "About", "Home", null, new { @class = "nav-link text-warning" })</span></li>
                         <li> <span class="nav-item">@Html.ActionLink("الأخبار", "News", "Home", null, new { @class = "nav-link text-warning" }) </span></li>
-                        <li> <span class="nav-item"><a class="nav-link text-warning" href="PublicProgrames.html">البرامج العامة</a></span></li>
+                        <li> <span class="nav-item">@Html.ActionLink("البرامج العامه", "PublicProgarms", "Home", null, new { @class = "nav-link text-warning" })</span></li>
                         <li>
                             <span class="nav-item">
                                 <a class="nav-link text-warning" id="mytracks" style="cursor: pointer;">الدورات والبرامج العلمية</a>
                                 <ul id="alltracks" style="z-index:10;">
-                                    <li><span class="nav-item"><a class="nav-link" href="progs.html">البرامج العلمية </a></span></li>
-                                    <li><span class="nav-item"><a class="nav-link" href="Tracks.html">الدورات العلمية  </a></span></li>
+                                    <li><span class="nav-item">@Html.ActionLink("البرامج العلميه", "Progs", "Home", null, new { @class = "nav-link" })</span></li>
+                                    <li><span class="nav-item">@Html.ActionLink("الدورات العلميه", "Tracks", "Home", null, new { @class = "nav-link" })</span></li>
                                 </ul>
                             </span>
                         </li>
-                        <li> <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link text-warning" })</span></li>
-                        <li> <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link text-warning" }) </span></li>
-                        <li> <span class="nav-item"><a class="nav-link text-warning" href="contactus.html">اتصل بنا</a></span></li>
+                        <li> <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link" })</span></li>
+                        <li> <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span></li>
+                        <li> <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span></li>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {
                             <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> DashBoard</a></span></li>
@@ -123,21 +123,21 @@
                         <span class="nav-item">@Html.ActionLink("الرئيسة", "Index", "Home", null, new { @class = "nav-link" })</span>
                         <span class="nav-item">@Html.ActionLink("عن الأكاديمية", "About", "Home", null, new { @class = "nav-link" })</span>
                         <span class="nav-item">@Html.ActionLink("الأخبار", "News", "Home", null, new { @class = "nav-link" })</span>
-                        <span class="nav-item"><a class="nav-link" href="PublicProgrames.html">البرامج العامة</a></span>
+                        <span class="nav-item">@Html.ActionLink("البرامج العامه", "PublicProgarms", "Home", null, new { @class = "nav-link" })</span>
                         <!-- Default dropright button -->
                         <span class="link-group dropdown mt-2" style="cursor: pointer;">
                             <a class="link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 الدورات والبرامج العلمية
                             </a>
                             <div class="dropdown-menu bg-light" style="z-index:10;">
-                                <span class="nav-item"><a class="nav-link" href="progs.html">البرامج العلمية </a></span>
-                                <span class="nav-item"><a class="nav-link" href="Tracks.html">الدورات العلمية  </a></span>
+                                <span class="nav-item">@Html.ActionLink("البرامج العلميه", "Progs", "Home", null, new { @class = "nav-link" })</span>
+                                <span class="nav-item">@Html.ActionLink("الدورات العلميه", "Tracks", "Home", null, new { @class = "nav-link" })</span>
                                 <!-- Dropdown menu links -->
                             </div>
                         </span>
                         <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link" })</span>
                         <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span>
-                        <span class="nav-item"><a class="nav-link" href="contactus.html">اتصل بنا</a></span>
+                        <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {
                             <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">To DashBoard</a></span>
@@ -173,7 +173,7 @@
                 </div>
             </div>
             <div class="col-md-6 order-1 order-md-2">
-                <a href="index.html" id="imgfooter">
+                <a href="/Home/Index" id="imgfooter">
                     <img id="image3" src="~/images/7.png" />
                 </a>
                 <p style="text-align: center;" class="mb-3">أكاديمية قائمة على بث العلم الشرعي النافع للمسلم والمسلمة</p>
