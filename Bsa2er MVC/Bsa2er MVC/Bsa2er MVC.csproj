@@ -212,6 +212,7 @@
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
     <Compile Include="Models\Certification.cs" />
+    <Compile Include="Models\CertificationViewModel.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -580,6 +581,7 @@
     <Content Include="Views\Home\BookSection.cshtml" />
     <Content Include="Views\Account\GoConfirmYourEmail.cshtml" />
     <Content Include="Views\Certification\getCertification.cshtml" />
+    <Content Include="Views\Certification\getCertificationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
