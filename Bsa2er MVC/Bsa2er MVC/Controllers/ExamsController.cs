@@ -161,6 +161,7 @@ namespace Bsa2er_MVC.Controllers
         {
             var pdf = new ActionAsPdf("GradeList", new { id = id });
             pdf.FileName = "بيان درجات الطالب" + ".pdf";
+            pdf.Cookies = Request.Cookies.AllKeys.ToDictionary(k => k, k => Request.Cookies[k].Value);
             return pdf;
         }
 

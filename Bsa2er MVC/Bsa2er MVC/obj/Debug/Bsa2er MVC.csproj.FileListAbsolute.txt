@@ -64,3 +64,4 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache

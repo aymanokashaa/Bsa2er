@@ -40,6 +40,8 @@ namespace Bsa2er_MVC.Controllers
         public ActionResult PrintPdf(int pId,string sId)
         {
             var pdf = new ActionAsPdf("getCertification", new {progId=pId,stdId=sId });
+            pdf.FileName = "شهادة إتمام البرنامج" + ".pdf";
+            pdf.Cookies = Request.Cookies.AllKeys.ToDictionary(k => k, k => Request.Cookies[k].Value);
             return pdf;
         }
     }
