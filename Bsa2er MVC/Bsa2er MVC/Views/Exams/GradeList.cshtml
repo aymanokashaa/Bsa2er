@@ -1,0 +1,35 @@
+﻿@model Bsa2er_MVC.Models.Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>بيان درجات الطالب</title>
+    @Styles.Render("~/Content/css")
+    <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
+</head>
+<body>
+    <table class="table table-striped w-75 mx-auto my-5 h2 text-right" style="direction:rtl">
+        <thead>
+            <tr class="d-flex">
+                <td class="col-6 border-top-0">البرنامج</td>
+                <td class="col-6 border-top-0">الدرجة</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
+            {
+                <tr class="d-flex">
+                    <td class="col-6">@item.Program.Program_Title</td>
+                    <td class="col-6">@item.ProgramGrade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @Scripts.Render("~/bundles/js")
+</body>
+</html>
