@@ -1,5 +1,6 @@
 ﻿using Bsa2er_MVC.Models;
 using Microsoft.AspNet.Identity;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -148,6 +149,20 @@ namespace Bsa2er_MVC.Controllers
             db.Exams.Remove(exam);
             await db.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult GradeList(string id)
+        {
+            var std = db.Students.Find(id);
+            return View(std);
+        }
+
+        public ActionResult PrintList(string id)
+        {
+            var pdf = new ActionAsPdf("GradeList", new { id = id });
+            pdf.FileName = "بيان درجات الطالب" + ".pdf";
+            pdf.Cookies = Request.Cookies.AllKeys.ToDictionary(k => k, k => Request.Cookies[k].Value);
+            return pdf;
         }
 
         protected override void Dispose(bool disposing)

@@ -226,7 +226,6 @@
     <Compile Include="Models\StudentsPrograms.cs" />
     <Compile Include="Models\Visitor.cs" />
     <Compile Include="Models\VisitorOperations.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -390,6 +389,7 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="App_Browsers\qt.browser" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -581,6 +581,7 @@
     <Content Include="Views\Home\BookSection.cshtml" />
     <Content Include="Views\Account\GoConfirmYourEmail.cshtml" />
     <Content Include="Views\Certification\getCertification.cshtml" />
+    <Content Include="Views\Exams\GradeList.cshtml" />
     <Content Include="Views\Certification\getCertificationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>

@@ -421,6 +421,7 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe.
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.dll
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Rotativa.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.pdb
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.xml
