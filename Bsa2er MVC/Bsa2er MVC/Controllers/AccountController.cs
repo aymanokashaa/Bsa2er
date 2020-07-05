@@ -439,6 +439,7 @@ namespace Bsa2er_MVC.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Student")]
         public ActionResult StudentDashboard()
         {
             var userID = User.Identity.GetUserId();
@@ -448,6 +449,7 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public ActionResult ChangeInfo(Student newUser)
         {
             if (ModelState.IsValid)
@@ -466,6 +468,7 @@ namespace Bsa2er_MVC.Controllers
         }
 
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
             var userID = User.Identity.GetUserId();
@@ -485,6 +488,7 @@ namespace Bsa2er_MVC.Controllers
             return RedirectToAction("StudentDashboard");
         }
 
+        [Authorize(Roles = "Student")]
         public ActionResult AddProgram(int id)
         {
             var userID = User.Identity.GetUserId();
