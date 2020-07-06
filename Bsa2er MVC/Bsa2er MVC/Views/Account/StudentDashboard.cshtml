@@ -317,7 +317,7 @@
                         </tbody>
                     </table>
                     <div class="row mt-3">
-                        <a class="btn btn-success text-white mx-auto">بيان الدرجات</a>
+                        <a class="btn btn-success text-white mx-auto" href="/Exams/PrintList/@Model.StdId">بيان الدرجات</a>
                     </div>
                 </div>
             </div>
@@ -339,7 +339,7 @@
                                 <tr class="d-flex">
                                     <td class="col-6">@item.Program.Program_Title</td>
                                     <td class="col-6">
-                                        <a href="/Certification/Create?progId=@item.Program_Id&&stdId=@Model.StdId" class="btn btn-info">تحميل الشهاده</a>
+                                        <a href="/Certification/PrintPdf?pId=@item.Program_Id&&sId=@Model.StdId" class="btn btn-info">تحميل الشهاده</a>
                                     </td>
                                 </tr>
                             }

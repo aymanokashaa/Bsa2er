@@ -23,8 +23,8 @@
                                 <p class="card-text"> @item.body.Substring(0, 20) .....</p>
 
                                 @Html.ActionLink("تعديل", "Edit", "News", new { id = item.id }, new { @class = "btn btn-primary mt-1" }) |
-                                @Html.ActionLink("التفاصيل", "Details", "News", new { id = item.id }, new { @class = "btn btn-primary mt-1" }) |
-                                @Html.ActionLink("حذف", "Delete", "News", new { id = item.id }, new { @class = "btn btn-primary mt-1" })
+                                @Html.ActionLink("التفاصيل", "Details", "News", new { id = item.id }, new { @class = "btn btn-success mt-1" }) |
+                                @Html.ActionLink("حذف", "Delete", "News", new { id = item.id }, new { @class = "btn  btn-danger mt-1" })
 
                             </div>
                         </div>

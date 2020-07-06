@@ -1,5 +1,6 @@
 ﻿using Bsa2er_MVC.Models;
 using Microsoft.AspNet.Identity;
+using Rotativa;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace Bsa2er_MVC.Controllers
     public class ExamsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -27,6 +29,7 @@ namespace Bsa2er_MVC.Controllers
             return View(exam);
         }
 
+        [Authorize(Roles = "Instructor")]
         public ActionResult Create(int id)
         {
             ViewBag.Program_Id = id;
@@ -35,6 +38,7 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Create(Exam exam)
         {
             if (ModelState.IsValid)
@@ -54,6 +58,7 @@ namespace Bsa2er_MVC.Controllers
             return View(exam);
         }
 
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -70,6 +75,7 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Edit(Exam exam)
         {
             if (ModelState.IsValid)
@@ -94,6 +100,7 @@ namespace Bsa2er_MVC.Controllers
             return View(exam);
         }
 
+        [Authorize(Roles = "Student")]
         public async Task<ActionResult> TakeExam(int? id)
         {
             if (id == null)
@@ -110,6 +117,7 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public async Task<ActionResult> TakeExam(int id, Dictionary<string, string> answers)
         {
             int grade = 0;
@@ -134,6 +142,7 @@ namespace Bsa2er_MVC.Controllers
             return RedirectToAction("StudentDashboard", "Account", null);
         }
 
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -148,6 +157,22 @@ namespace Bsa2er_MVC.Controllers
             db.Exams.Remove(exam);
             await db.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
+        }
+
+        [Authorize(Roles = "Student")]
+        public ActionResult GradeList(string id)
+        {
+            var std = db.Students.Find(id);
+            return View(std);
+        }
+
+        [Authorize(Roles = "Student")]
+        public ActionResult PrintList(string id)
+        {
+            var pdf = new ActionAsPdf("GradeList", new { id = id });
+            pdf.FileName = "بيان درجات الطالب" + ".pdf";
+            pdf.Cookies = Request.Cookies.AllKeys.ToDictionary(k => k, k => Request.Cookies[k].Value);
+            return pdf;
         }
 
         protected override void Dispose(bool disposing)
