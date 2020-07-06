@@ -1,4 +1,13 @@
-
+html
+{
+    height:100%;
+}
+body
+{
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+}
 * {
   box-sizing: border-box;
   font-family: "Changa", sans-serif;
