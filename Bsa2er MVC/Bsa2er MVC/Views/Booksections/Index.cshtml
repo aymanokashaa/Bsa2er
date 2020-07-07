@@ -26,23 +26,24 @@
 
                 </div>
                 <div class="card-footer text-center">
-                    @if (User.IsInRole("Instructor")|| User.IsInRole("Admin"))
+                    @if (User.IsInRole("Instructor") || User.IsInRole("Admin") || User.IsInRole("Owner"))
                     {
 
-                @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
-                    @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, new { @class = "btn btn-success" })}
+                        @Html.ActionLink("حذف", "Delete", new { id = item.id }, new { @class = "btn btn-danger" })
+                        @Html.ActionLink("اضافة كتاب", "Create", "Books", new { id = item.id }, new { @class = "btn btn-success ml-2" })}
+                    @Html.ActionLink("الكتب", "Index", "Books", new { id = item.id }, new { @class = "btn btn-dark ml-2" })
 
-                    @Html.ActionLink("تفاصيل", "Details", new { id = item.id }, new { @class = "btn btn-dark " })
-                    @Html.ActionLink("الكتب", "Index", "Books", new { id = item.id }, new { @class = "btn btn-dark " })
+                    }
+                    else
+                    {
+                    @Html.ActionLink("تفاصيل", "Details", new { id = item.id }, new { @class = "btn btn-dark ml-2 " })
+
+                    }
 
                 </div>
 
 
-            </div>
-
-         
-
-
+            </div>  
         }
     </div>
 
