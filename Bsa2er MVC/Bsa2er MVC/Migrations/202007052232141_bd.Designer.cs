@@ -7,13 +7,13 @@ namespace Bsa2er_MVC.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class v : IMigrationMetadata
+    public sealed partial class bd : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(v));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(bd));
         
         string IMigrationMetadata.Id
         {
-            get { return "202007041356492_v"; }
+            get { return "202007052232141_bd"; }
         }
         
         string IMigrationMetadata.Source

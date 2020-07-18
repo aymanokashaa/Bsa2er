@@ -5,7 +5,7 @@
 }
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit","Exams",FormMethod.Post,null))
 {
     @Html.AntiForgeryToken()
 

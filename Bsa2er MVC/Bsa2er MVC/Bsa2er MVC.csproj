@@ -192,9 +192,11 @@
     <Compile Include="Controllers\BooksectionsController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstructorDashboardController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\message.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -203,15 +205,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007041356492_v.cs" />
-    <Compile Include="Migrations\202007041356492_v.Designer.cs">
-      <DependentUpon>202007041356492_v.cs</DependentUpon>
+    <Compile Include="Migrations\202007052232141_bd.cs" />
+    <Compile Include="Migrations\202007052232141_bd.Designer.cs">
+      <DependentUpon>202007052232141_bd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
     <Compile Include="Models\Certification.cs" />
+    <Compile Include="Models\CertificationViewModel.cs" />
     <Compile Include="Models\Exam.cs" />
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -225,7 +228,6 @@
     <Compile Include="Models\StudentsPrograms.cs" />
     <Compile Include="Models\Visitor.cs" />
     <Compile Include="Models\VisitorOperations.cs" />
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -389,6 +391,7 @@
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="App_Browsers\qt.browser" />
+    <Content Include="libman.json" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -580,6 +583,11 @@
     <Content Include="Views\Home\BookSection.cshtml" />
     <Content Include="Views\Account\GoConfirmYourEmail.cshtml" />
     <Content Include="Views\Certification\getCertification.cshtml" />
+    <Content Include="Views\Exams\GradeList.cshtml" />
+    <Content Include="Views\Certification\getCertificationPartial.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\Manage.cshtml" />
+    <Content Include="Views\InstructorDashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -600,8 +608,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007041356492_v.resx">
-      <DependentUpon>202007041356492_v.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007052232141_bd.resx">
+      <DependentUpon>202007052232141_bd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

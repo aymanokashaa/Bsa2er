@@ -1,6 +1,7 @@
 ﻿@model Bsa2er_MVC.Models.Program
 
 @{
+    Layout = "~/Views/Shared/Manage.cshtml";
     ViewBag.Title = "تعديل";
 }
 
@@ -23,11 +24,17 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Program_MainImage, htmlAttributes: new { @class = "control-label col-md-2 mt-3 " })
+    <div class="form-group mt-3" style="min-height:170px;">
+        <label id="img" class="control-label col-md-2">الصورة الرئيسية</label>
         <div class="col-md-10">
-            <input type="file" class="form-control mt-3 w-75 mx-auto" name="mainimageFile" id="mainimageFile" value="~/images/Programs/@Model.Program_MainImage" />
-            @Html.ValidationMessageFor(model => model.Program_MainImage, "", new { @class = "text-danger" })
+            <img height="150" width="150" id="img" src="~/images/News/@Model.Program_MainImage" dir="rtl" class="float-right" />
+            @Html.HiddenFor(model => model.Program_MainImage)
+        </div>
+    </div>
+    <div class="form-group mt-3" style="min-height:50px;">
+        <label id="newImg" class="control-label col-md-2">الصورة الجديدة</label>
+        <div class="col-md-10">
+            <input name="mainimgFile" type="file" id="newImg" class="form-control" />
         </div>
     </div>
 
@@ -70,14 +77,17 @@
         </div>
     </div>
 
-    <div class="form-group  progimg">
-        <label class="control-label col-md-2 mt-3" id="img">صورة البرنامج</label>
+    <div class="form-group mt-3" style="min-height:170px;">
+        <label id="img" class="control-label col-md-2">صورة البرنامج / الدورة</label>
         <div class="col-md-10">
-            <input type="file" class="form-control mt-3 w-75 mx-auto" name="imageFile" id="imageFile" value="~/images/Programs/@ViewBag.Program_ImagePath" />
-            @*@Html.LabelFor(model => model.Program_ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Program_ImagePath, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Program_ImagePath, "", new { @class = "text-danger" })*@
+            <img height="150" width="150" id="img" src="~/images/News/@Model.Program_ImagePath" dir="rtl" class="float-right" />
+            @Html.HiddenFor(model => model.Program_ImagePath)
+        </div>
+    </div>
+    <div class="form-group mt-3" style="min-height:50px;">
+        <label id="newImg" class="control-label col-md-2">الصورة الجديدة</label>
+        <div class="col-md-10">
+            <input name="imgFile" type="file" id="newImg" class="form-control" />
         </div>
     </div>
 
@@ -133,7 +143,7 @@
                 $(".proglink").show();
                 $(".progimg").hide();
             }
-        else if ($(".progtype").val() == "0" || ($(".progtype").val() == "1" ) {
+        else if ($(".progtype").val() == "0" || ($(".progtype").val() == "1" )) {
                 $(".proglink").hide();
                 $(".progimg").show();
             }

@@ -3,7 +3,7 @@ namespace Bsa2er_MVC.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class v : DbMigration
+    public partial class bd : DbMigration
     {
         public override void Up()
         {

@@ -2,22 +2,57 @@
 
 @{
     ViewBag.Title = "Edit";
+    string[] qualificationArr = new string[4]
+    {
+        "متوسط","ثانوي","بكالريوس","دراسات عليا"
+    };
+    string[] cities = new string[]
+    {
+        "مصر","المملكة العربية السعودية","سوريا","الجزائر","المغرب","إثيوبيا","آروبا","أرمينيا","أنتاركتيكا"
+        ,"أنتيغوا وبربودا","إسبانيا","أستراليا","أستونيا","أذربيجان","أريتريا","أفغانستان","الأرجنتين","الأردن"
+        ,"الإقليم البريطاني في المحيط الهندي","الإكوادور","الإمارات العربية المتحدة","ألبانيا","الباهاما","البحرين"
+        ,"البرازيل","البرتغال","البوسنة والهرسك","الجابون","الجبل الأسود","الجزائر","الدانمرك","الرأس الأخضر"
+        ,"السلفادور","السنغال","السودان","السويد","الصحراء الغربية","الصومال","الصين","العراق","الفاتيكان"
+        ,"الفلبين","الكاميرون","الكونغو - برازافيل","الكونغو - كينشاسا","الكويت","ألمانيا","المغرب"
+        ,"المقاطعات الجنوبية الفرنسية","المكسيك","المملكة العربية السعودية","المملكة المتحدة","النرويج"
+        ,"النمسا","النيجر","الهند","اليابان","اليمن","اليونان","أندورا","أندونيسيا","أنغويلا","أنغولا"
+        ,"أورغواي","أوزبكستان","أوغندا","أوكرانيا","إيران","أيسلندا","إيطاليا","أيرلندا","باراغواي"
+        ,"بالاو","باكستان","بتسوانا","بربادوس","برمودا","بروناي","بلجيكا","بلغاريا","بليز","بنجلاديش"
+        ,"بنما","بنين","بوتان","بورتوريكو","بوركينا فاسو","بوروندي","بولندا","بوليفيا","بولينيزيا الفرنسية"
+        ,"بيرو","تانزانيا","تايلاند","تايوان","تركمانستان","تشاد","تركيا","ترينيداد وتوباغو","توجو","توفالو"
+        ,"توكيلو","تونس","تونغا","تيمور الشرقية","جامايكا","الولايات المتحدة","بابوا غينيا الجديدة"
+        ,"جبل طارق","جزر الترك وجايكوس","جزر القمر","جزر الكايمن","جزر المالديف","جزر الولايات المتحدة النائية"
+        ,"جزر بيتكيرن","جزر سليمان","جزر فارو","جزر فرجين الأمريكية","جزر فرجين البريطانية","جزر فوكلاند","جزر كوكوس"
+        ,"جزر كوك","جزر ماريانا الشمالية","جزر والس وفوتونا","جزيرة الكريسماس","جزيرة مان","جزيرة نورفوك"
+        ,"جمهورية أفريقيا الوسطى","جمهورية التشيك","جمهورية الدومينيك","جنوب أفريقيا","جوادلوب","جورجيا","جيبوتي"
+        ,"جورجيا الجنوبية وجزر ساندويتش الجنوبية","دومينيكا","رواندا","روسيا","روسيا البيضاء","رومانيا","زامبيا"
+        ,"زيمبابوي","ساحل العاج","سان بارتليمي","ساموا","ساموا الأمريكية","سانت بيير وميكولون","سانت فنسنت وغرنادين"
+        ,"سانت كيتس ونيفيس","سانت لوسيا","سانت مارتن","سانت هيلنا","سان مارينو","ساو تومي وبرينسيبي","سريلانكا"
+        ,"سفالبارد وجان مايان","سلوفاكيا","سلوفينيا","سنغافورة","سوازيلاند","سوريا","سورينام","سويسرا","سيراليون"
+        ,"سيشل","صربيا","طاجكستان","عُمان","غامبيا","غانا","غرينادا","غرينلاند","غواتيمالا","غوام","غويانا الفرنسية"
+        ,"غيانا","غيرنزي","غينيا","غينيا بيساو","غينيا الإستوائية","فانواتو","فرنسا","فلسطين","فنزويلا","فنلندا"
+        ,"فيتنام","فيجي","قبرص","قرغيزستان","قطر","كازاخستان","كاليدونيا الجديدة","كرواتيا","كمبوديا","كندا","كوبا"
+        ,"كوستاريكا","كوريا الجنوبية","كوريا الشمالية","كوسوفو","كولومبيا","كيريباتي","كينيا","لاتفيا","لاوس"
+        ,"لبنان","لوكسمبورغ","ليبيريا","ليبيا","ليتوانيا","ليختنشتاين","ليسوتو","مارتينيك","مالطا","مالي"
+        ,"ماليزيا","مايوت","مدغشقر","مصر","مقدونيا","مكاو الصينية (منطقة إدارية خاصة)","ملاويمنغوليا","موريتانيا"
+        ,"موريشيوس","موزمبيق","مولدافيا","موناكو","مونتسرات","ميكرونيزيا","ميانمار -بورما","ناميبيا","ناورو","نيبال"
+        ,"نيجيريا","نيكاراغوا","نيوزيلاندا","نيوي","هايتي","هندوراس","هنغاريا","هولندا","هونغ كونغ الصينية"             
+    };
 }
 
-<h2>Edit</h2>
+<h2 class="text-center">تعديل بيانات مستخدم</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
-<div class="form-horizontal">
-    <h4>ApplicationUser</h4>
-    <hr />
+<div class="form-horizontal text-right" style="height:320px;" dir="rtl">
+
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.Id)
 
 
-    <div class="form-group">
+    <div class="form-group" style="height:40px;">
         @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
@@ -25,269 +60,49 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="height:40px;">
         @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            <select style="direction:rtl;" name="@Model.Country" class="form-control" >
-                <option value="EG">مصر</option>
-                <option value="SA">المملكة العربية السعودية</option>
-                <option value="SY">سوريا</option>
-                <option value="DZ">الجزائر</option>
-                <option value="MA">المغرب</option>
-                <option value="ET">إثيوبيا</option>
-                <option value="AW">آروبا</option>
-                <option value="AM">أرمينيا</option>
-                <option value="AQ">أنتاركتيكا</option>
-                <option value="AG">أنتيغوا وبربودا</option>
-                <option value="ES">إسبانيا</option>
-                <option value="AU">أستراليا</option>
-                <option value="EE">أستونيا</option>
-                <option value="AZ">أذربيجان</option>
-                <option value="ER">أريتريا</option>
-                <option value="AF">أفغانستان</option>
-                <option value="AR">الأرجنتين</option>
-                <option value="JO">الأردن</option>
-                <option value="IO">الإقليم البريطاني في المحيط الهندي</option>
-                <option value="EC">الإكوادور</option>
-                <option value="AE">الإمارات العربية المتحدة</option>
-                <option value="AL">ألبانيا</option>
-                <option value="BS">الباهاما</option>
-                <option value="BH">البحرين</option>
-                <option value="BR">البرازيل</option>
-                <option value="PT">البرتغال</option>
-                <option value="BA">البوسنة والهرسك</option>
-                <option value="GA">الجابون</option>
-                <option value="ME">الجبل الأسود</option>
-                <option value="DZ">الجزائر</option>
-                <option value="DK">الدانمرك</option>
-                <option value="CV">الرأس الأخضر</option>
-                <option value="SV">السلفادور</option>
-                <option value="SN">السنغال</option>
-                <option value="SD">السودان</option>
-                <option value="SE">السويد</option>
-                <option value="EH">الصحراء الغربية</option>
-                <option value="SO">الصومال</option>
-                <option value="CN">الصين</option>
-                <option value="IQ">العراق</option>
-                <option value="VA">الفاتيكان</option>
-                <option value="PH">الفلبين</option>
-                <option value="CM">الكاميرون</option>
-                <option value="CG">الكونغو - برازافيل</option>
-                <option value="CD">الكونغو - كينشاسا</option>
-                <option value="KW">الكويت</option>
-                <option value="DE">ألمانيا</option>
-                <option value="MA">المغرب</option>
-                <option value="TF">المقاطعات الجنوبية الفرنسية</option>
-                <option value="MX">المكسيك</option>
-                <option value="SA">المملكة العربية السعودية</option>
-                <option value="GB">المملكة المتحدة</option>
-                <option value="NO">النرويج</option>
-                <option value="AT">النمسا</option>
-                <option value="NE">النيجر</option>
-                <option value="US">الولايات المتحدة</option>
-                <option value="IN">الهند</option>
-                <option value="JP">اليابان</option>
-                <option value="YE">اليمن</option>
-                <option value="GR">اليونان</option>
-                <option value="AD">أندورا</option>
-                <option value="ID">أندونيسيا</option>
-                <option value="AI">أنغويلا</option>
-                <option value="AO">أنغولا</option>
-                <option value="UY">أورغواي</option>
-                <option value="UZ">أوزبكستان</option>
-                <option value="UG">أوغندا</option>
-                <option value="UA">أوكرانيا</option>
-                <option value="IR">إيران</option>
-                <option value="IS">أيسلندا</option>
-                <option value="IT">إيطاليا</option>
-                <option value="IE">أيرلندا</option>
-                <option value="PG">بابوا غينيا الجديدة</option>
-                <option value="PY">باراغواي</option>
-                <option value="PW">بالاو</option>
-                <option value="PK">باكستان</option>
-                <option value="BW">بتسوانا</option>
-                <option value="BB">بربادوس</option>
-                <option value="BM">برمودا</option>
-                <option value="BN">بروناي</option>
-                <option value="BE">بلجيكا</option>
-                <option value="BG">بلغاريا</option>
-                <option value="BZ">بليز</option>
-                <option value="BD">بنجلاديش</option>
-                <option value="PA">بنما</option>
-                <option value="BJ">بنين</option>
-                <option value="BT">بوتان</option>
-                <option value="PR">بورتوريكو</option>
-                <option value="BF">بوركينا فاسو</option>
-                <option value="BI">بوروندي</option>
-                <option value="PL">بولندا</option>
-                <option value="BO">بوليفيا</option>
-                <option value="PF">بولينيزيا الفرنسية</option>
-                <option value="PE">بيرو</option>
-                <option value="TZ">تانزانيا</option>
-                <option value="TH">تايلاند</option>
-                <option value="TW">تايوان</option>
-                <option value="TM">تركمانستان</option>
-                <option value="TD">تشاد</option>
-                <option value="TR">تركيا</option>
-                <option value="TT">ترينيداد وتوباغو</option>
-                <option value="TG">توجو</option>
-                <option value="TV">توفالو</option>
-                <option value="TK">توكيلو</option>
-                <option value="TN">تونس</option>
-                <option value="TO">تونغا</option>
-                <option value="TL">تيمور الشرقية</option>
-                <option value="JM">جامايكا</option>
-                <option value="GI">جبل طارق</option>
-                <option value="TC">جزر الترك وجايكوس</option>
-                <option value="KM">جزر القمر</option>
-                <option value="KY">جزر الكايمن</option>
-                <option value="MV">جزر المالديف</option>
-                <option value="UM">جزر الولايات المتحدة النائية</option>
-                <option value="PN">جزر بيتكيرن</option>
-                <option value="SB">جزر سليمان</option>
-                <option value="FO">جزر فارو</option>
-                <option value="VI">جزر فرجين الأمريكية</option>
-                <option value="VG">جزر فرجين البريطانية</option>
-                <option value="FK">جزر فوكلاند</option>
-                <option value="CC">جزر كوكوس</option>
-                <option value="CK">جزر كوك</option>
-                <option value="MP">جزر ماريانا الشمالية</option>
-                <option value="WF">جزر والس وفوتونا</option>
-                <option value="CX">جزيرة الكريسماس</option>
-                <option value="IM">جزيرة مان</option>
-                <option value="NF">جزيرة نورفوك</option>
-                <option value="CF">جمهورية أفريقيا الوسطى</option>
-                <option value="CZ">جمهورية التشيك</option>
-                <option value="DO">جمهورية الدومينيك</option>
-                <option value="ZA">جنوب أفريقيا</option>
-                <option value="GP">جوادلوب</option>
-                <option value="GE">جورجيا</option>
-                <option value="GS">جورجيا الجنوبية وجزر ساندويتش الجنوبية</option>
-                <option value="DJ">جيبوتي</option>
-                <option value="JE">جيرسي</option>
-                <option value="DM">دومينيكا</option>
-                <option value="RW">رواندا</option>
-                <option value="RU">روسيا</option>
-                <option value="BY">روسيا البيضاء</option>
-                <option value="RO">رومانيا</option>
-                <option value="ZM">زامبيا</option>
-                <option value="ZW">زيمبابوي</option>
-                <option value="CI">ساحل العاج</option>
-                <option value="BL">سان بارتليمي</option>
-                <option value="WS">ساموا</option>
-                <option value="AS">ساموا الأمريكية</option>
-                <option value="PM">سانت بيير وميكولون</option>
-                <option value="VC">سانت فنسنت وغرنادين</option>
-                <option value="KN">سانت كيتس ونيفيس</option>
-                <option value="LC">سانت لوسيا</option>
-                <option value="MF">سانت مارتن</option>
-                <option value="SH">سانت هيلنا</option>
-                <option value="SM">سان مارينو</option>
-                <option value="ST">ساو تومي وبرينسيبي</option>
-                <option value="LK">سريلانكا</option>
-                <option value="SJ">سفالبارد وجان مايان</option>
-                <option value="SK">سلوفاكيا</option>
-                <option value="SI">سلوفينيا</option>
-                <option value="SG">سنغافورة</option>
-                <option value="SZ">سوازيلاند</option>
-                <option value="SY">سوريا</option>
-                <option value="SR">سورينام</option>
-                <option value="CH">سويسرا</option>
-                <option value="SL">سيراليون</option>
-                <option value="SC">سيشل</option>
-                <option value="CL">شيلي</option>
-                <option value="RS">صربيا</option>
-                <option value="TJ">طاجكستان</option>
-                <option value="OM">عُمان</option>
-                <option value="GM">غامبيا</option>
-                <option value="GH">غانا</option>
-                <option value="GD">غرينادا</option>
-                <option value="GL">غرينلاند</option>
-                <option value="GT">غواتيمالا</option>
-                <option value="GU">غوام</option>
-                <option value="GF">غويانا الفرنسية</option>
-                <option value="GY">غيانا</option>
-                <option value="GG">غيرنزي</option>
-                <option value="GN">غينيا</option>
-                <option value="GW">غينيا بيساو</option>
-                <option value="GQ">غينيا الإستوائية</option>
-                <option value="VU">فانواتو</option>
-                <option value="FR">فرنسا</option>
-                <option value="PS">فلسطين</option>
-                <option value="VE">فنزويلا</option>
-                <option value="FI">فنلندا</option>
-                <option value="VN">فيتنام</option>
-                <option value="FJ">فيجي</option>
-                <option value="CY">قبرص</option>
-                <option value="KG">قرغيزستان</option>
-                <option value="QA">قطر</option>
-                <option value="KZ">كازاخستان</option>
-                <option value="NC">كاليدونيا الجديدة</option>
-                <option value="HR">كرواتيا</option>
-                <option value="KH">كمبوديا</option>
-                <option value="CA">كندا</option>
-                <option value="CU">كوبا</option>
-                <option value="CR">كوستاريكا</option>
-                <option value="KR">كوريا الجنوبية</option>
-                <option value="KP">كوريا الشمالية</option>
-                <option value="XK">كوسوفو</option>
-                <option value="CO">كولومبيا</option>
-                <option value="KI">كيريباتي</option>
-                <option value="KE">كينيا</option>
-                <option value="LV">لاتفيا</option>
-                <option value="LA">لاوس</option>
-                <option value="LB">لبنان</option>
-                <option value="LU">لوكسمبورغ</option>
-                <option value="LR">ليبيريا</option>
-                <option value="LY">ليبيا</option>
-                <option value="LT">ليتوانيا</option>
-                <option value="LI">ليختنشتاين</option>
-                <option value="LS">ليسوتو</option>
-                <option value="MQ">مارتينيك</option>
-                <option value="MT">مالطا</option>
-                <option value="ML">مالي</option>
-                <option value="MY">ماليزيا</option>
-                <option value="YT">مايوت</option>
-                <option value="MG">مدغشقر</option>
-                <option value="EG">مصر</option>
-                <option value="MK">مقدونيا</option>
-                <option value="MO">مكاو الصينية (منطقة إدارية خاصة)</option>
-                <option value="MW">ملاويمنغوليا</option>
-                <option value="MR">موريتانيا</option>
-                <option value="MU">موريشيوس</option>
-                <option value="MZ">موزمبيق</option>
-                <option value="MD">مولدافيا</option>
-                <option value="MC">موناكو</option>
-                <option value="MS">مونتسرات</option>
-                <option value="FM">ميكرونيزيا</option>
-                <option value="MM">ميانمار -بورما</option>
-                <option value="NA">ناميبيا</option>
-                <option value="NR">ناورو</option>
-                <option value="NP">نيبال</option>
-                <option value="NG">نيجيريا</option>
-                <option value="NI">نيكاراغوا</option>
-                <option value="NZ">نيوزيلاندا</option>
-                <option value="NU">نيوي</option>
-                <option value="HT">هايتي</option>
-                <option value="HN">هندوراس</option>
-                <option value="HU">هنغاريا</option>
-                <option value="NL">هولندا</option>
-                <option value="HK">هونغ كونغ الصينية</option>
+            <select style="direction:rtl;" name="@Model.Country" class="form-control">
+                @foreach (var c in cities)
+                {
+                    if (c == Model.Country)
+                    {
+                        <option selected value="@c">@c</option>
+                    }
+                    else
+                    {
+                        <option value="@c">@c</option>
+                    }
+                }
             </select>
             @*@Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })*@
             @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="height:40px;">
         @Html.LabelFor(model => model.Qualification, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Qualification, new { htmlAttributes = new { @class = "form-control" } })
+            <select style="direction:rtl;height:40px;" name="@Model.Qualification" class="form-control">
+                @foreach (var q in qualificationArr)
+                {
+                    if (q == Model.Qualification)
+                    {
+                        <option selected value="@q">@q</option>
+                    }
+                    else
+                    {
+                        <option value="@q">@q</option>
+                    }
+                }
+            </select>
+            @*@Html.EditorFor(model => model.Qualification, new { htmlAttributes = new { @class = "form-control" } })*@
             @Html.ValidationMessageFor(model => model.Qualification, "", new { @class = "text-danger" })
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="height:40px;">
         @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
@@ -295,7 +110,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" style="height:40px;">
         @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
@@ -307,7 +122,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-default" />
+            <input type="submit" value="حفظ" class="btn btn-primary" />
         </div>
     </div>
 </div>

@@ -1,0 +1,202 @@
+﻿@model Bsa2er_MVC.Models.Instructor
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="~/Content/bootstrap-rtl.min.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
+    <style>
+
+        /* ------------------------------------------------------------Global-------------------------------------------------------------------- */
+        body {
+            background-image: url(/images/6.jpg);
+            font-family: "Changa", sans-serif;
+        }
+
+        .profile-box {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .aside,
+        .link {
+            border: 1px solid;
+            border-radius: 2em;
+            background-color: #15A299;
+            color: #f8f9fa;
+        }
+
+        a {
+            color: #f8f9fa;
+        }
+
+            a:hover {
+                text-decoration: none !important;
+                color: #000;
+            }
+
+        @@media (min-width: 768px) {
+            .links {
+                border-right: 1px solid;
+            }
+        }
+
+        /* ------------------------------------------------------------Aside-------------------------------------------------------------------- */
+        .aside:first-child > div {
+            padding: 3%;
+            border-bottom: 1px solid;
+        }
+
+            .aside:first-child > div:last-child {
+                border: none;
+            }
+
+        .info .lead {
+            line-height: 4.5;
+        }
+
+        .img-cont img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-cont {
+            height: 90px;
+            width: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .select .selection {
+            cursor: pointer;
+        }
+
+            .select .selection:hover {
+                color: #555;
+            }
+
+        .activeS {
+            color: #555;
+            cursor: default !important;
+        }
+
+        /* ------------------------------------------------------------Content-------------------------------------------------------------------- */
+        /* ----------------------------------Personal-------------------------------------- */
+        .personal table {
+            border-radius: 1em;
+        }
+
+            .personal table th {
+                border: none;
+            }
+
+        .content .section {
+            border-bottom: 1px solid;
+        }
+
+        /* ----------------------------------Edit-------------------------------------- */
+        .card-body {
+            background-color: #15A299;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row profile-box m-3">
+        <div class="col-md-3 aside">
+            <div class="info row">
+                <div class="lead col-8 col-md-12 col-xl-8">@Model.ApplicationUser.UserName</div>
+                <div class="img-cont col-4 col-md-12 col-xl-4 p-0">
+                    <a href="#" data-toggle="modal" data-target="#dpic"><img src="@Model.ApplicationUser.pathofimage"></a>
+                </div>
+            </div>
+            <div class="c-pw"><a href="/Manage/ChangePassword">تغيير كلمة المرور</a></div>
+            <div class="l-out"><form method="post" action="LogOff">@Html.AntiForgeryToken() <input type="submit" value="تسجيل الخروج" class="btn btn-link text-danger" /></form></div>
+            <div class="row mb-3 mt-3 selection" data-toggle="collapse" aria-expanded="true"
+                 aria-controls="cont-insmanage" data-target="#cont-insmanage">
+                <div class="col " style="cursor:pointer;">ادارة البرامج والدورات</div>
+                <div class="fa fa-chevron-left fa-lg "></div>
+            </div>
+        </div>
+        <div class="col-md-7 content" id="content">
+            <div class="collapse multi-collapse personal show" id="cont-insmanage" data-parent="#content">
+                <div class="tracks-box">
+
+                    <h2 style="text-align:center" class="m-3">الدورات والبرامج</h2>
+                    <div class="row">
+                        @foreach (var item in Model.Programs)
+                        {
+                            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                                <div class="card bg-info text-light">
+                                    <div class="img-c">
+                                        <img src="~/images/Programs/@item.Program_ImagePath">
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Program_Title</h5>
+                                        <p class="card-text">@item.Program_Body</p>
+                                        @Html.ActionLink("تعديل", "Edit", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-danger" }) |
+                                        @Html.ActionLink("تفاصيل", "Details", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-warning" }) |
+                                        @Html.ActionLink("حذف", "Delete", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-secondary" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <p>
+                        @Html.ActionLink("اضافة دورة", "Create", "Programs", new { InstructorId = Model.InsId }, new { @class = "btn btn-info btn-block w-25 m-auto text-white" })
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Change Profile Picture Modal -->
+    <div class="modal fade" id="dpic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-right" style="direction:rtl">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">تغيير الصوره الشخصيه</h5>
+                </div>
+                <form method="post" action="/Account/ChangePic" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div class="w-100" style="height:400px">
+                                <img src="@Model.ApplicationUser.pathofimage" class="w-100 h-100" />
+                            </div>
+                            <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button>
+                        <input type="submit" class="btn btn-success" value="حفظ" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Scripts/date.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</body>
+
+</html>

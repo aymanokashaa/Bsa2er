@@ -22,25 +22,46 @@ namespace Bsa2er_MVC.Controllers
         public ActionResult Create(int progId,string stdId)
         {
             var studentprogramInformation = db.StudentsPrograms.FirstOrDefault(s => s.Program_Id == progId && s.Std_Id == stdId);
-            ViewBag.studentName = studentprogramInformation.Student.ApplicationUser.UserName;
+            ViewBag.studentName = studentprogramInformation.Student.ApplicationUser.fullname;
             ViewBag.programName = studentprogramInformation.Program.Program_Title;
             ViewBag.grad = studentprogramInformation.ProgramGrade;
          
             return View();
         }
+
+        [Authorize(Roles = "Student")]
         public ActionResult getCertification(int progId, string stdId)
         {
             var studentprogramInformation = db.StudentsPrograms.FirstOrDefault(s => s.Program_Id == progId && s.Std_Id == stdId);
-            ViewBag.studentName = studentprogramInformation.Student.ApplicationUser.UserName;
+            ViewBag.studentName = studentprogramInformation.Student.ApplicationUser.fullname;
             ViewBag.programName = studentprogramInformation.Program.Program_Title;
             ViewBag.grad = studentprogramInformation.ProgramGrade;
 
             return View();
         }
+
+        [Authorize(Roles = "Student")]
         public ActionResult PrintPdf(int pId,string sId)
         {
             var pdf = new ActionAsPdf("getCertification", new {progId=pId,stdId=sId });
+            pdf.FileName = "شهادة إتمام البرنامج" + ".pdf";
+            pdf.Cookies = Request.Cookies.AllKeys.ToDictionary(k => k, k => Request.Cookies[k].Value);
             return pdf;
+        }
+
+        public ActionResult getCertificationPartial(int progId, string stdId)
+        {
+            var studentprogramInformation = db.StudentsPrograms.FirstOrDefault(s => s.Program_Id == progId && s.Std_Id == stdId);
+            var studentName = studentprogramInformation.Student.ApplicationUser.fullname;
+            var programName = studentprogramInformation.Program.Program_Title;
+            var grad = studentprogramInformation.ProgramGrade;
+            var obj = new CertificationViewModel()
+            {
+                studentName = studentName,
+                programName = programName,
+                grad = grad
+            };
+            return new PartialViewAsPdf(obj);
         }
     }
 }
