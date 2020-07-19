@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html" charset="utf-8" />
@@ -45,18 +46,18 @@
                         </li>
                         <li> <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link" })</span></li>
                         <li> <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span></li>
-                        @*@if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                        @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
         {
             <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> DashBoard</a></span></li>
         }
         else if (User.IsInRole("Instructor"))
         {
-            <li> <span class="nav-item"><a class="nav-link text-warning" href="/InstructorDashboard/Index/@Model.InsId"> لوحة التحكم</a></span></li>
+            <li> <span class="nav-item"><a class="nav-link text-warning" href="/InstructorDashboard/Index"> لوحة التحكم</a></span></li>
         }
         else
         {
             <li> <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span></li>
-        }*@
+        }
 
 
 
@@ -150,14 +151,18 @@
                         </span>
                         <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link" })</span>
                         <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span>
-                        <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {
                             <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">To DashBoard</a></span>
                         }
                         else if (User.IsInRole("Instructor"))
                         {
-                            <span class="nav-item"><a class="nav-link text-warning" href="/InstructorDashboard/Index/@User."> لوحة التحكم</a></span>
+                            <span class="nav-item"><a class="nav-link text-warning" href="/InstructorDashboard/Index"> لوحة التحكم</a></span>
+                        }
+                        else
+                        {
+                           <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span>
+
                         }
 
                     </div>

@@ -2,7 +2,6 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
 
@@ -11,11 +10,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>لوحة التحكم</title>
-    <link rel="stylesheet" href="~/Content/bootstrap-rtl.min.css" />
+    <link href="~/Content/headerfooter.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/bootstrap-rtl.min.css" />    
     <link rel="stylesheet" href="~/Content/bootstrap.min.css">
     <link rel="stylesheet" href="~/Content/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
     <style>
+
 
         /* ------------------------------------------------------------Global-------------------------------------------------------------------- */
         body {
@@ -105,10 +106,44 @@
         }
 
         /* ----------------------------------Edit-------------------------------------- */
-        .card-body {
-            background-color: #15A299;
-            border: none;
+
+        /* ----------------------------------Cards-------------------------------------- */
+        .tracks-box {
+            direction: rtl;
+            text-align: right;
         }
+
+        .tracks-box {
+            direction: rtl;
+            text-align: right;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .card {
+            border-radius: 5%;
+            overflow: hidden;
+            height: 350px;
+        }
+
+        .img-c,
+        .card-body {
+            height: 50%;
+        }
+
+            .img-c img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .card-body .btn:hover {
+                background-color: #fff;
+                color: #343a40;
+                border-color: #343a40;
+            }
+
     </style>
 </head>
 
@@ -141,7 +176,7 @@
                             <div class="col-md-6 col-lg-4 col-xl-3 p-2">
                                 <div class="card bg-info text-light">
                                     <div class="img-c">
-                                        <img src="~/images/Programs/@item.Program_ImagePath">
+                                        <img src="~/images/Programs/@item.Program_MainImage">
                                     </div>
                                     <div class="card-body">
                                         <h5 class="card-title">@item.Program_Title</h5>

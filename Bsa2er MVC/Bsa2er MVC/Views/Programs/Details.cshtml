@@ -13,6 +13,11 @@
         <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
             <tbody>
                 <tr class="d-flex">
+                    <td class="col-4"> اسم المعلم</td>
+                    <td class="col-8"> @Html.DisplayFor(model => User.Identity.Name)</td>
+                </tr>
+
+                <tr class="d-flex">
                     <td class="col-4"> @Html.DisplayNameFor(model => model.Program_Title)</td>
                     <td class="col-8"> @Html.DisplayFor(model => model.Program_Title)</td>
                 </tr>
@@ -30,14 +35,22 @@
                     <td class="col-4">@Html.DisplayNameFor(model => model.Program_Goals)</td>
                     <td class="col-8">@Html.DisplayFor(model => model.Program_Goals)</td>
                 </tr>
-                <tr class="d-flex">
-                    <td class="col-4">@Html.DisplayNameFor(model => model.Program_ImagePath)</td>
-                    <td class="col-8">@Html.DisplayFor(model => model.Program_ImagePath)</td>
-                </tr>
-                <tr class="d-flex">
-                    <td class="col-4">@Html.DisplayNameFor(model => model.Program_VideoLink)</td>
-                    <td class="col-8">@Html.DisplayFor(model => model.Program_VideoLink)</td>
-                </tr>
+                @if (!(Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram))
+                {
+                    <tr class="d-flex">
+                        <td class="col-4">@Html.DisplayNameFor(model => model.Program_ImagePath)</td>
+                        <td class="col-8">@Html.DisplayFor(model => model.Program_ImagePath)</td>
+                    </tr>
+
+                }
+                @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram)
+                {
+                    <tr class="d-flex">
+                        <td class="col-4">@Html.DisplayNameFor(model => model.Program_VideoLink)</td>
+                        <td class="col-8">@Html.DisplayFor(model => model.Program_VideoLink)</td>
+                    </tr>
+
+                }
                 <tr class="d-flex">
                     <td class="col-4">
                         @Html.DisplayNameFor(model => model.Program_TargetGroup)
@@ -52,13 +65,18 @@
                     </td>
                     <td class="col-8"> @Html.DisplayFor(model => model.Program_Type)</td>
                 </tr>
-                <tr class="d-flex">
-                    <td class="col-4">
-                        @Html.DisplayNameFor(model => model.NumOfLecture)
-                    </td>
-                    <td class="col-8 numoflectures">
-                    </td>
-                </tr>
+                @if (!(Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram))
+                {
+                    <tr class="d-flex">
+                        <td class="col-4">
+                            @Html.DisplayNameFor(model => model.NumOfLecture)
+                        </td>
+                        <td class="col-8 numoflectures">
+                            @Html.DisplayFor(model => model.NumOfLecture)
+                        </td>
+                    </tr>
+
+                }
 
             </tbody>
         </table>
