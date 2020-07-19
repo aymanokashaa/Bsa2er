@@ -39,7 +39,11 @@ namespace Bsa2er_MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Instructor")]
+<<<<<<< HEAD
         public async Task<ActionResult> Create(Exam exam,int Program_Id)
+=======
+        public async Task<ActionResult> Create(Exam exam)
+>>>>>>> 18bf64d85af85d998582244f8d593c8d80ded793
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +82,11 @@ namespace Bsa2er_MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Instructor")]
+<<<<<<< HEAD
         public async Task<ActionResult> Edit(Exam exam, int Program_Id)
+=======
+        public async Task<ActionResult> Edit(Exam exam)
+>>>>>>> 18bf64d85af85d998582244f8d593c8d80ded793
         {
             if (ModelState.IsValid)
             {
