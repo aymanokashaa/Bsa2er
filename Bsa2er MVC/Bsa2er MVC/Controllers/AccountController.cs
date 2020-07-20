@@ -479,7 +479,7 @@ namespace Bsa2er_MVC.Controllers
             var user = db.Users.Find(userID);
             var userImage = user.pathofimage;
 
-            if (userImage != "/images/4.jpg")
+            if (userImage != "images/DashBoard/user.png")
             {
                 System.IO.File.Delete(Server.MapPath(userImage));
             }

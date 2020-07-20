@@ -7,22 +7,22 @@
     <div class="row">
         <div class="col-xs-12 text-center">
             <h1 style="display:block;" class="pb-4 mt-3">@Model.Program_Title</h1>
-            <iframe id="prgframe" src="@Model.Program_VideoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <div class="mb-5">
-                @if (User.IsInRole("Student"))
-                {
-                    <a href="/Account/AddProgram/@Model.ProgramId" class="btn btn-info w-50 mt-4 mx-auto">التسجيل بالبرنامج</a>
-                }
-                else if (!User.Identity.IsAuthenticated)
-                {
-                    <h4 class="text-center">ًللتسجيل بالبرنامج عليك تسجيل الدخول أولا</h4>
-                }
-            </div>
+            <img src="~/images/Programs/@Model.Program_ImagePath" />
+            @* <div class="mb-5">
+            @if (User.IsInRole("Student"))
+            {
+                <a href="/Account/AddProgram/@Model.ProgramId" class="btn btn-info w-50 mt-4 mx-auto">التسجيل بالبرنامج</a>
+            }
+            else if (!User.Identity.IsAuthenticated)
+            {
+                <h4 class="text-center">ًللتسجيل بالبرنامج عليك تسجيل الدخول أولا</h4>
+            }
+        </div>*@
             <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
                 <tbody>
                     <tr class="d-flex">
                         <td class="col-4">اسم المعلم</td>
-                        <td class="col-8">@Model.</td>
+                        <td class="col-8">@Model.Instructor.ApplicationUser.UserName</td>
                     </tr>
                     <tr class="d-flex">
                         <td class="col-4">عدد الدروس</td>

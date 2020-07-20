@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/Manage.cshtml";
     ViewBag.Title = "تعديل";
 }
-
 <h2 style="text-align:center" class="mt-4">تعديل البرنامج</h2>
 
 @using (Html.BeginForm("Edit", "Programs", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -73,7 +72,27 @@
     <div class="form-group enumtype">
         @Html.LabelFor(model => model.Program_Type, htmlAttributes: new { @class = "control-label col-md-2 mt-3 " })
         <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.Program_Type, htmlAttributes: new { @class = "form-control mt-3 w-75 mx-auto  progtype" })
+            <select class="form-control mt-3 w-75 mx-auto" onchange="ShowPorgType(event)" name="Program_Type">
+                @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.Program)
+                {
+                    <option value="@Bsa2er_MVC.Models.ProgramType.Program" selected>برنامج علمي</option>
+                    <option value="@Bsa2er_MVC.Models.ProgramType.Track">دورة تدريبية</option>
+                    <option value="@Bsa2er_MVC.Models.ProgramType.PublicProgram">برنامج عام</option>
+                }
+                @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.Track)
+                {
+                    <option value="@Bsa2er_MVC.Models.ProgramType.Program" >برنامج علمي</option>
+                    <option value="@Bsa2er_MVC.Models.ProgramType.Track" selected>دورة تدريبية</option>
+                    <option value="@Bsa2er_MVC.Models.ProgramType.PublicProgram">برنامج عام</option>
+                }
+                @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram)
+                {
+                    <option value="@Bsa2er_MVC.Models.ProgramType.Program" >برنامج علمي</option>
+                    <option value="@Bsa2er_MVC.Models.ProgramType.Track">دورة تدريبية</option>
+                    <option value="@Bsa2er_MVC.Models.ProgramType.PublicProgram" selected>برنامج عام</option>
+                }
+
+            </select>
             @Html.ValidationMessageFor(model => model.Program_Type, "", new { @class = "text-danger" })
         </div>
     </div>
