@@ -10,12 +10,12 @@
               <div class="col-md-6 col-lg-4 col-xl-3 p-2">
                   <div class="card bg-info text-light">
                       <div class="img-c">
-                          <img src="@item.Program_MainImage">
+                          <img src="~/images/Programs/@item.Program_MainImage">
                       </div>
                       <div class="card-body">
                           <h5 class="card-title">@item.Program_Title</h5>
                           <p class="card-text">@item.Program_Body</p>
-                          @Html.ActionLink("تفاصيل البرنامج", "Program", "Home", new { id = item.ProgramId }, new { @class = "btn btn-warning" });
+                          @Html.ActionLink("تفاصيل البرنامج", "Program", "Home", new { id = item.ProgramId }, new { @class = "btn btn-warning" })
                       </div>
                   </div>
               </div>
