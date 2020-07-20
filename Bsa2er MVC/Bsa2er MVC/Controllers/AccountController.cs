@@ -151,10 +151,27 @@ namespace Bsa2er_MVC.Controllers
 
         //
         // GET: /Account/Register
+
+        //[AllowAnonymous]
+        //[ActionName("StudentRegister")]
+        //public ActionResult Register()
+        //{
+        //    ViewBag.id ="4";
+        //    return View();
+        //}
+        // GET: /Account/Register
+
         [AllowAnonymous]
         public ActionResult Register(string id)
         {
-            ViewBag.id = id;
+            if (id == null)
+            {
+                ViewBag.id = "4";
+            }
+            else
+            {
+                ViewBag.id = id;
+            }
             return View();
         }
 
@@ -204,8 +221,8 @@ namespace Bsa2er_MVC.Controllers
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
+            ViewBag.id = id;
             return View(model);
         }
 
@@ -473,12 +490,11 @@ namespace Bsa2er_MVC.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Student")]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
             var userID = User.Identity.GetUserId();
-            var user = db.Students.Find(userID);
-            var userImage = user.ApplicationUser.pathofimage;
+            var user = db.Users.Find(userID);
+            var userImage = user.pathofimage;
 
             if (userImage != "/images/4.jpg")
             {
@@ -487,10 +503,19 @@ namespace Bsa2er_MVC.Controllers
 
             var arr = image.FileName.Split('.');
             string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
-            user.ApplicationUser.pathofimage = $"/images/{filename}";
+            user.pathofimage = $"/images/{filename}";
             image.SaveAs(Server.MapPath("~/images/") + filename);
             db.SaveChanges();
-            return RedirectToAction("StudentDashboard");
+            if (User.Identity.AuthenticationType == "Student")
+            {
+                return RedirectToAction("StudentDashboard");
+
+            }
+            else 
+            {
+                return RedirectToAction("Index", "InstructorDashboard");
+            }
+
         }
 
         [Authorize(Roles = "Student")]

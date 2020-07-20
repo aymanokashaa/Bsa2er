@@ -55,6 +55,15 @@
                     </tr>
                 </tbody>
             </table>
+            @if (User.IsInRole("Student"))
+            {
+                @Html.ActionLink("ادرس الان", "StudentDashboard", new { id = Model.ProgramId }, new { @class = "btn btn-warning" });
+            }
+            else
+            {
+                @Html.ActionLink("سجل الان", "Login", "Account", null, new { @class = "btn btn-warning" });
+
+            }
             <p style="margin-top:10px;" class=" mr-5 text-right">ملاحظة : يمكنك التسجيل بالاكاديمية والالتحاق بالبرامج والدورات العلمية والحصول علي شهادات حضور واجتياز</p>
         </div>
     </div>

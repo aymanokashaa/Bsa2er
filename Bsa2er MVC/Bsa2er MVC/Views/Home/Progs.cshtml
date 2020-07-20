@@ -15,7 +15,7 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Program_Title</h5>
                         <p class="card-text">@item.Program_Body</p>
-                        <a href="/Home/Prog/@item.ProgramId" class="btn btn-dark">تفاصيل البرنامج</a>
+                        @Html.ActionLink("تفاصيل البرنامج", "Prog", "Home", new { id = item.ProgramId }, new { @class = "btn btn-warning" });
                     </div>
                 </div>
             </div>
