@@ -204,8 +204,8 @@ namespace Bsa2er_MVC.Controllers
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
+            ViewBag.id = id;
             return View(model);
         }
 
