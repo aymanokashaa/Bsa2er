@@ -473,12 +473,11 @@ namespace Bsa2er_MVC.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Student")]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
             var userID = User.Identity.GetUserId();
-            var user = db.Students.Find(userID);
-            var userImage = user.ApplicationUser.pathofimage;
+            var user = db.Users.Find(userID);
+            var userImage = user.pathofimage;
 
             if (userImage != "/images/4.jpg")
             {
@@ -487,10 +486,19 @@ namespace Bsa2er_MVC.Controllers
 
             var arr = image.FileName.Split('.');
             string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
-            user.ApplicationUser.pathofimage = $"/images/{filename}";
+            user.pathofimage = $"/images/{filename}";
             image.SaveAs(Server.MapPath("~/images/") + filename);
             db.SaveChanges();
-            return RedirectToAction("StudentDashboard");
+            if (User.Identity.AuthenticationType == "Student")
+            {
+                return RedirectToAction("StudentDashboard");
+
+            }
+            else 
+            {
+                return RedirectToAction("Index", "InstructorDashboard");
+            }
+
         }
 
         [Authorize(Roles = "Student")]

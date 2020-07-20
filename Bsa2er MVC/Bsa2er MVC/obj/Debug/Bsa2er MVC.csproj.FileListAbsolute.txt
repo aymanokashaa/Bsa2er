@@ -635,10 +635,10 @@ C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.pdb
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.xml
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.pdb
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.xml
-C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.bd.resources
-C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.cache
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
+C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
+C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache

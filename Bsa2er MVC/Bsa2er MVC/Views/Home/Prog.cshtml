@@ -22,7 +22,7 @@
                 <tbody>
                     <tr class="d-flex">
                         <td class="col-4">اسم المعلم</td>
-                        <td class="col-8">@Model.Instructor.ApplicationUser.fullname</td>
+                        <td class="col-8">@Model.</td>
                     </tr>
                     <tr class="d-flex">
                         <td class="col-4">عدد الدروس</td>
@@ -56,6 +56,16 @@
                     </tr>
                 </tbody>
             </table>
+            @if (User.IsInRole("Student"))
+            {
+                @Html.ActionLink("ادرس الان", "StudentDashboard", new { id = Model.ProgramId }, new { @class = "btn btn-warning" });
+            }
+            else
+            {
+                @Html.ActionLink("سجل الان", "Login", "Account", null, new { @class = "btn btn-warning" });
+
+            }
+
             <p style="margin-top:10px;" class=" mr-5 text-right">ملاحظة : يمكنك التسجيل بالاكاديمية والالتحاق بالبرامج والدورات العلمية والحصول علي شهادات حضور واجتياز</p>
         </div>
     </div>
