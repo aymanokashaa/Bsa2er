@@ -475,30 +475,45 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
-            var userID = User.Identity.GetUserId();
-            var user = db.Users.Find(userID);
-            var userImage = user.pathofimage;
-
-            if (userImage != "/images/DashBoard/user.png")
+            if (image != null)
             {
-                System.IO.File.Delete(Server.MapPath(userImage));
-            }
+                var userID = User.Identity.GetUserId();
+                var user = db.Users.Find(userID);
+                var userImage = user.pathofimage;
 
-            var arr = image.FileName.Split('.');
-            string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
-            user.pathofimage = $"/images/{filename}";
-            image.SaveAs(Server.MapPath("~/images/") + filename);
-            db.SaveChanges();
-            if (User.IsInRole("Student"))
-            {
-                return RedirectToAction("StudentDashboard");
+                if (userImage != "/images/DashBoard/user.png")
+                {
+                    System.IO.File.Delete(Server.MapPath(userImage));
+                }
+                var arr = image.FileName.Split('.');
+                string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
+                user.pathofimage = $"/images/{filename}";
+                image.SaveAs(Server.MapPath("~/images/") + filename);
+                db.SaveChanges();
+                if (User.IsInRole("Student"))
+                {
+                    return RedirectToAction("StudentDashboard");
 
+                }
+                else if (User.IsInRole("Instructor"))
+                {
+                    return RedirectToAction("Index", "InstructorDashboard");
+                }
+                return RedirectToAction("Index", "Error");
             }
-            else if (User.IsInRole("Instructor"))
+            else
             {
-                return RedirectToAction("Index", "InstructorDashboard");
+                if (User.IsInRole("Student"))
+                {
+                    return RedirectToAction("StudentDashboard");
+
+                }
+                else if (User.IsInRole("Instructor"))
+                {
+                    return RedirectToAction("Index", "InstructorDashboard");
+                }
+                return RedirectToAction("Index", "Error");
             }
-            return RedirectToAction("Index", "Error");
         }
 
         [Authorize(Roles = "Student")]
