@@ -168,7 +168,7 @@ namespace Bsa2er_MVC.Controllers
             if (ModelState.IsValid)
             {
                 string date = model.year+"-"+ model.month +"-"+ model.day;
-                var user = new ApplicationUser { UserName = model.Username,pathofimage="images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
+                var user = new ApplicationUser { UserName = model.Username,pathofimage="/images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -479,7 +479,7 @@ namespace Bsa2er_MVC.Controllers
             var user = db.Users.Find(userID);
             var userImage = user.pathofimage;
 
-            if (userImage != "images/DashBoard/user.png")
+            if (userImage != "/images/DashBoard/user.png")
             {
                 System.IO.File.Delete(Server.MapPath(userImage));
             }
@@ -489,16 +489,16 @@ namespace Bsa2er_MVC.Controllers
             user.pathofimage = $"/images/{filename}";
             image.SaveAs(Server.MapPath("~/images/") + filename);
             db.SaveChanges();
-            if (User.Identity.AuthenticationType == "Student")
+            if (User.IsInRole("Student"))
             {
                 return RedirectToAction("StudentDashboard");
 
             }
-            else 
+            else if (User.IsInRole("Instructor"))
             {
                 return RedirectToAction("Index", "InstructorDashboard");
             }
-
+            return RedirectToAction("Index", "Error");
         }
 
         [Authorize(Roles = "Student")]
