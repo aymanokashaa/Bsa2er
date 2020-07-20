@@ -500,7 +500,6 @@ F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er M
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.cache
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
@@ -565,11 +564,9 @@ C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Common.Logg
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.pdb
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.xml
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v.resources
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v.resources
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Rotativa.dll
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Rotativa.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.addGallaryTable.resources
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v2.resources
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v3.resources
@@ -577,3 +574,6 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrati
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v5.resources
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v6.resources
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.addtrackVisitorsModels.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.init.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache

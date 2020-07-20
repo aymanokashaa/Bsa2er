@@ -190,6 +190,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BooksController.cs" />
     <Compile Include="Controllers\BooksectionsController.cs" />
+    <Compile Include="Controllers\CarouselImageController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
@@ -203,14 +204,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202007041356492_v.cs" />
-    <Compile Include="Migrations\202007041356492_v.Designer.cs">
-      <DependentUpon>202007041356492_v.cs</DependentUpon>
+    <Compile Include="Migrations\202007201048354_init.cs" />
+    <Compile Include="Migrations\202007201048354_init.Designer.cs">
+      <DependentUpon>202007201048354_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Booksection.cs" />
+    <Compile Include="Models\CarouselImage.cs" />
     <Compile Include="Models\Certification.cs" />
     <Compile Include="Models\CertificationViewModel.cs" />
     <Compile Include="Models\Exam.cs" />
@@ -336,6 +338,10 @@
     <Content Include="images\7.jpg" />
     <Content Include="images\7.png" />
     <Content Include="images\bsaer.png" />
+    <Content Include="images\CarouselImages\1.jpg" />
+    <Content Include="images\CarouselImages\2.jpg" />
+    <Content Include="images\CarouselImages\3.jpg" />
+    <Content Include="images\CarouselImages\default.jpg" />
     <Content Include="images\DashBoard\edit-button.svg" />
     <Content Include="images\DashBoard\user.png" />
     <Content Include="images\Gallery\default.jpg" />
@@ -583,6 +589,11 @@
     <Content Include="Views\Certification\getCertification.cshtml" />
     <Content Include="Views\Exams\GradeList.cshtml" />
     <Content Include="Views\Certification\getCertificationPartial.cshtml" />
+    <Content Include="Views\CarouselImage\Create.cshtml" />
+    <Content Include="Views\CarouselImage\Delete.cshtml" />
+    <Content Include="Views\CarouselImage\Details.cshtml" />
+    <Content Include="Views\CarouselImage\Edit.cshtml" />
+    <Content Include="Views\CarouselImage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -603,8 +614,8 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202007041356492_v.resx">
-      <DependentUpon>202007041356492_v.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202007201048354_init.resx">
+      <DependentUpon>202007201048354_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
