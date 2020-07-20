@@ -14,6 +14,7 @@ namespace Bsa2er_MVC.Controllers
     public class ExamsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -28,6 +29,7 @@ namespace Bsa2er_MVC.Controllers
             return View(exam);
         }
 
+        [Authorize(Roles = "Instructor")]
         public ActionResult Create(int id)
         {
             ViewBag.Program_Id = id;
@@ -36,7 +38,9 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Exam exam)
+        [Authorize(Roles = "Instructor")]
+
+        public async Task<ActionResult> Create(Exam exam,int Program_Id)
         {
             if (ModelState.IsValid)
             {
@@ -47,21 +51,24 @@ namespace Bsa2er_MVC.Controllers
                 }
                 exam.grads = grade;
                 exam.NumberOfQuestions = exam.Questions.Count();
+                var myins = db.Programs.SingleOrDefault(a => a.ProgramId == Program_Id).Instructor;
                 db.Exams.Add(exam);
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "InstructorDashboard",new {id=myins.InsId});
             }
 
             return View(exam);
         }
 
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Exam exam = await db.Exams.FindAsync(id);
+            Program program = await db.Programs.FindAsync(id);
+            Exam exam = program.Exam.First();
             if (exam == null)
             {
                 return HttpNotFound();
@@ -71,7 +78,8 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(Exam exam)
+        [Authorize(Roles = "Instructor")]
+        public async Task<ActionResult> Edit(Exam exam, int Program_Id)
         {
             if (ModelState.IsValid)
             {
@@ -89,12 +97,14 @@ namespace Bsa2er_MVC.Controllers
                 oldE.NumberOfQuestions = exam.NumberOfQuestions;
                 db.Questions.RemoveRange(oldE.Questions);
                 db.Questions.AddRange(exam.Questions);
+                var myins1 = db.Programs.SingleOrDefault(a => a.ProgramId == Program_Id).Instructor;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "InstructorDashboard", new { id = myins1.InsId });
             }
             return View(exam);
         }
 
+        [Authorize(Roles = "Student")]
         public async Task<ActionResult> TakeExam(int? id)
         {
             if (id == null)
@@ -111,6 +121,7 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public async Task<ActionResult> TakeExam(int id, Dictionary<string, string> answers)
         {
             int grade = 0;
@@ -135,6 +146,7 @@ namespace Bsa2er_MVC.Controllers
             return RedirectToAction("StudentDashboard", "Account", null);
         }
 
+        [Authorize(Roles = "Instructor")]
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -151,12 +163,14 @@ namespace Bsa2er_MVC.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [Authorize(Roles = "Student")]
         public ActionResult GradeList(string id)
         {
             var std = db.Students.Find(id);
             return View(std);
         }
 
+        [Authorize(Roles = "Student")]
         public ActionResult PrintList(string id)
         {
             var pdf = new ActionAsPdf("GradeList", new { id = id });

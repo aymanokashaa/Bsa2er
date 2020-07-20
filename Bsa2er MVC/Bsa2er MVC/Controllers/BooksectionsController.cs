@@ -53,8 +53,15 @@ namespace Bsa2er_MVC.Controllers
             {
                 if (booksection.Image != null)
                 {
-
+          
                     String[] array = booksection.Image.FileName.Split('.');
+                    if (array[array.Length - 1].ToLower() !="jpg" && array[array.Length - 1].ToLower() != "jpeg")
+                    {
+                        ModelState.AddModelError("imageproblem", "من فضلك قم بادخال صورة بامتداد jpg"  );
+                        return View();
+                    }
+
+
                     String filename = Guid.NewGuid() + "." + array[array.Length - 1];
                     booksection.Image.SaveAs(Server.MapPath("~/images/Booksections/")+filename);
                     booksection.imagepath = filename;

@@ -52,16 +52,32 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(int id,Book book)
+        public ActionResult Create(int id, Book book)
         {
             if (ModelState.IsValid)
             {
                 String[] array = book.ImageFile.FileName.Split('.');
                 String filename = Guid.NewGuid() + "." + array[array.Length - 1];
-                book.ImageFile.SaveAs(Server.MapPath("~/images/Books/") + filename);
-                book.imageFilePath = filename;
                 String[] array1 = book.PdfFile.FileName.Split('.');
                 String filename1 = Guid.NewGuid() + "." + array1[array1.Length - 1];
+
+                if (array[array.Length - 1].ToLower() != "jpg"  ||  array[array.Length - 1].ToLower() !="jpeg" )
+
+                {
+                    ModelState.AddModelError("", "من فضلك قم بادخال الصورة  بصيغة جي بي جي او جي بي اي جي ");
+
+                    return View();
+                }
+                else if (array1[array1.Length-1].ToLower()!="pdf")
+                {
+                    ModelState.AddModelError("","قم بادخال الملف بصيغة بي دي اف ");
+                    return View();
+
+                }
+
+                book.ImageFile.SaveAs(Server.MapPath("~/images/Books/") + filename);
+                book.imageFilePath = filename;
+             
                 book.PdfFile.SaveAs(Server.MapPath("~/texts/") + filename1);
                 book.PdfFilepath = filename1;
               Booksection b =db.Booksections.Include(a=>a.Books).FirstOrDefault(a => a.id == id);

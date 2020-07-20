@@ -89,6 +89,11 @@ namespace Bsa2er_MVC.Controllers
                     {
                         return RedirectToAction("StudentDashboard");
                     }
+                    else if (user.Roles.Any(r => r.RoleId == "3"))
+                    {
+                        return RedirectToAction("Index", "InstructorDashboard", new { id = user.Id });
+                    }
+
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
@@ -439,6 +444,7 @@ namespace Bsa2er_MVC.Controllers
             return View();
         }
 
+        [Authorize(Roles = "Student")]
         public ActionResult StudentDashboard()
         {
             var userID = User.Identity.GetUserId();
@@ -448,6 +454,7 @@ namespace Bsa2er_MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public ActionResult ChangeInfo(Student newUser)
         {
             if (ModelState.IsValid)
@@ -466,6 +473,7 @@ namespace Bsa2er_MVC.Controllers
         }
 
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Student")]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
             var userID = User.Identity.GetUserId();
@@ -485,6 +493,7 @@ namespace Bsa2er_MVC.Controllers
             return RedirectToAction("StudentDashboard");
         }
 
+        [Authorize(Roles = "Student")]
         public ActionResult AddProgram(int id)
         {
             var userID = User.Identity.GetUserId();

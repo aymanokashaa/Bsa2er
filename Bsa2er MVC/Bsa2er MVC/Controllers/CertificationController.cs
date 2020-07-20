@@ -28,6 +28,8 @@ namespace Bsa2er_MVC.Controllers
          
             return View();
         }
+
+        [Authorize(Roles = "Student")]
         public ActionResult getCertification(int progId, string stdId)
         {
             var studentprogramInformation = db.StudentsPrograms.FirstOrDefault(s => s.Program_Id == progId && s.Std_Id == stdId);
@@ -37,6 +39,8 @@ namespace Bsa2er_MVC.Controllers
 
             return View();
         }
+
+        [Authorize(Roles = "Student")]
         public ActionResult PrintPdf(int pId,string sId)
         {
             var pdf = new ActionAsPdf("getCertification", new {progId=pId,stdId=sId });

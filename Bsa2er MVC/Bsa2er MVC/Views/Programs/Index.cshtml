@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<Bsa2er_MVC.Models.Program>
 
 @{
+    Layout = "~/Views/Shared/Manage.cshtml";
     ViewBag.Title = "الدورات والبرامج";
 }
     <div class="tracks-box">
@@ -104,6 +105,6 @@
 
             </table>*@
         <p>
-            @Html.ActionLink("اضافة دورة", "Create", "Create", new { @class = "btn btn-info btn-block w-25 m-auto text-white"})
+            @Html.ActionLink("اضافة دورة", "Create",null, new { @class = "btn btn-info btn-block w-25 m-auto text-white"})
         </p>
 

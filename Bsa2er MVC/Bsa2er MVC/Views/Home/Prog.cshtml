@@ -13,6 +13,10 @@
                 {
                     <a href="/Account/AddProgram/@Model.ProgramId" class="btn btn-info w-50 mt-4 mx-auto">التسجيل بالبرنامج</a>
                 }
+                else if (!User.Identity.IsAuthenticated)
+                {
+                    <h4 class="text-center">ًللتسجيل بالبرنامج عليك تسجيل الدخول أولا</h4>
+                }
             </div>
             <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
                 <tbody>

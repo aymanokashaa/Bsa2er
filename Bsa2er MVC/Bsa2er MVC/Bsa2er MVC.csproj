@@ -193,9 +193,11 @@
     <Compile Include="Controllers\CarouselImageController.cs" />
     <Compile Include="Controllers\CertificationController.cs" />
     <Compile Include="Controllers\DashBoardController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\ExamsController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InstructorDashboardController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\message.cs" />
     <Compile Include="Controllers\NewsController.cs" />
@@ -204,6 +206,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007052232141_bd.cs" />
+	  <Compile Include="Migrations\202007052232141_bd.Designer.cs">
+		  <DependentUpon>202007052232141_bd.cs</DependentUpon>
+	  </Compile>
     <Compile Include="Migrations\202007201048354_init.cs" />
     <Compile Include="Migrations\202007201048354_init.Designer.cs">
       <DependentUpon>202007201048354_init.cs</DependentUpon>
@@ -594,6 +600,9 @@
     <Content Include="Views\CarouselImage\Details.cshtml" />
     <Content Include="Views\CarouselImage\Edit.cshtml" />
     <Content Include="Views\CarouselImage\Index.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Shared\Manage.cshtml" />
+    <Content Include="Views\InstructorDashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -614,6 +623,9 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+	  <EmbeddedResource Include="Migrations\202007052232141_bd.resx">
+		  <DependentUpon>202007052232141_bd.cs</DependentUpon>
+	  </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007201048354_init.resx">
       <DependentUpon>202007201048354_init.cs</DependentUpon>
     </EmbeddedResource>
