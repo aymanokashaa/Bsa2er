@@ -2,12 +2,12 @@
     padding-left: 25%;
 }
 
-    .imgContainer img {
-        transition: 1s;
-        border-radius: 10px;
-        width: 70%;
-        height: 300px;
-    }
+.imgContainer img {
+    transition: 1s;
+    border-radius: 10px;
+    width: 70%;
+    height: 300px;
+}
 
         .imgContainer img:hover {
             transform: scale(1.1);

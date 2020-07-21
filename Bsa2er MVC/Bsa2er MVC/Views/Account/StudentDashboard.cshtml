@@ -154,7 +154,7 @@
                         if (item.ProgramGrade == 0 && item.Program.Exam.Count > 0)
                         {
                             <div class="card card-body selection">
-                                <a class="link d-block h4 text-center" href="/Exams/TakeExam/@item.Program.Exam.FirstOrDefault(e => e.Active == true).Exam_Id">@item.Program.Exam.FirstOrDefault(e => e.Active == true).Title</a>
+                                <a class="link d-block h4 text-center" href="/Exams/TakeExam/@item.Program.Exam.FirstOrDefault().Exam_Id">@item.Program.Exam.FirstOrDefault().Title</a>
                             </div>
                         }
                     }

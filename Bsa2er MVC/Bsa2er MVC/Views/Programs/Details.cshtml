@@ -6,9 +6,18 @@
 
 <h2 style="text-align:center">تفاصيل البرنامج</h2>
 <div class="container">
-    <div class="imgContainer mt-5">
-        <img src="~/images/Programs/@Model.Program_MainImage">
-    </div>
+    @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram)
+    {
+        <iframe id="prgframe" src="@Model.Program_VideoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    }
+    @if (!(Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram))
+    {
+        <div class="imgContainer mt-5">
+            <img src="~/images/Programs/@Model.Program_ImagePath" />
+        </div>
+    }
+
+
     <div class="row">
         <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
             <tbody>
@@ -35,22 +44,6 @@
                     <td class="col-4">@Html.DisplayNameFor(model => model.Program_Goals)</td>
                     <td class="col-8">@Html.DisplayFor(model => model.Program_Goals)</td>
                 </tr>
-                @if (!(Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram))
-                {
-                    <tr class="d-flex">
-                        <td class="col-4">@Html.DisplayNameFor(model => model.Program_ImagePath)</td>
-                        <td class="col-8">@Html.DisplayFor(model => model.Program_ImagePath)</td>
-                    </tr>
-
-                }
-                @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram)
-                {
-                    <tr class="d-flex">
-                        <td class="col-4">@Html.DisplayNameFor(model => model.Program_VideoLink)</td>
-                        <td class="col-8">@Html.DisplayFor(model => model.Program_VideoLink)</td>
-                    </tr>
-
-                }
                 <tr class="d-flex">
                     <td class="col-4">
                         @Html.DisplayNameFor(model => model.Program_TargetGroup)
@@ -63,11 +56,28 @@
                     <td class="col-4">
                         @Html.DisplayNameFor(model => model.Program_Type)
                     </td>
-                    <td class="col-8"> @Html.DisplayFor(model => model.Program_Type)</td>
-                </tr>
-                @if (!(Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram))
-                {
-                    <tr class="d-flex">
+                 @if (Model.Program_Type== Bsa2er_MVC.Models.ProgramType.Program)
+                    {
+                        <td class="col-8">
+                            برنامج علمي
+                        </td>
+                    }
+                    @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.Track)
+                    {
+                        <td class="col-8">
+                            دورة تدريبية
+                        </td>
+
+                    }
+                    @if (Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram)
+                    {
+                        <td class="col-8">
+                            برنامج عام
+                        </td>
+                    }
+                        @if (!(Model.Program_Type == Bsa2er_MVC.Models.ProgramType.PublicProgram))
+                        {
+                        <tr class="d-flex">
                         <td class="col-4">
                             @Html.DisplayNameFor(model => model.NumOfLecture)
                         </td>
@@ -81,7 +91,6 @@
             </tbody>
         </table>
     </div>
-</div>
 </div>
 
 
