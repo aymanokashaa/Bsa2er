@@ -164,13 +164,14 @@ namespace Bsa2er_MVC.Controllers
         [AllowAnonymous]
         public ActionResult Register(string id)
         {
-            if (id == null)
+           
+            if(id!=null && (User.IsInRole("Admin")||User.IsInRole("Owner")))
             {
-                ViewBag.id = "4";
+                ViewBag.id = id;
             }
             else
             {
-                ViewBag.id = id;
+                ViewBag.id = "4";
             }
             return View();
         }
@@ -516,6 +517,10 @@ namespace Bsa2er_MVC.Controllers
                 {
                     return RedirectToAction("Index", "InstructorDashboard");
                 }
+                else if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("DashBoardPage", "DashBoard");
+                }
                 return RedirectToAction("Index", "Error");
             }
             else
@@ -528,6 +533,10 @@ namespace Bsa2er_MVC.Controllers
                 else if (User.IsInRole("Instructor"))
                 {
                     return RedirectToAction("Index", "InstructorDashboard");
+                }
+                else if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("DashBoardPage", "DashBoard");
                 }
                 return RedirectToAction("Index", "Error");
             }
