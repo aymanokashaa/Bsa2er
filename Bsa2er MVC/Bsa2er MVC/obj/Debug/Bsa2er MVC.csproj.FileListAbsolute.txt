@@ -703,6 +703,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Numerics
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Runtime.CompilerServices.Unsafe.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Text.Encodings.Web.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Threading.Tasks.Extensions.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache

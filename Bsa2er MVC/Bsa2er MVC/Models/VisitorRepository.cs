@@ -7,7 +7,7 @@ using Bsa2er_MVC.Models;
 namespace Bsa2er_MVC.Models
 {
     
-    public class VisitorOperations
+    public class VisitorRepository
     {
         private  static ApplicationDbContext db = new ApplicationDbContext();
         public static void AddVisitor(Visitor visitor)

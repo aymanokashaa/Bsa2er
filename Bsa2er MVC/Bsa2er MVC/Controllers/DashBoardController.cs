@@ -20,7 +20,7 @@ namespace Bsa2er_MVC.Controllers
             ViewBag.NumOfStudents = listOfS.ToList().Count();
             ViewBag.NumOfNewStudents =listOfS.AsEnumerable().Where(u=> (DateTime.Now-u.dataOfRegister).Days <= 7).ToList().Count();
             ViewBag.NumOfProgram = db.Programs.ToList().Count();
-             int[] visitorsInfo = VisitorOperations.getVisitors();
+             int[] visitorsInfo = VisitorRepository.getVisitors();
             ViewBag.NumOfTodayVisitors = visitorsInfo[0];
             ViewBag.NumOfAllVisitors = visitorsInfo[1];
 
