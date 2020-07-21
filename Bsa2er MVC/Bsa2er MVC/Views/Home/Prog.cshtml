@@ -7,17 +7,9 @@
     <div class="row">
         <div class="col-xs-12 text-center">
             <h1 style="display:block;" class="pb-4 mt-3">@Model.Program_Title</h1>
-            <img src="~/images/Programs/@Model.Program_ImagePath" />
-            @* <div class="mb-5">
-            @if (User.IsInRole("Student"))
-            {
-                <a href="/Account/AddProgram/@Model.ProgramId" class="btn btn-info w-50 mt-4 mx-auto">التسجيل بالبرنامج</a>
-            }
-            else if (!User.Identity.IsAuthenticated)
-            {
-                <h4 class="text-center">ًللتسجيل بالبرنامج عليك تسجيل الدخول أولا</h4>
-            }
-        </div>*@
+            <div class="imgContainer mt-5">
+                <img src="~/images/Programs/@Model.Program_ImagePath" />
+            </div>
             <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
                 <tbody>
                     <tr class="d-flex">
@@ -56,15 +48,16 @@
                     </tr>
                 </tbody>
             </table>
-            @if (User.IsInRole("Student"))
-            {
-                @Html.ActionLink("ادرس الان", "StudentDashboard", new { id = Model.ProgramId }, new { @class = "btn btn-warning" });
-            }
-            else
-            {
-                @Html.ActionLink("سجل الان", "Login", "Account", null, new { @class = "btn btn-warning" });
-
-            }
+            <div class="mb-5">
+                @if (User.IsInRole("Student"))
+                {
+                    <a href="/Account/AddProgram/@Model.ProgramId" class="btn btn-info w-50 mt-4 mx-auto">التسجيل بالبرنامج</a>
+                }
+                else if (!User.Identity.IsAuthenticated)
+                {
+                    <h4 class="text-center">ًللتسجيل بالبرنامج عليك تسجيل الدخول أولا</h4>
+                }
+            </div>
 
             <p style="margin-top:10px;" class=" mr-5 text-right">ملاحظة : يمكنك التسجيل بالاكاديمية والالتحاق بالبرامج والدورات العلمية والحصول علي شهادات حضور واجتياز</p>
         </div>
