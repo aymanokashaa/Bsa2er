@@ -22,9 +22,9 @@ namespace Bsa2er_MVC
                    Port=587,
                    EnableSsl=true,
                    DeliveryMethod=System.Net.Mail.SmtpDeliveryMethod.Network,
-                   Credentials=new NetworkCredential("mvclect@gmail.com","Eman2005$")
+                   Credentials=new NetworkCredential("basaersite@gmail.com","basaer123")
             };
-            MailMessage m = new MailMessage("mvclect@gmail.com", message.Destination)
+            MailMessage m = new MailMessage("basaersite@gmail.com", message.Destination)
             {
                 Body = message.Body,
                 Subject = message.Subject

@@ -211,12 +211,18 @@ namespace Bsa2er_MVC.Controllers
                     }
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
+<<<<<<< HEAD
                   //  string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                  //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+=======
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+>>>>>>> c543017f7395576c097529d1ed7ac0288af09016
 
                     if (id == "4")
                         return RedirectToAction("GoConfirmYourEmail");
@@ -550,11 +556,17 @@ namespace Bsa2er_MVC.Controllers
         {
             var userID = User.Identity.GetUserId();
             
-            
-                db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
-                db.SaveChanges();
-            
-            return RedirectToAction("Index", "Home");
+                try
+                {
+                    db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    return RedirectToAction("StudentDashboard");
+                }
+
+            return RedirectToAction("StudentDashboard");
         }
 
         protected override void Dispose(bool disposing)
