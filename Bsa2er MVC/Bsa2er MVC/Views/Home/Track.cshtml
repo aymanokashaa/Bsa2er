@@ -6,17 +6,8 @@
     <div class="row">
         <div class="col-xs-12 text-center">
             <h1 style="display:block;" class="pb-4 mt-3">@Model.Program_Title</h1>
-            <iframe id="prgframe" src="@Model.Program_VideoLink" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <div class="mb-5">
-                @if (User.IsInRole("Student"))
-                {
-                    <a href="/Account/AddProgram/@Model.ProgramId" class="btn btn-info w-50 mt-4 mx-auto">التسجيل بالدورة</a>
-                }
-                else if (!User.Identity.IsAuthenticated)
-                {
-                    <h4 class="text-center">ًللتسجيل بالدورة عليك تسجيل الدخول أولا</h4>
-                }
-            </div>
+            <img src="~/images/Programs/@Model.Program_ImagePath" />
+            
             <table class="table  table-bordered table-hover mt-5 mb-5 tab ">
                 <tbody>
                     <tr class="d-flex">
@@ -55,6 +46,15 @@
                     </tr>
                 </tbody>
             </table>
+            @if (User.IsInRole("Student"))
+            {
+                @Html.ActionLink("ادرس الان", "StudentDashboard", new { id = Model.ProgramId }, new { @class = "btn btn-warning" });
+            }
+            else
+            {
+                @Html.ActionLink("سجل الان", "Login", "Account", null, new { @class = "btn btn-warning" });
+
+            }
             <p style="margin-top:10px;" class=" mr-5 text-right">ملاحظة : يمكنك التسجيل بالاكاديمية والالتحاق بالبرامج والدورات العلمية والحصول علي شهادات حضور واجتياز</p>
         </div>
     </div>

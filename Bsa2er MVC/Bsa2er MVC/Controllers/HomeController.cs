@@ -15,7 +15,7 @@ namespace Bsa2er_MVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
-            return View();
+            return View(db.CarouselImages.ToList());
         }
 
         public ActionResult About()

@@ -1,7 +1,16 @@
-﻿@{
+﻿@model IEnumerable<Bsa2er_MVC.Models.CarouselImage>
+@{
     ViewBag.Title = "الرئيسة";
 }
-<div class="container-fluid mt-5" style="overflow: hidden;">
+@if (User.IsInRole("Admin"))
+{
+    <div style="text-align:center" class="mb-0 mt-1">
+        @Html.ActionLink("اضافة صورة جديدة", "Create", "CarouselImage", null, new { @class = "btn btn-primary", style = "direction:rtl" })
+    </div>
+}
+
+<a  ></a>
+<div class="container-fluid mt-5" style="overflow: hidden;" >
     <div class="row carousel slide " id="myCarousel" data-ride="carousel" data-interval="2000">
         <ul class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0"></li>
@@ -10,18 +19,40 @@
         </ul>
 
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="~/images/1.jpg" />
-                <a class="carousel-caption"></a>
-            </div>
-            <div class="carousel-item ">
-                <img src="~/images/2.jpg">
-                <a class="carousel-caption"></a>
-            </div>
-            <div class="carousel-item">
-                <img src="~/images/3.jpg">
-                <a class="carousel-caption"></a>
-            </div>
+
+            @foreach (var item in Model.Select((x, i) => new { Value = x, Index = i }))
+            {
+                if (item.Index == 0)
+                {
+                    <div class="carousel-item active">
+                        <img src="~/images/CarouselImages/@item.Value.ImagePath" />
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="carousel-caption text-center" style="top:-10px;">
+                                @Html.ActionLink("تعديل", "Edit", "CarouselImage", new { id = item.Value.Id }, new { @class = "btn  btn-warning" }) |
+                                @Html.ActionLink("حذف", "Delete", "CarouselImage", new { id = item.Value.Id }, new { @class = "btn  btn-danger" })
+                            </div>
+                        }
+
+                    </div>
+                }
+                else
+                {
+                    <div class="carousel-item ">
+                        <img src="~/images/CarouselImages/@item.Value.ImagePath" />
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <div class="carousel-caption text-center" style="top:-10px;">
+                                @Html.ActionLink("تعديل", "Edit", "CarouselImage", new { id = item.Value.Id }, new { @class = "btn  btn-warning" }) |
+                                @Html.ActionLink("حذف", "Delete", "CarouselImage", new { id = item.Value.Id }, new { @class = "btn  btn-danger" })
+                            </div>
+                        }
+
+                    </div>
+                }
+
+            }
+
         </div>
 
         <a class="carousel-control-prev" data-target="#myCarousel" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
@@ -29,14 +60,14 @@
     </div>
 
     <div class="row box col-12 justify-content-around" style="margin-top: 12px;margin-left: 5px; width: 100%;">
-       
-            <div><span>@Html.ActionLink("سجل الأن", "Register", "Account", null,null) </span></div>
-      
-       
-            <div><span>@Html.ActionLink("تسجيل الدخول", "Login", "Account", null,null)  </span></div>
-       
-        
-            <div><span>@Html.ActionLink("التعليم الالكترونى", "", "", null, null)</span></div>
-       
+
+        <div><span>@Html.ActionLink("سجل الأن", "Register", "Account", null, null) </span></div>
+
+
+        <div><span>@Html.ActionLink("تسجيل الدخول", "Login", "Account", null, null)  </span></div>
+
+
+        <div><span>@Html.ActionLink("التعليم الالكترونى", "", "", null, null)</span></div>
+
     </div>
 </div>

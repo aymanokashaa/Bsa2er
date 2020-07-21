@@ -73,7 +73,11 @@
     <div class="form-group enumtype">
         @Html.LabelFor(model => model.Program_Type, htmlAttributes: new { @class = "control-label col-md-2 mt-3 " })
         <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.Program_Type, htmlAttributes: new { @class = "form-control mt-3 w-75 mx-auto", onchange = "ShowPorgType(event)" })
+            <select class="form-control mt-3 w-75 mx-auto" onchange="ShowPorgType(event)" name="Program_Type" >
+                <option value="@Bsa2er_MVC.Models.ProgramType.Program">برنامج علمي</option>
+                <option value="@Bsa2er_MVC.Models.ProgramType.Track">دورة تدريبية</option>
+                <option value="@Bsa2er_MVC.Models.ProgramType.PublicProgram">برنامج عام</option>
+            </select>
             @Html.ValidationMessageFor(model => model.Program_Type, "", new { @class = "text-danger" })
         </div>
     </div>

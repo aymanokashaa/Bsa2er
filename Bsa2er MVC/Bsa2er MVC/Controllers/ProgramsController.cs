@@ -11,7 +11,7 @@ using Bsa2er_MVC.Models;
 
 namespace Bsa2er_MVC.Controllers
 {
-    [Authorize(Roles ="Instructor")]
+    [Authorize(Roles = "Instructor,Admin,Owner")]
     public class ProgramsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

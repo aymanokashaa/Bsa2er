@@ -364,15 +364,24 @@
                 </div>
                 <div class="form-row mt-5">
                     <div class="offset-5 col-3">
-                        <select style="direction:rtl;" name="Qualifications" class="form-control">
+                        <select style="direction:rtl;" name="Qualifications" class="form-control" onchange="showForm(event)" id="selectlist">
                             <option value="متوسط">متوسط</option>
                             <option value="ثانوي"> ثانوي</option>
                             <option value="بكالريوس">بكالريوس</option>
                             <option value="دراسات عليا">دراسات عليا</option>
+                            <option value="3">أخري</option>
                         </select>
                     </div>
                     <div class="col-2">
                         @Html.LabelFor(a => a.Qualifications, "المؤهل", new { @class = "form-label" })
+                    </div>
+                </div>
+                <div class="form-row mt-5" id="myi">
+                    <div class="offset-5 col-3">
+<input type="text" class="form-control" name="Qualifications" id="textinput"/>
+                    </div>
+                    <div class="col-2">
+                        @Html.LabelFor(a => a.Qualifications, "أضف المؤهل", new { @class = "form-label" })
                     </div>
                 </div>
                 <div class="form-row mt-4">
@@ -546,8 +555,8 @@
                     </div>
                 </div>
 
-                <div class="col-12 mt-5">
-                    <button style="padding:10px 40px;" type="submit" class="btn btn-primary">سجل</button>
+                <div class="col-12 mt-5 mb-5">
+                    <button style="padding:10px 40px;" type="submit" class="btn btn-primary" onclick="changeselectvalue();" >سجل</button>
                 </div>}
         </div>
     </div>

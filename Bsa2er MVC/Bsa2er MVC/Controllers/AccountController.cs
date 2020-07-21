@@ -151,10 +151,28 @@ namespace Bsa2er_MVC.Controllers
 
         //
         // GET: /Account/Register
+
+        //[AllowAnonymous]
+        //[ActionName("StudentRegister")]
+        //public ActionResult Register()
+        //{
+        //    ViewBag.id ="4";
+        //    return View();
+        //}
+        // GET: /Account/Register
+
         [AllowAnonymous]
         public ActionResult Register(string id)
         {
-            ViewBag.id = id;
+           
+            if(id!=null && (User.IsInRole("Admin")||User.IsInRole("Owner")))
+            {
+                ViewBag.id = id;
+            }
+            else
+            {
+                ViewBag.id = "4";
+            }
             return View();
         }
 
@@ -168,7 +186,7 @@ namespace Bsa2er_MVC.Controllers
             if (ModelState.IsValid)
             {
                 string date = model.year+"-"+ model.month +"-"+ model.day;
-                var user = new ApplicationUser { UserName = model.Username,pathofimage="images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
+                var user = new ApplicationUser { UserName = model.Username,pathofimage="/images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -193,9 +211,9 @@ namespace Bsa2er_MVC.Controllers
                     }
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+                  //  string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                   // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                   // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
 
                     if (id == "4")
                         return RedirectToAction("GoConfirmYourEmail");
@@ -204,8 +222,8 @@ namespace Bsa2er_MVC.Controllers
                 }
                 AddErrors(result);
             }
-
             // If we got this far, something failed, redisplay form
+            ViewBag.id = id;
             return View(model);
         }
 
@@ -473,24 +491,55 @@ namespace Bsa2er_MVC.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        [Authorize(Roles = "Student")]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
-            var userID = User.Identity.GetUserId();
-            var user = db.Students.Find(userID);
-            var userImage = user.ApplicationUser.pathofimage;
-
-            if (userImage != "/images/4.jpg")
+            if (image != null)
             {
-                System.IO.File.Delete(Server.MapPath(userImage));
-            }
+                var userID = User.Identity.GetUserId();
+                var user = db.Users.Find(userID);
+                var userImage = user.pathofimage;
 
-            var arr = image.FileName.Split('.');
-            string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
-            user.ApplicationUser.pathofimage = $"/images/{filename}";
-            image.SaveAs(Server.MapPath("~/images/") + filename);
-            db.SaveChanges();
-            return RedirectToAction("StudentDashboard");
+                if (userImage != "/images/DashBoard/user.png")
+                {
+                    System.IO.File.Delete(Server.MapPath(userImage));
+                }
+                var arr = image.FileName.Split('.');
+                string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
+                user.pathofimage = $"/images/{filename}";
+                image.SaveAs(Server.MapPath("~/images/") + filename);
+                db.SaveChanges();
+                if (User.IsInRole("Student"))
+                {
+                    return RedirectToAction("StudentDashboard");
+
+                }
+                else if (User.IsInRole("Instructor"))
+                {
+                    return RedirectToAction("Index", "InstructorDashboard");
+                }
+                else if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("DashBoardPage", "DashBoard");
+                }
+                return RedirectToAction("Index", "Error");
+            }
+            else
+            {
+                if (User.IsInRole("Student"))
+                {
+                    return RedirectToAction("StudentDashboard");
+
+                }
+                else if (User.IsInRole("Instructor"))
+                {
+                    return RedirectToAction("Index", "InstructorDashboard");
+                }
+                else if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("DashBoardPage", "DashBoard");
+                }
+                return RedirectToAction("Index", "Error");
+            }
         }
 
         [Authorize(Roles = "Student")]

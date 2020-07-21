@@ -152,13 +152,13 @@
     <div class="row profile-box m-3">
         <div class="col-md-3 aside">
             <div class="info row">
-                <div class="lead col-8 col-md-12 col-xl-8">@Model.ApplicationUser.UserName</div>
+                <div class="lead col-8 col-md-12 col-xl-8">@User.Identity.Name</div>
                 <div class="img-cont col-4 col-md-12 col-xl-4 p-0">
                     <a href="#" data-toggle="modal" data-target="#dpic"><img src="@Model.ApplicationUser.pathofimage"></a>
                 </div>
             </div>
             <div class="c-pw"><a href="/Manage/ChangePassword">تغيير كلمة المرور</a></div>
-            <div class="l-out"><form method="post" action="LogOff">@Html.AntiForgeryToken() <input type="submit" value="تسجيل الخروج" class="btn btn-link text-danger" /></form></div>
+            <div class="l-out"><form method="post" action="~/Account/LogOff/">@Html.AntiForgeryToken() <input type="submit" value="تسجيل الخروج" class="btn btn-link text-warning h2"  /></form></div>
             <div class="row mb-3 mt-3 selection" data-toggle="collapse" aria-expanded="true"
                  aria-controls="cont-insmanage" data-target="#cont-insmanage">
                 <div class="col " style="cursor:pointer;">ادارة البرامج والدورات</div>
@@ -196,6 +196,17 @@
                 </div>
 
             </div>
+        </div>
+        <div class="col-md-2 links text-center p-3 aside">
+            <a href="/Home/Index">
+                <div class="m-auto" style="max-width: 350px; margin-top:auto">
+                    <img src="/images/4.png"
+                         style="width: 100%; height: 100%;">
+                </div>
+            </a>
+            <div class="date  h6 mb-3"></div>
+            <a href="/Home/News" class="link d-block mb-3 h3 btn btn-warning" >الأخبار</a>
+            <a href="/Home/BookSection" class="link d-block h3 btn btn-info">المكتبة</a>
         </div>
     </div>
 

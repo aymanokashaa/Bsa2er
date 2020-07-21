@@ -79,6 +79,7 @@ namespace Bsa2er_MVC.Models
         public virtual DbSet<Student> Students { set; get; }
         public virtual DbSet<Gallery> Galleries { set; get; }
         public virtual DbSet<Visitor> Visitors { set; get; }
+        public virtual DbSet<CarouselImage> CarouselImages { set; get; }
         public static ApplicationDbContext Create()
         {
 
