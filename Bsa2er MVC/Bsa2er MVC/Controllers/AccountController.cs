@@ -547,11 +547,17 @@ namespace Bsa2er_MVC.Controllers
         {
             var userID = User.Identity.GetUserId();
             
-            
-                db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
-                db.SaveChanges();
-            
-            return RedirectToAction("Index", "Home");
+                try
+                {
+                    db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    return RedirectToAction("StudentDashboard");
+                }
+
+            return RedirectToAction("StudentDashboard");
         }
 
         protected override void Dispose(bool disposing)
