@@ -151,10 +151,28 @@ namespace Bsa2er_MVC.Controllers
 
         //
         // GET: /Account/Register
+
+        //[AllowAnonymous]
+        //[ActionName("StudentRegister")]
+        //public ActionResult Register()
+        //{
+        //    ViewBag.id ="4";
+        //    return View();
+        //}
+        // GET: /Account/Register
+
         [AllowAnonymous]
         public ActionResult Register(string id)
         {
-            ViewBag.id = id;
+           
+            if(id!=null && (User.IsInRole("Admin")||User.IsInRole("Owner")))
+            {
+                ViewBag.id = id;
+            }
+            else
+            {
+                ViewBag.id = "4";
+            }
             return View();
         }
 
@@ -168,7 +186,7 @@ namespace Bsa2er_MVC.Controllers
             if (ModelState.IsValid)
             {
                 string date = model.year+"-"+ model.month +"-"+ model.day;
-                var user = new ApplicationUser { UserName = model.Username,pathofimage="images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
+                var user = new ApplicationUser { UserName = model.Username,pathofimage="/images/DashBoard/user.png",birthcountry=model.countryofbirth ,fullname = model.fullname, Email = model.Email, Country = model.Countries, Qualification = model.Qualifications, PhoneNumber = model.Phonenumber, dateofbirth = DateTime.Parse(date), gender = model.gender.ToString() ,dataOfRegister=DateTime.Now};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -475,30 +493,53 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePic(HttpPostedFileBase image)
         {
-            var userID = User.Identity.GetUserId();
-            var user = db.Users.Find(userID);
-            var userImage = user.pathofimage;
-
-            if (userImage != "images/DashBoard/user.png")
+            if (image != null)
             {
-                System.IO.File.Delete(Server.MapPath(userImage));
-            }
+                var userID = User.Identity.GetUserId();
+                var user = db.Users.Find(userID);
+                var userImage = user.pathofimage;
 
-            var arr = image.FileName.Split('.');
-            string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
-            user.pathofimage = $"/images/{filename}";
-            image.SaveAs(Server.MapPath("~/images/") + filename);
-            db.SaveChanges();
-            if (User.Identity.AuthenticationType == "Student")
+                if (userImage != "/images/DashBoard/user.png")
+                {
+                    System.IO.File.Delete(Server.MapPath(userImage));
+                }
+                var arr = image.FileName.Split('.');
+                string filename = Guid.NewGuid() + "." + arr[arr.Length - 1];
+                user.pathofimage = $"/images/{filename}";
+                image.SaveAs(Server.MapPath("~/images/") + filename);
+                db.SaveChanges();
+                if (User.IsInRole("Student"))
+                {
+                    return RedirectToAction("StudentDashboard");
+
+                }
+                else if (User.IsInRole("Instructor"))
+                {
+                    return RedirectToAction("Index", "InstructorDashboard");
+                }
+                else if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("DashBoardPage", "DashBoard");
+                }
+                return RedirectToAction("Index", "Error");
+            }
+            else
             {
-                return RedirectToAction("StudentDashboard");
+                if (User.IsInRole("Student"))
+                {
+                    return RedirectToAction("StudentDashboard");
 
+                }
+                else if (User.IsInRole("Instructor"))
+                {
+                    return RedirectToAction("Index", "InstructorDashboard");
+                }
+                else if (User.IsInRole("Owner") || User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("DashBoardPage", "DashBoard");
+                }
+                return RedirectToAction("Index", "Error");
             }
-            else 
-            {
-                return RedirectToAction("Index", "InstructorDashboard");
-            }
-
         }
 
         [Authorize(Roles = "Student")]

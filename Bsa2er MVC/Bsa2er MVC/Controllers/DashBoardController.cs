@@ -28,7 +28,7 @@ namespace Bsa2er_MVC.Controllers
             var user = db.Users.SingleOrDefault(u => u.Id ==id );
             if (user.pathofimage == null)
             {
-                ViewBag.img = "images/DashBoard/user.png";
+                ViewBag.img = "/images/DashBoard/user.png";
             }
             else
             {

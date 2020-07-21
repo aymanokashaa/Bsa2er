@@ -8,6 +8,11 @@
 @using System.Web;
 @using System.Web.Mvc;
 
+
+
+@{
+    string val = "4";
+}
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -26,6 +31,18 @@
 else
 {
 
-    <li class="nav-item">@Html.ActionLink("سجل الان", "Register", "Account", routeValues: new {id="4" }, htmlAttributes: new { id = "registerLink", @class = "nav-link text-warning" })</li>
+    @*using (Html.BeginForm("FRegister", "Account", FormMethod.Post, new { id = "registerLink", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+        <li class="nav-item">
+            <input type="hidden" name="RoleId" value="4" />
+            <input type="submit" value="سجل الان" class="nav-link text-warning" id="" />
+        </li>
+        <input type="hidden" name="RoleId" value="4" />
+        <li class="nav-item"><a class="nav-link text-warning" href="javascript:document.getElementById('registerLink').submit()">سجل الان</a></li>
+
+    }*@
+
+    <li class="nav-item">@Html.ActionLink("سجل الان", "Register", "Account", null, htmlAttributes: new { id = "registerLink", @class = "nav-link text-warning" })</li>
     <li class="nav-item">@Html.ActionLink("تسجيل الدخول", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link text-warning" })</li>
 }

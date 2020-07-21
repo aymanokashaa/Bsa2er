@@ -29,8 +29,14 @@
     <div class="card-body">
         <div class="tab-content p-0">
             <p>
-                @if (ViewBag.RoleId!="4")
+                @if (ViewBag.RoleId != "4")
                 {
+                    @*using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                    {
+                        <input type="hidden" name="RoleId" value="@ViewBag.RoleId" />
+                        <input type="submit" value="أنشأ @rolename جديد" class="btn btn-primary" />
+                    }*@
+
                     @Html.ActionLink($"أنشأ {rolename} جديد", "Register","Account", new {id=ViewBag.RoleId }, new { @class = "btn btn-primary" })
 
                 }

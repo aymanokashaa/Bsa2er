@@ -187,7 +187,7 @@
                 </div>
                 <div class="Usercard-body">
                     <div class="image">
-                        <img src="~/@ViewBag.img" class=" elevation-2 img-circle" width="50" height="50" alt="صورة المستخدم">
+                        <a href="#" data-toggle="modal" data-target="#dpic"><img src="@ViewBag.img" class=" elevation-2 img-circle" width="50" height="50" alt="صورة المستخدم"></a>
                     </div>
                     <h2 class="Username">@User.Identity.Name</h2>
 
@@ -211,9 +211,9 @@
             <div class="sidebar mt-3">
                 <!-- Sidebar Menu -->
                 <nav class="mt-0">
-                    <ul class="nav nav-pills nav-sidebar flex-column text-right overflow-auto"  data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column text-right overflow-auto" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                    with font-awesome or any other icon font library -->
+                        with font-awesome or any other icon font library -->
                         <li class="nav-item has-treeview">
                             <a href="/DashBoard/DashBoardPage" class="nav-link active">
                                 <p>
@@ -269,16 +269,16 @@
                          UpdateTargetId = "ContentSection"
                      }, new { @class = "nav-link", id = "AjaxLinkThree" })
                             <!--<a href='/User/Index?roleId="4"' class="nav-link">
-                            <p>
+                                <p>
 
-                                إدارة الطلاب
+                                    إدارة الطلاب
 
-                            </p>
-                            <i class="float-left fa fa-graduation-cap"></i>
-                        </a>-->
+                                </p>
+                                <i class="float-left fa fa-graduation-cap"></i>
+                            </a>-->
                         </li>
                         <li class="nav-item has-treeview">
-                            <a id="dropLink" class="nav-link" >
+                            <a id="dropLink" class="nav-link">
                                 <svg style="display: inline;width:20px;height:20px;" fill="black" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
 
                                 <p>
@@ -288,7 +288,7 @@
 
                                 <i class="float-left fa fa-video-camera"></i>
                             </a>
-                            <ul class="nav nav-pills nav-sidebar flex-column text-right dispnon" id="drop" >
+                            <ul class="nav nav-pills nav-sidebar flex-column text-right dispnon" id="drop">
                                 <li>
                                     @Ajax.ActionLink("البرامج العامة", "ProgramsPage", "DashBoard", new { type = Bsa2er_MVC.Models.ProgramType.PublicProgram },
                                        new AjaxOptions()
@@ -298,12 +298,12 @@
                                            UpdateTargetId = "ContentSection"
                                        }, new { @class = "nav-link" })
                                     @*<a href="/Programs/Index" class="nav-link">
-                                        <p>
-                                            البرامج العامة
+                                            <p>
+                                                البرامج العامة
 
-                                        </p>
+                                            </p>
 
-                                    </a>*@
+                                        </a>*@
                                 </li>
                                 <li>
                                     @Ajax.ActionLink("البرامج العلمية", "ProgramsPage", "DashBoard", new { type = Bsa2er_MVC.Models.ProgramType.Program },
@@ -330,12 +330,12 @@
                                            UpdateTargetId = "ContentSection"
                                        }, new { @class = "nav-link" })
                                     @*<a href="/Programs/Index" class="nav-link">
-                                        <p>
-                                            الدورات العلمية
+                                            <p>
+                                                الدورات العلمية
 
-                                        </p>
-                                      
-                                    </a>*@
+                                            </p>
+
+                                        </a>*@
                                 </li>
                             </ul>
                         </li>
@@ -364,12 +364,12 @@
                                    UpdateTargetId = "ContentSection"
                                }, new { @class = "nav-link", id = "AjaxLinkBooks" })
                             @*<a href="/Booksections/Index" class="nav-link">
-                                <p>
-                                    إدارة الكتب
+                                    <p>
+                                        إدارة الكتب
 
-                                </p>
-                                <i class="float-left fa fa-book"></i>
-                            </a>*@
+                                    </p>
+                                    <i class="float-left fa fa-book"></i>
+                                </a>*@
                         </li>
                         <li class="nav-item has-treeview">
                             @Ajax.ActionLink("إدارة الصور", "PicturesPage", "DashBoard", null,
@@ -380,12 +380,12 @@
                                      UpdateTargetId = "ContentSection"
                                  }, new { @class = "nav-link", id = "AjaxLinkGallery" })
                             @*<a href="#" class="nav-link">
-                                <p>
-                                    إدارة الصور
+                                    <p>
+                                        إدارة الصور
 
-                                </p>
-                                <i class="float-left fa fa-image"></i>
-                            </a>*@
+                                    </p>
+                                    <i class="float-left fa fa-image"></i>
+                                </a>*@
                         </li>
                     </ul>
                 </nav>
@@ -402,10 +402,11 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1 class="m-0 text-dark" style="font-size: 2.5rem;">Dashboard</h1>
+                            @Html.ActionLink("الصفحة الرئيسية", "Index", "Home", null, new { @class = "brand-link text-primary" })
                             @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
                             {
-                            @Html.AntiForgeryToken()
-                            <a class="brand-link text-danger" href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a>
+                                @Html.AntiForgeryToken()
+                                <a class="brand-link text-danger" href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a>
                             }
                         </div><!-- /.col -->
 
@@ -535,7 +536,7 @@
 
 
         <!-- /.content-wrapper -->
-        <footer class="main-footer" >
+        <footer class="main-footer">
             <strong>Copyright &copy; 2020 <a href="#">Basear</a>.</strong>
             All rights reserved.
         </footer>
@@ -544,6 +545,51 @@
 
     </div>
     <!-- ./wrapper -->
+
+
+    <!-- Change Profile Picture Modal -->
+    <div class="modal fade" id="dpic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content text-right" style="direction:rtl">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">تغيير الصوره الشخصيه</h5>
+                </div>
+                @using (Html.BeginForm("ChangePic", "Account", FormMethod.Post,new { enctype = "multipart/form-data" }))
+                {
+                    <div class="modal-body">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div class="w-100" style="height:400px">
+                                <img src="@ViewBag.img" class="w-100 h-100" />
+                            </div>
+                            <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button> |
+                        <input type="submit" class="btn btn-success" value="حفظ" />
+                    </div>
+                }
+                @*<form method="post" action="/Account/ChangePic" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <div class="w-100" style="height:400px">
+                                <img src="@ViewBag.img" class="w-100 h-100" />
+                            </div>
+                            <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button> |
+                        <input type="submit" class="btn btn-success" value="حفظ" />
+                    </div>
+                </form>*@
+            </div>
+        </div>
+    </div>
+
+
     <script src="~/Scripts/jquery-3.5.1.min.js"></script>
     <script src="~/Scripts/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
