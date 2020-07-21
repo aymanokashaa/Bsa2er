@@ -344,7 +344,7 @@
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentsPrograms.cs" />
     <Compile Include="Models\Visitor.cs" />
-    <Compile Include="Models\VisitorOperations.cs" />
+    <Compile Include="Models\VisitorRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

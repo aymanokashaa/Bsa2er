@@ -211,9 +211,15 @@ namespace Bsa2er_MVC.Controllers
                     }
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
+<<<<<<< HEAD
                   //  string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+=======
+                   // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                 //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+>>>>>>> 4c59b7ab5f3b778040a047df68e99aaf8af85593
 
                     if (id == "4")
                         return RedirectToAction("GoConfirmYourEmail");
@@ -546,15 +552,11 @@ namespace Bsa2er_MVC.Controllers
         public ActionResult AddProgram(int id)
         {
             var userID = User.Identity.GetUserId();
-            try
-            {
+            
+            
                 db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
                 db.SaveChanges();
-            }
-            catch
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            
             return RedirectToAction("Index", "Home");
         }
 

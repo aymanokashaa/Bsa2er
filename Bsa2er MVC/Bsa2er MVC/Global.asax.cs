@@ -17,7 +17,7 @@ namespace Bsa2er_MVC
         }
         protected void Application_BeginRequest()
         {
-            VisitorOperations.AddVisitor(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
+            VisitorRepository.AddVisitor(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
         }
     }
 }
