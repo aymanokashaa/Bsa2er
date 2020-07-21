@@ -33,10 +33,7 @@ namespace Bsa2er_MVC
                 "~/Scripts/popper.js",
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/bootstrap.min.js",
-<<<<<<< HEAD
                 "~/Scripts/show.js",
-=======
->>>>>>> 4c59b7ab5f3b778040a047df68e99aaf8af85593
                 "~/Scripts/show2.js",
                 "~/Scripts/jquery.unobtrusive-ajax.js"
 
