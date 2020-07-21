@@ -134,7 +134,6 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 <<<<<<< HEAD
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
@@ -336,7 +335,6 @@ C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authentication.Core.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authorization.dll
@@ -406,7 +404,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Numerics
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Runtime.CompilerServices.Unsafe.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Text.Encodings.Web.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Threading.Tasks.Extensions.xml
-<<<<<<< HEAD
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
@@ -545,7 +542,3 @@ D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.ca
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
-=======
->>>>>>> 4c59b7ab5f3b778040a047df68e99aaf8af85593
-=======
->>>>>>> c543017f7395576c097529d1ed7ac0288af09016

@@ -18,7 +18,7 @@ function changeselectvalue() {
     if ($("#selectlist").val() == "3") {
         var x = $("#textinput").val();
         console.log(x);
-        $("#selectlist").empty().append(`<option selected="selected" value="${x}">اخر</option>`);
+        $("#selectlist").empty().append(`<option selected="selected" value="${x}">اخري</option>`);
 
     }
 
