@@ -841,7 +841,6 @@ D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Features.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
-D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Core.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.dll
@@ -883,7 +882,6 @@ D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Abstractions.xml
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.xml
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Features.xml
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
-D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Core.xml
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.xml
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
@@ -912,3 +910,8 @@ D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.ca
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
+D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.dll
+D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.dll
+D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Mvc5.dll
+D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.pdb
+D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.pdb

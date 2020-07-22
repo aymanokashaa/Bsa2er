@@ -34,7 +34,11 @@
 
         </dl>
     </div>
-<p class="text-center">
-    @Html.ActionLink("تعديل الكتاب", "Edit", new { id = Model.Id },new {@class="btn btn-primary"}) 
-    @Html.ActionLink("الرجوع الي قائمة الكتب", "Index",null,new {@class="btn btn-success"})
-</p>
+    <p class="text-center">
+        @if (User.IsInRole("Instructor"))
+        {
+            @Html.ActionLink("تعديل الكتاب", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        }
+
+        @Html.ActionLink("الرجوع الي قائمة الكتب", "Index", null, new { @class = "btn btn-success" })
+    </p>
