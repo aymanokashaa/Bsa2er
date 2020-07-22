@@ -13,7 +13,7 @@ namespace Bsa2er_MVC.Controllers
 {
     public class UserController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: ApplicationUser
         public async Task<ActionResult> Index(string roleId)
@@ -87,7 +87,7 @@ namespace Bsa2er_MVC.Controllers
             {
                 db.Entry(applicationUser).State = EntityState.Modified;
                 await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("DashBoardPage","DashBoard");
             }
             return View(applicationUser);
         }
@@ -113,6 +113,16 @@ namespace Bsa2er_MVC.Controllers
         public async Task<ActionResult> DeleteConfirmed(string id)
         {
             ApplicationUser applicationUser = await db.Users.SingleOrDefaultAsync(a => a.Id == id);
+            var std = await db.Students.SingleOrDefaultAsync(s => s.StdId == id);
+            var inst = await db.Instructors.SingleOrDefaultAsync(s => s.InsId == id);
+            if (std != null)
+            {
+                db.Students.Remove(std);
+            }
+            if (inst != null)
+            {
+                db.Instructors.Remove(inst);
+            }
             db.Users.Remove(applicationUser);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");

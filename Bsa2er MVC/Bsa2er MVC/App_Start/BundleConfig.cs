@@ -30,7 +30,7 @@ namespace Bsa2er_MVC
                 "~/Scripts/date2.js",
                 "~/Scripts/date.js",
                 "~/Scripts/JQuery-3.5.1.min.js",
-                "~/Scripts/popper.js",
+
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/show.js",
