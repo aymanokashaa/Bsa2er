@@ -13,7 +13,7 @@ namespace Bsa2er_MVC.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db= new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -21,7 +21,7 @@ namespace Bsa2er_MVC.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager/*,ApplicationDbContext _db*/)
         {
             UserManager = userManager;
             SignInManager = signInManager;

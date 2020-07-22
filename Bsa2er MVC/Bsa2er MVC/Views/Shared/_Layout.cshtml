@@ -92,7 +92,7 @@
 
 
     </header>
-    <header id="com">
+    <header id="com" style="min-height:190px;">
         <div class="col-md-3 col-xs-12">
             <img id="image2" src="~/images/4.png" />
         </div>
@@ -171,9 +171,9 @@
         </div>
     </header>
     <!--endheader-->
-
-    @RenderBody()
-
+    <div class="container-fluid mb-2" style="min-height:50vh;" >
+        @RenderBody()
+    </div>
     <!--footer-->
 
     <footer class="p-3 mt-auto">

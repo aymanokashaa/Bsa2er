@@ -1,4 +1,5 @@
 ﻿using Bsa2er_MVC.Models;
+using Bsa2er_MVC.Repositories;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,8 +13,12 @@ namespace Bsa2er_MVC.Controllers
     [Authorize(Roles ="Admin,Owner")]
     public class DashBoardController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db;// = new ApplicationDbContext();
 
+        public DashBoardController(ApplicationDbContext _db)
+        {
+            db = _db;
+        }
         public ActionResult DashBoardPage()
         {
             var listOfS = db.Users.Where(u => u.Roles.Any(r => r.RoleId == "4"));
@@ -49,6 +54,7 @@ namespace Bsa2er_MVC.Controllers
         //GET: Programs
         public ActionResult ProgramsPage(ProgramType type)
         {
+            ViewBag.type = type;
             return PartialView(db.Programs.Where(p=>p.Program_Type==type).ToList());
         }
         //GET: Pictures

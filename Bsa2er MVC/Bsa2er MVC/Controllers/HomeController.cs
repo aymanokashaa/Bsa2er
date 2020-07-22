@@ -8,11 +8,21 @@ using System.Net.Mail;
 using System.Net;
 using System.Web.Services.Description;
 using Bsa2er_MVC;
+using Bsa2er_MVC.Repositories;
+
 namespace Bsa2er_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db; //= new ApplicationDbContext();
+        private IRepository<news> _newsRepository;
+
+        public HomeController(IRepository<news> newsRepository,ApplicationDbContext _db)
+        {
+            _newsRepository = newsRepository;
+            db = _db;
+        }
+
         public ActionResult Index()
         {
             return View(db.CarouselImages.ToList());
@@ -54,7 +64,7 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult News()
         {
-            return View(db.News.ToList());
+            return View(_newsRepository.getAllItems());
         }
 
         public ActionResult PublicProgarms()

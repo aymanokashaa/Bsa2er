@@ -113,67 +113,7 @@ C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2e
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v1.resources
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\Youssef Hatem\Source\Repos\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v2.resources
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csc.exe
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csc.exe.config
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csc.rsp
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csi.exe
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csi.exe.config
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csi.rsp
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CSharp.Core.targets
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.Managed.Core.targets
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.Win32.Primitives.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.AppContext.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Collections.Immutable.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Console.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Diagnostics.StackTrace.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Globalization.Calendars.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.Compression.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.Compression.ZipFile.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Net.Sockets.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Reflection.Metadata.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Text.Encoding.CodePages.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Threading.Tasks.Extensions.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.ValueTuple.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.ReaderWriter.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.XmlDocument.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.XPath.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.XPath.XDocument.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.exe
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.exe.config
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.rsp
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe.config
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.pdb
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.pdb
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.cache
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 C:\Users\Youssef Hatem\source\repos\Bsa2er\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
@@ -564,7 +504,6 @@ C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Common.Logg
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.v.resources
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Rotativa.dll
 C:\Users\Youssef Hatem\source\repos\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Rotativa.dll
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
@@ -634,6 +573,61 @@ C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.cspro
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.xml
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csc.exe
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csc.exe.config
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csc.rsp
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csi.exe
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csi.exe.config
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\csi.rsp
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.CSharp.Core.targets
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.Managed.Core.targets
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.VisualBasic.Core.targets
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\Microsoft.Win32.Primitives.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.AppContext.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Collections.Immutable.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Console.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Diagnostics.StackTrace.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Globalization.Calendars.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.Compression.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.Compression.ZipFile.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.IO.FileSystem.Primitives.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Net.Sockets.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Reflection.Metadata.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.Encoding.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.Primitives.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Text.Encoding.CodePages.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Threading.Tasks.Extensions.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.ValueTuple.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.ReaderWriter.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.XmlDocument.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.XPath.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\System.Xml.XPath.XDocument.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.exe
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.exe.config
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\vbc.rsp
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\roslyn\VBCSCompiler.exe.config
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authentication.Core.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authorization.dll
@@ -645,7 +639,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNe
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Features.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Core.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.dll
@@ -662,6 +655,7 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Exten
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Extensions.Options.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Extensions.Primitives.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.Net.Http.Headers.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Rotativa.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Buffers.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.ComponentModel.Annotations.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Diagnostics.DiagnosticSource.dll
@@ -670,6 +664,11 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Numerics
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Runtime.CompilerServices.Unsafe.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Text.Encodings.Web.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Threading.Tasks.Extensions.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\BouncyCastle.Crypto.xml
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.pdb
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.xml
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.pdb
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Common.Logging.Core.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authentication.Core.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Authorization.xml
@@ -678,10 +677,7 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNe
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Abstractions.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Features.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Core.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
@@ -705,4 +701,11 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Text.Enc
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\System.Threading.Tasks.Extensions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CoreCompileInputs.cache
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Mvc5.dll
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.pdb
+F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.pdb
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
