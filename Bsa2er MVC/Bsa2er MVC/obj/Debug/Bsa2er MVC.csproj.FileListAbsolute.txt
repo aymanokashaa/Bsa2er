@@ -441,7 +441,6 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.CopyComplete
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
-<<<<<<< HEAD
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
 F:\ITI\Final Project\Bsa2er-ThirdBranch\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
@@ -642,7 +641,6 @@ C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.pdb
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 C:\Users\Ayman\Documents\GitHub\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csproj.GenerateResource.cache
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er_MVC.Migrations.an.resources
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
@@ -779,7 +777,6 @@ F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Mvc5.dll
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.pdb
 F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.pdb
-F:\ITI\Final Project\Final_Project_git\Bsa2er MVC\Bsa2er MVC\obj\Debug\Bsa2er MVC.csprojAssemblyReference.cache
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll.config
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Bsa2er MVC.pdb
