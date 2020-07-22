@@ -61,7 +61,7 @@ namespace Bsa2er_MVC.Controllers
                 String[] array1 = book.PdfFile.FileName.Split('.');
                 String filename1 = Guid.NewGuid() + "." + array1[array1.Length - 1];
 
-                if (array[array.Length - 1].ToLower() != "jpg"  ||  array[array.Length - 1].ToLower() !="jpeg" )
+                if (array[array.Length - 1].ToLower() != "jpg"  &&  array[array.Length - 1].ToLower() !="jpeg" )
 
                 {
                     ModelState.AddModelError("", "من فضلك قم بادخال الصورة  بصيغة جي بي جي او جي بي اي جي ");
