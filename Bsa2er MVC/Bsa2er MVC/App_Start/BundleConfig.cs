@@ -33,6 +33,7 @@ namespace Bsa2er_MVC
 
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/bootstrap.min.js",
+                "~/Scripts/show.js",
                 "~/Scripts/show2.js",
                 "~/Scripts/jquery.unobtrusive-ajax.js"
 

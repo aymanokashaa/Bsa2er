@@ -13,13 +13,13 @@
                 <h4 class="text-center pr-2">تسجيل الدخول</h4>
                 <hr />
                 <div class="row">
-                    <div class="col-xs-12 text-center">
+                    <div class="col-xs-12 text-center mr-5">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     </div>
                 </div>
 
-                <div class="form-row mt-5">
+                <div class="form-row mt-3">
 
                     <div class="offset-4 col-3">
                         @Html.TextBoxFor(m => m.username, new { @class = "form-control" })
@@ -29,7 +29,7 @@
                         @Html.LabelFor(m => m.username, "اسم المستخدم ", new { @class = "control-label" })
                     </div>
                 </div>
-                <div class="form-row mt-5">
+                <div class="form-row mt-2">
 
                     <div class="offset-4 col-3">
                         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
@@ -39,7 +39,7 @@
                         @Html.LabelFor(m => m.Email, "البريد الالكتروني  ", new { @class = "control-label" })
                     </div>
                 </div>
-                <div class="form-row mt-5">
+                <div class="form-row mt-2">
                     <div class="offset-4 col-3">
                         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                         @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
@@ -50,7 +50,7 @@
 
                 </div>
 
-                <div class="form-group mt-2">
+                <div class="form-group mt-3">
                     <div class="text-center ">
 
                         <input class="btn btn-success ml-6" type="submit" value=" تسجيل الدخول" />
@@ -58,8 +58,9 @@
                         @Html.CheckBoxFor(m => m.RememberMe)
                     </div>
                 </div>
-                <p class="text-center">
-                    @Html.ActionLink("الدخول بحساب جديد", "Register", new { id = 4 }, new { @class = "btn btn-primary" })
+                <p class="text-center mt-5">
+                    @Html.ActionLink("تسجيل حساب جديد", "Register", new { id = 4 }, new { @class = "btn btn-primary" })
+                    ليس لديك حساب ؟
                 </p> @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
                         @Html.ActionLink("Forgot your password?", "ForgotPassword")
