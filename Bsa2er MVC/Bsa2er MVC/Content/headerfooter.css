@@ -1,12 +1,12 @@
-html
-{
-    height:100%;
+html {
+    height: 100%;
 }
 body
 {
     min-height:100%;
     display:flex;
     flex-direction:column;
+
 }
 * {
   box-sizing: border-box;
@@ -215,6 +215,7 @@ text-align: center;
 
 body {
     background-image: url('../images/6.jpg');
+
 }
 .myf,.myl{
   width: 60%;

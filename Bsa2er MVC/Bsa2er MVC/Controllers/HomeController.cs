@@ -100,7 +100,16 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult BookSection()
         {
-            return View(db.Booksections.ToList());
+          if(Request.IsAuthenticated)
+            {
+                return View(db.Booksections.ToList());
+            }
+          else
+            {
+                return RedirectToAction("Register", "account");
+            }
+              
+         
         }
 
     }
