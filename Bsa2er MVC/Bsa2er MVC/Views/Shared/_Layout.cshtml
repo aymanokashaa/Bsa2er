@@ -48,7 +48,7 @@
                         <li> <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span></li>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
         {
-            <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> DashBoard</a></span></li>
+            <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> لوحة التحكم</a></span></li>
         }
         else if (User.IsInRole("Instructor"))
         {
@@ -153,7 +153,7 @@
                         <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {
-                            <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">To DashBoard</a></span>
+                            <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">لوحة التحكم</a></span>
                         }
                         else if (User.IsInRole("Instructor"))
                         {

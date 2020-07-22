@@ -136,18 +136,20 @@
         <div class="container lectures ">
             <div class="form-group my-3 overflow-hidden w-75 mt-5 mx-auto text-right">
                 <h3>المحاضرات</h3>
-                @foreach (var item in Model.lectures)
+                @foreach (var item in Model.lectures.Select((x,i)=> new { Value=x,Index=i }))
                 {
-                    <div class="lecture p-4 text-right" style="border:3px solid #ffd800; border-radius:10%;">
-                        <label>لينك فيديو المحاضرة </label>
-                        <div class="mb-3">
-                            <input class="form-control text-box single-line" type="text" value="@item.Lecture_VideoLink" name="@item.Lecture_VideoLink" />
-                        </div>
-                        <label>لينك الصوت الخاص بالمحاضرة</label>
-                        <div class="mb-3">
-                            <input class="form-control text-box single-line" type="text" value="@item.Lecture_SoundLink" name="@item.Lecture_VideoLink" />
-                        </div>
-                    </div>
+            <div class="lecture p-4 text-right" style="border:3px solid #ffd800; border-radius:10%;">
+                <input type="hidden" value="@item.Value.Lecture_Id" name="lectures[@item.Index].Lecture_Id" />
+                <input type="hidden" value="@item.Value.Program_Id" name="lectures[@item.Index].Program_Id" />
+                <label>لينك فيديو المحاضرة </label>
+                <div class="mb-3">
+                    <input class="form-control text-box single-line" type="text" value="@item.Value.Lecture_VideoLink" name="lectures[@item.Index].Lecture_VideoLink" />
+                </div>
+                <label>لينك الصوت الخاص بالمحاضرة</label>
+                <div class="mb-3">
+                    <input class="form-control text-box single-line" type="text" value="@item.Value.Lecture_SoundLink" name="lectures[@item.Index].Lecture_SoundLink" />
+                </div>
+            </div>
                 }
             </div>
         </div>
