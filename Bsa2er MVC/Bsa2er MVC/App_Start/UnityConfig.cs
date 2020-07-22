@@ -25,6 +25,7 @@ namespace Bsa2er_MVC
             // e.g. container.RegisterType<ITestService, TestService>();
             container.RegisterType<ApplicationDbContext>();
             container.RegisterType<IRepository<news>, NewsRepository>();
+            container.RegisterType<IRepository<Visitor>, VisitorRepository>();
            // container.RegisterType<IUserStore<ApplicationUser> , UserStore<ApplicationUser>>();
            // container.RegisterType<DbConnection, SqlConnection>(new InjectionFactory(c => new SqlConnection("DefaultConnection")));
             container.RegisterType<AccountController>(new InjectionConstructor());

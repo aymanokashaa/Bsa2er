@@ -446,6 +446,7 @@
     <Content Include="Content\ionicons.min.css" />
     <Content Include="Content\jqvmap.min.css" />
     <Content Include="Content\Library.css" />
+    <Content Include="Content\LoadingGIF.css" />
     <Content Include="Content\News.css" />
     <Content Include="Content\OverlayScrollbars.min.css" />
     <Content Include="Content\Program.css" />
@@ -469,6 +470,8 @@
     <Content Include="images\CarouselImages\2.jpg" />
     <Content Include="images\CarouselImages\3.jpg" />
     <Content Include="images\CarouselImages\default.jpg" />
+    <Content Include="images\CarouselImages\loading.gif" />
+    <Content Include="images\CarouselImages\loading2.gif" />
     <Content Include="images\DashBoard\edit-button.svg" />
     <Content Include="images\DashBoard\user.png" />
     <Content Include="images\Gallery\default.jpg" />
@@ -537,6 +540,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\LoadingGIF.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
