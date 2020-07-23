@@ -17,9 +17,9 @@ namespace Bsa2er_MVC
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-        protected void Application_BeginRequest()
+        protected void Application_BeginRequest(IRepository<Visitor> _repository)
         {
-            VisitorRepository.AddVisitor(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
+            _repository.AddItem(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
         }
     }
 }

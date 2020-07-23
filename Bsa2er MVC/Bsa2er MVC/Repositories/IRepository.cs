@@ -13,6 +13,7 @@ namespace Bsa2er_MVC.Repositories
          void AddItem(T item);
          void EditItem(T item);
          void Remove(T item);
+         int[] getInfo();
         void Dispose();
     }
 }

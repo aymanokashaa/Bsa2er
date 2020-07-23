@@ -13,11 +13,13 @@ namespace Bsa2er_MVC.Controllers
     [Authorize(Roles ="Admin,Owner")]
     public class DashBoardController : Controller
     {
-        private ApplicationDbContext db;// = new ApplicationDbContext();
+        private readonly ApplicationDbContext db;// = new ApplicationDbContext();
+        private readonly IRepository<Visitor> vistorRepository;
 
-        public DashBoardController(ApplicationDbContext _db)
+        public DashBoardController(ApplicationDbContext _db,IRepository<Visitor> _visitorRepository)
         {
             db = _db;
+            vistorRepository = _visitorRepository;
         }
         public ActionResult DashBoardPage()
         {
@@ -25,7 +27,7 @@ namespace Bsa2er_MVC.Controllers
             ViewBag.NumOfStudents = listOfS.ToList().Count();
             ViewBag.NumOfNewStudents =listOfS.AsEnumerable().Where(u=> (DateTime.Now-u.dataOfRegister).Days <= 7).ToList().Count();
             ViewBag.NumOfProgram = db.Programs.ToList().Count();
-             int[] visitorsInfo = VisitorRepository.getVisitors();
+             int[] visitorsInfo = vistorRepository.getInfo();
             ViewBag.NumOfTodayVisitors = visitorsInfo[0];
             ViewBag.NumOfAllVisitors = visitorsInfo[1];
 

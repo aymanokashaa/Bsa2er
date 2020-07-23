@@ -43,5 +43,10 @@ namespace Bsa2er_MVC.Repositories
         {
             _db.Dispose();
         }
+
+        public int[] getInfo()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

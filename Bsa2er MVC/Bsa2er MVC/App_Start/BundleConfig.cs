@@ -22,20 +22,21 @@ namespace Bsa2er_MVC
                      "~/Content/News.css",
                       "~/Content/Library.css",
                       "~/Content/Program.css",
-                      "~/Content/Track.css"
-));
+                      "~/Content/Track.css",
+                      "~/Content/LoadingGIF.css"
+                     ));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
                 "~/Scripts/slide.js",
                 "~/Scripts/date2.js",
                 "~/Scripts/date.js",
                 "~/Scripts/JQuery-3.5.1.min.js",
-
                 "~/Scripts/jquery.validate*",
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/show.js",
                 "~/Scripts/show2.js",
-                "~/Scripts/jquery.unobtrusive-ajax.js"
+                "~/Scripts/jquery.unobtrusive-ajax.js",
+                "~/Scripts/LoadingGIF.js"
 
                 ));
         }

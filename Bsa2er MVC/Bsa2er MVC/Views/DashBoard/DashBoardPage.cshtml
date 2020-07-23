@@ -36,8 +36,9 @@
     <link href="~/Content/DashBoardNews.css" rel="stylesheet" />
     <link href="~/Content/Gallery.css" rel="stylesheet" />
     <link href="~/Content/Program.css" rel="stylesheet" />
-   
+
     <link href="~/Content/Track.css" rel="stylesheet" />
+    <link href="~/Content/LoadingGIF.css" rel="stylesheet" />
     <style>
 
         .Usercard {
@@ -138,7 +139,6 @@
             padding-left: 10px;
             background-color: white;
             color: black;
-  
         }
 
         .Username {
@@ -154,25 +154,32 @@
             margin-top: 3px;
             color: #919191;
         }
+
         #BasaerLogo:hover {
             transform: scale(1.4);
         }
-        #BasaerLogo{
-            transition:all 1s;
+
+        #BasaerLogo {
+            transition: all 1s;
         }
-        .dispnon{
-            display:none;
+
+        .dispnon {
+            display: none;
         }
-        #drop{
-            transition:all 1s;
+
+        #drop {
+            transition: all 1s;
         }
+
         #dropLink:hover {
             cursor: pointer;
         }
-     
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+    <div id="loader">
+        <div id="status"></div>
+    </div>
     <div class="wrapper">
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-maroon elevation-4 " id="side">
@@ -545,8 +552,6 @@
 
     </div>
     <!-- ./wrapper -->
-
-
     <!-- Change Profile Picture Modal -->
     <div class="modal fade" id="dpic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -554,7 +559,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">تغيير الصوره الشخصيه</h5>
                 </div>
-                @using (Html.BeginForm("ChangePic", "Account", FormMethod.Post,new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("ChangePic", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     <div class="modal-body">
                         @Html.AntiForgeryToken()
@@ -571,20 +576,20 @@
                     </div>
                 }
                 @*<form method="post" action="/Account/ChangePic" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        @Html.AntiForgeryToken()
-                        <div class="form-group">
-                            <div class="w-100" style="height:400px">
-                                <img src="@ViewBag.img" class="w-100 h-100" />
+                        <div class="modal-body">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <div class="w-100" style="height:400px">
+                                    <img src="@ViewBag.img" class="w-100 h-100" />
+                                </div>
+                                <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
                             </div>
-                            <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button> |
-                        <input type="submit" class="btn btn-success" value="حفظ" />
-                    </div>
-                </form>*@
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button> |
+                            <input type="submit" class="btn btn-success" value="حفظ" />
+                        </div>
+                    </form>*@
             </div>
         </div>
     </div>
@@ -594,6 +599,7 @@
     <script src="~/Scripts/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/LoadingGIF.js"></script>
     <script>
         $("#AjaxLinkTwo").html('<p>إدارة المعلمين</p ><i class="float-left fa fa-user-circle-o"></i>').on("click", function () { $(".card").css("display", "block") });
         $("#AjaxLinkOne").html('<p>إدارة المشرفين</p ><i class="float-left fa fa-vcard"></i>').on("click", function () { $(".card").css("display", "block") });

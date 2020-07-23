@@ -370,7 +370,6 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Htt
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Core.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.dll
@@ -412,7 +411,6 @@ C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Htt
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Extensions.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Http.Features.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
-C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Mvc.Core.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.xml
 C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
@@ -915,3 +913,8 @@ D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Mvc5.dll
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.pdb
 D:\Basaer\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.pdb
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.dll
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.dll
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Unity.Mvc5.dll
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Unity.Abstractions.pdb
+C:\Users\ahmed\Desktop\Bsa2er\Bsa2er MVC\Bsa2er MVC\bin\Unity.Container.pdb
