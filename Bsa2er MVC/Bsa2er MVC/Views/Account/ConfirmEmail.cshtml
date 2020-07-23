@@ -2,10 +2,10 @@
     ViewBag.Title = "Confirm Email";
 }
 
-<h2 class="text-center mt-5">تاكيد بريدك الالكتروني</h2>
-<div>
-    <p class="text-center mt-5">
-        @Html.ActionLink("اضغط هنا لسجيل الدخول", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-success" })        شكرا لك لتاكيد بريدك الالكتروني
-
+<h2 class="text-center mt-5">تاكيد البريد الإلكتروني</h2>
+<div class="mt-3">
+    <p>تم تأكيد بريدك الإلكتروني بنجاح</p>
+    <p class="text-center mt-3">
+        @Html.ActionLink("اضغط هنا لسجيل الدخول", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-success" }) 
     </p>
 </div>
