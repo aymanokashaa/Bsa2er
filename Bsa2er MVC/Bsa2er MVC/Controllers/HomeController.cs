@@ -102,7 +102,7 @@ namespace Bsa2er_MVC.Controllers
         {
           if(Request.IsAuthenticated)
             {
-                return View(db.Booksections.ToList());
+                return RedirectToAction("index", "Booksections");
             }
           else
             {
