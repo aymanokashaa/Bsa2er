@@ -65,7 +65,7 @@ namespace Bsa2er_MVC.Controllers
                 }
 
                 _newsRepository.AddItem(news);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Home");
             }
 
             return View(news);
