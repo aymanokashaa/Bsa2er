@@ -23,7 +23,7 @@
                     <div class="card-title"> <h5>@item.title</h5></div>
                     <div class="card-body">
 
-                        <p class="card-text"> @item.body.Substring(0, 20) .....</p>
+                        <p class="card-text"> @item.body.Substring(0, item.body.Length/2) .....</p>
                         @Ajax.ActionLink("قراءة المزيد", "NewsDetails", "News", new { id = item.id }, new AjaxOptions()
                                  {
                                     InsertionMode = InsertionMode.Replace,

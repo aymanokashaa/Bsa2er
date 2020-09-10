@@ -15,11 +15,10 @@ namespace Bsa2er_MVC.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Booksections
-       /* public ActionResult Index()
+        public ActionResult Index()
         {
             return View(db.Booksections.ToList());
-        }*/
+        }
 
         // GET: Booksections/Details/5
         public ActionResult Details(int? id)

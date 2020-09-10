@@ -15,7 +15,7 @@
     <div class="row ">
         @foreach (var item in Model)
         {
-            <div class="card col-md-4 ml-1 mt-3">
+            <div class="col-md-6 col-lg-4 col-xl-3 p-2">
                 <div class="card-header text-center">
 
                     @Html.DisplayFor(modelItem => item.Title)
@@ -28,13 +28,13 @@
                         <img  class="card-img" src="~/images/Books/@item.imageFilePath" />
                         </div>
                    
-                <div class="card-footer text-center">
+                <div class="card-footer text-center ">
                     @if (User.IsInRole("Instructor") || User.IsInRole("Admin") || User.IsInRole("Owner"))
                     {
                 @Html.ActionLink("تعديل", "Edit", new { id = item.Id }, new { @class = "btn btn-success" })
-                   @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-danger ml-2" })}
+                   @Html.ActionLink("حذف", "Delete", new { id = item.Id }, new { @class = "btn btn-danger ml-2 " })}
 
-                    @Html.ActionLink("التفاصيل", "Details", new { id = item.Id }, new { @class = "btn btn-dark" })
+                    @Html.ActionLink("التفاصيل", "Details", new { id = item.Id }, new { @class = "btn btn-dark mt-md-2 mt-lg-0" })
                 </div>
 
                 </div>

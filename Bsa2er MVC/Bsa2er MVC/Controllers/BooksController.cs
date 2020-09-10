@@ -54,6 +54,10 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(int id, Book book)
         {
+         if(System.IO.Path.HasExtension(book.PdfFile.FileName)== false)
+            {
+                ModelState.AddModelError("", "قم بادخال الملف بصيغة بي دي اف ");
+            }
             if (ModelState.IsValid)
             {
                 String[] array = book.ImageFile.FileName.Split('.');
@@ -68,7 +72,7 @@ namespace Bsa2er_MVC.Controllers
 
                     return View();
                 }
-                else if (array1[array1.Length-1].ToLower()!="pdf")
+                else if (array1[array1.Length-1].ToLower()!="pdf" )
                 {
                     ModelState.AddModelError("","قم بادخال الملف بصيغة بي دي اف ");
                     return View();
