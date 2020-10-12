@@ -8,11 +8,21 @@ using System.Net.Mail;
 using System.Net;
 using System.Web.Services.Description;
 using Bsa2er_MVC;
+using Bsa2er_MVC.Repositories;
+
 namespace Bsa2er_MVC.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db; //= new ApplicationDbContext();
+        private IRepository<news> _newsRepository;
+
+        public HomeController(IRepository<news> newsRepository,ApplicationDbContext _db)
+        {
+            _newsRepository = newsRepository;
+            db = _db;
+        }
+
         public ActionResult Index()
         {
             return View(db.CarouselImages.ToList());
@@ -37,9 +47,9 @@ namespace Bsa2er_MVC.Controllers
                 Port = 587,
                 EnableSsl = true,
                 DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
-                Credentials = new NetworkCredential("mvclect@gmail.com", "Eman2005$")
+                Credentials = new NetworkCredential("basaersite@gmail.com", "basaer123")
             };
-            MailMessage m = new MailMessage("mvclect@gmail.com", "Youssefhatem270@gmail.com")
+            MailMessage m = new MailMessage("basaersite@gmail.com", "ammar.omega1@gmail.com")
             {
                 Body = Message.body,
                 Subject = Message.subject
@@ -54,7 +64,7 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult News()
         {
-            return View(db.News.ToList());
+            return View(_newsRepository.getAllItems());
         }
 
         public ActionResult PublicProgarms()
@@ -90,7 +100,16 @@ namespace Bsa2er_MVC.Controllers
         }
         public ActionResult BookSection()
         {
-            return View(db.Booksections.ToList());
+          if(Request.IsAuthenticated)
+            {
+                return RedirectToAction("index", "Booksections");
+            }
+          else
+            {
+                return RedirectToAction("Register", "account");
+            }
+              
+         
         }
 
     }

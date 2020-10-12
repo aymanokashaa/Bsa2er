@@ -19,16 +19,20 @@
         </div>
         <div class="card-body">
             <div class="tab-content p-0">
-                <p>
+                @*<p>
                     @Html.ActionLink("اضافة دورة", "Create", "Programs",null, new { @class = "btn btn-info btn-block w-25 m-auto text-white" })
-                </p> 
-                <div class="row">
+                </p>*@ 
+                <div class="row"  style="justify-content:space-around">
+                    @if (Model.Count() == 0)
+                    {
+                        <p>لا يوجد برامج</p>
+                    }
                     @foreach (var item in Model)
                     {
                         <div class="col-md-6 col-lg-4 col-xl-4 p-2 tracks-box">
                             <div class="card bg-info text-light cardStyle">
                                 <div class="img-c">
-                                    <img src="~/images/Programs/@item.Program_ImagePath">
+                                    <img src="~/images/Programs/@item.Program_MainImage">
                                 </div>
                                 <div class="card-body card-bodyStyle">
                                     <h5 class="card-title">@item.Program_Title</h5>

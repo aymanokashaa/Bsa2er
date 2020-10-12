@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dash Board</title>
+    <title>لوحة التحكم</title>
     <link rel="icon" type="images/png" href="~/images/bsaer.png" />
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,8 +36,9 @@
     <link href="~/Content/DashBoardNews.css" rel="stylesheet" />
     <link href="~/Content/Gallery.css" rel="stylesheet" />
     <link href="~/Content/Program.css" rel="stylesheet" />
-   
+
     <link href="~/Content/Track.css" rel="stylesheet" />
+    <link href="~/Content/LoadingGIF.css" rel="stylesheet" />
     <style>
 
         .Usercard {
@@ -138,7 +139,6 @@
             padding-left: 10px;
             background-color: white;
             color: black;
-  
         }
 
         .Username {
@@ -154,35 +154,42 @@
             margin-top: 3px;
             color: #919191;
         }
+
         #BasaerLogo:hover {
             transform: scale(1.4);
         }
-        #BasaerLogo{
-            transition:all 1s;
+
+        #BasaerLogo {
+            transition: all 1s;
         }
-        .dispnon{
-            display:none;
+
+        .dispnon {
+            display: none;
         }
-        #drop{
-            transition:all 1s;
+
+        #drop {
+            transition: all 1s;
         }
+
         #dropLink:hover {
             cursor: pointer;
         }
-     
     </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
+    <div id="loader">
+        <div id="status"></div>
+    </div>
     <div class="wrapper">
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-maroon elevation-4 " id="side">
+        <aside class="main-sidebar sidebar-dark-maroon elevation-4 " id="side" style="margin-left:calc(100vw - 250px);" >
             <!-- Brand Logo -->
             <div class="Usercard w-100">
                 <div class="Usercard-header" style="background-image: url(../../images/7.png);background-size:contain;background-repeat:no-repeat;">
                     <div class="Usercard-header-slanted-edge">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200"><path class="Userpolygon" d="M-20,200,1000,0V200Z"></path></svg>
 
-                        <a href="/Manage/Index" class="Userbtn-follow"><span class="Usersr-only">الصفحة الشخصية</span></a>
+                        <a href="/Manage/ChangePassword" class="Userbtn-follow"><span class="Usersr-only">الصفحة الشخصية</span></a>
                     </div>
                 </div>
                 <div class="Usercard-body">
@@ -395,25 +402,26 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper " style="background-image: url(../../images/6.jpg)">
+        <div class="content-wrapper " style="background-image: url(../../images/6.jpg);width:calc(100vw - 250px);position:relative;right:250px;">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0 text-dark" style="font-size: 2.5rem;">Dashboard</h1>
-                            @Html.ActionLink("الصفحة الرئيسية", "Index", "Home", null, new { @class = "brand-link text-primary" })
-                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+
+                        <div class="col-sm-6" >
+                            <ol class="breadcrumb float-sm-left">
+                                <li class="breadcrumb-item mr-4"><img src="~/images/7.png" width="200" id="BasaerLogo" alt="Basaer Logo"></li>
+                            </ol>
+                        </div><!-- /.col -->
+
+                        <div class="col-sm-6" style="text-align:right;" dir="rtl">
+                            <h1 class="m-0 text-dark" style="font-size: 2.5rem;">لوحة التحكم</h1>
+                            @Html.ActionLink("الصفحة الرئيسية", "Index", "Home", null, new { @class = "brand-link text-primary text-right" })
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "text-right" }))
                             {
                                 @Html.AntiForgeryToken()
                                 <a class="brand-link text-danger" href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a>
                             }
-                        </div><!-- /.col -->
-
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item mr-4"><img src="~/images/7.png" width="200" id="BasaerLogo" alt="Basaer Logo"></li>
-                            </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -536,7 +544,7 @@
 
 
         <!-- /.content-wrapper -->
-        <footer class="main-footer">
+        <footer class="main-footer" style="width: calc(100vw - 250px); position: relative; right: 250px;" >
             <strong>Copyright &copy; 2020 <a href="#">Basear</a>.</strong>
             All rights reserved.
         </footer>
@@ -545,8 +553,6 @@
 
     </div>
     <!-- ./wrapper -->
-
-
     <!-- Change Profile Picture Modal -->
     <div class="modal fade" id="dpic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -554,7 +560,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">تغيير الصوره الشخصيه</h5>
                 </div>
-                @using (Html.BeginForm("ChangePic", "Account", FormMethod.Post,new { enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("ChangePic", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     <div class="modal-body">
                         @Html.AntiForgeryToken()
@@ -571,20 +577,20 @@
                     </div>
                 }
                 @*<form method="post" action="/Account/ChangePic" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        @Html.AntiForgeryToken()
-                        <div class="form-group">
-                            <div class="w-100" style="height:400px">
-                                <img src="@ViewBag.img" class="w-100 h-100" />
+                        <div class="modal-body">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <div class="w-100" style="height:400px">
+                                    <img src="@ViewBag.img" class="w-100 h-100" />
+                                </div>
+                                <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
                             </div>
-                            <input type="file" accept="image/x-png,image/gif,image/jpeg" name="image" class="form-control-file mt-3" />
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button> |
-                        <input type="submit" class="btn btn-success" value="حفظ" />
-                    </div>
-                </form>*@
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">إلغاء</button> |
+                            <input type="submit" class="btn btn-success" value="حفظ" />
+                        </div>
+                    </form>*@
             </div>
         </div>
     </div>
@@ -594,6 +600,7 @@
     <script src="~/Scripts/popper.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/LoadingGIF.js"></script>
     <script>
         $("#AjaxLinkTwo").html('<p>إدارة المعلمين</p ><i class="float-left fa fa-user-circle-o"></i>').on("click", function () { $(".card").css("display", "block") });
         $("#AjaxLinkOne").html('<p>إدارة المشرفين</p ><i class="float-left fa fa-vcard"></i>').on("click", function () { $(".card").css("display", "block") });

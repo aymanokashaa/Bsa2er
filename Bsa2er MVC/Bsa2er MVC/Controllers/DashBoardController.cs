@@ -1,4 +1,5 @@
 ﻿using Bsa2er_MVC.Models;
+using Bsa2er_MVC.Repositories;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,21 @@ namespace Bsa2er_MVC.Controllers
     [Authorize(Roles ="Admin,Owner")]
     public class DashBoardController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db;// = new ApplicationDbContext();
+        private readonly IRepository<Visitor> vistorRepository;
 
+        public DashBoardController(ApplicationDbContext _db,IRepository<Visitor> _visitorRepository)
+        {
+            db = _db;
+            vistorRepository = _visitorRepository;
+        }
         public ActionResult DashBoardPage()
         {
             var listOfS = db.Users.Where(u => u.Roles.Any(r => r.RoleId == "4"));
             ViewBag.NumOfStudents = listOfS.ToList().Count();
             ViewBag.NumOfNewStudents =listOfS.AsEnumerable().Where(u=> (DateTime.Now-u.dataOfRegister).Days <= 7).ToList().Count();
             ViewBag.NumOfProgram = db.Programs.ToList().Count();
-             int[] visitorsInfo = VisitorOperations.getVisitors();
+             int[] visitorsInfo = vistorRepository.getInfo();
             ViewBag.NumOfTodayVisitors = visitorsInfo[0];
             ViewBag.NumOfAllVisitors = visitorsInfo[1];
 
@@ -49,6 +56,7 @@ namespace Bsa2er_MVC.Controllers
         //GET: Programs
         public ActionResult ProgramsPage(ProgramType type)
         {
+            ViewBag.type = type;
             return PartialView(db.Programs.Where(p=>p.Program_Type==type).ToList());
         }
         //GET: Pictures

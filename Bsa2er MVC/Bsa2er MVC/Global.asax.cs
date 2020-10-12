@@ -1,4 +1,5 @@
 using Bsa2er_MVC.Models;
+using Bsa2er_MVC.Repositories;
 using System;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -11,13 +12,14 @@ namespace Bsa2er_MVC
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            UnityConfig.RegisterComponents();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-        protected void Application_BeginRequest()
+        protected void Application_BeginRequest(IRepository<Visitor> _repository)
         {
-            VisitorOperations.AddVisitor(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
+            _repository.AddItem(new Visitor() { IpAddress = Request.UserHostAddress, DateTimeOfVisit = DateTime.Now });
         }
     }
 }

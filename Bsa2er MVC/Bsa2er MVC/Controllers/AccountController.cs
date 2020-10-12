@@ -13,7 +13,7 @@ namespace Bsa2er_MVC.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db= new ApplicationDbContext();
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
@@ -21,7 +21,7 @@ namespace Bsa2er_MVC.Controllers
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager/*,ApplicationDbContext _db*/)
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -67,6 +67,11 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
         {
+            var user1 = UserManager.Users.FirstOrDefault(a => a.UserName == model.username);
+            if(user1.EmailConfirmed==false)
+            {
+                ModelState.AddModelError("", "من فضلك قم بتفعيل بريدك الالكتروني");
+            }
 
             if (!ModelState.IsValid)
             {
@@ -211,9 +216,22 @@ namespace Bsa2er_MVC.Controllers
                     }
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
+<<<<<<< HEAD
                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                  await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+=======
+                  //  string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                   // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                   // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+                   // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                 //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+                    string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking this link             " + callbackUrl + " Your userName: " + model.Username + ",  Your Password: " + model.Password);
+                    
+>>>>>>> e0abc7c2adf31cd335a69456af0cfb6d4c5da870
 
                     if (id == "4")
                         return RedirectToAction("GoConfirmYourEmail");
@@ -239,6 +257,7 @@ namespace Bsa2er_MVC.Controllers
             var result = await UserManager.ConfirmEmailAsync(userId, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
+        [AllowAnonymous]
         public ActionResult GoConfirmYourEmail()
         {
             return View();
@@ -547,6 +566,7 @@ namespace Bsa2er_MVC.Controllers
         {
             var userID = User.Identity.GetUserId();
             
+<<<<<<< HEAD
             try
             {
                 db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
@@ -558,6 +578,19 @@ namespace Bsa2er_MVC.Controllers
             }
 
             return RedirectToAction("StudentDashboard", "Account");
+=======
+                try
+                {
+                    db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
+                    db.SaveChanges();
+                }
+                catch
+                {
+                    return RedirectToAction("StudentDashboard");
+                }
+
+            return RedirectToAction("StudentDashboard");
+>>>>>>> e0abc7c2adf31cd335a69456af0cfb6d4c5da870
         }
 
         protected override void Dispose(bool disposing)

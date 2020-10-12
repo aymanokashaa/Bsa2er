@@ -67,6 +67,7 @@ namespace Bsa2er_MVC.Controllers
                     mainimageFile.SaveAs(Server.MapPath("~/images/Programs/") + filename2);
                     program.Program_MainImage = filename2;
                 }
+                program.NumOfLecture = program.lectures.Count();
                 program.Ins_Id = InstructorId;
                 db.Programs.Add(program);
                 await db.SaveChangesAsync();
@@ -106,7 +107,7 @@ namespace Bsa2er_MVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit(string InstructorId,[Bind(Include = "ProgramId,Program_Title,Program_MainImage,Program_Body,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,NumOfLecture,Ins_Id")] Program program, HttpPostedFileBase imgFile, HttpPostedFileBase mainimgFile)
+        public async Task<ActionResult> Edit(string InstructorId,[Bind(Include = "ProgramId,lectures,Program_Title,Program_MainImage,Program_Body,Program_Duration,Program_Advantages,Program_Goals,Program_ImagePath,Program_VideoLink,Program_TargetGroup,Program_Type,Ins_Id")] Program program, HttpPostedFileBase imgFile, HttpPostedFileBase mainimgFile)
         {
             if (ModelState.IsValid)
             { 
@@ -132,10 +133,11 @@ namespace Bsa2er_MVC.Controllers
                         System.IO.File.Delete(Server.MapPath("~/images/Programs/") + program.Program_MainImage);
                     }
                     mainimgFile.SaveAs(Server.MapPath("~/images/Programs/") + imageName2);
-                    program.Program_ImagePath = imageName2;
+                    program.Program_MainImage = imageName2;
                 }
-
+                program.NumOfLecture = program.lectures.Count();
                 db.Entry(program).State = EntityState.Modified;
+
                 await db.SaveChangesAsync();
                 if (program.Program_Type == ProgramType.PublicProgram)
                 {
@@ -148,7 +150,7 @@ namespace Bsa2er_MVC.Controllers
 
                 }
             }
-            ViewBag.Ins_Id = new SelectList(db.Instructors, "InsId", "Degree", program.Ins_Id);
+            //ViewBag.Ins_Id = new SelectList(db.Instructors, "InsId", "Degree", program.Ins_Id);
             return View(program);
         }
 

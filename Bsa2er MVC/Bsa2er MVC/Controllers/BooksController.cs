@@ -54,6 +54,10 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(int id, Book book)
         {
+         if(System.IO.Path.HasExtension(book.PdfFile.FileName)== false)
+            {
+                ModelState.AddModelError("", "قم بادخال الملف بصيغة بي دي اف ");
+            }
             if (ModelState.IsValid)
             {
                 String[] array = book.ImageFile.FileName.Split('.');
@@ -61,14 +65,14 @@ namespace Bsa2er_MVC.Controllers
                 String[] array1 = book.PdfFile.FileName.Split('.');
                 String filename1 = Guid.NewGuid() + "." + array1[array1.Length - 1];
 
-                if (array[array.Length - 1].ToLower() != "jpg"  ||  array[array.Length - 1].ToLower() !="jpeg" )
+                if (array[array.Length - 1].ToLower() != "jpg"  &&  array[array.Length - 1].ToLower() !="jpeg" )
 
                 {
                     ModelState.AddModelError("", "من فضلك قم بادخال الصورة  بصيغة جي بي جي او جي بي اي جي ");
 
                     return View();
                 }
-                else if (array1[array1.Length-1].ToLower()!="pdf")
+                else if (array1[array1.Length-1].ToLower()!="pdf" )
                 {
                     ModelState.AddModelError("","قم بادخال الملف بصيغة بي دي اف ");
                     return View();

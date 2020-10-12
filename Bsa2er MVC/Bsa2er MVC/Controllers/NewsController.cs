@@ -1,4 +1,5 @@
 ﻿using Bsa2er_MVC.Models;
+using Bsa2er_MVC.Repositories;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -11,7 +12,13 @@ namespace Bsa2er_MVC.Controllers
     
     public class NewsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        //private ApplicationDbContext db = new ApplicationDbContext();
+
+        private IRepository<news> _newsRepository;
+        public NewsController(IRepository<news> newsRepository)
+        {
+            _newsRepository = newsRepository;
+        }
 
         // GET: news
        /* public ActionResult Index()
@@ -26,7 +33,7 @@ namespace Bsa2er_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            news news = db.News.Find(id);
+            news news = _newsRepository.FindById(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -57,9 +64,8 @@ namespace Bsa2er_MVC.Controllers
                     news.ImagePath = filename;
                 }
 
-                db.News.Add(news);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                _newsRepository.AddItem(news);
+                return RedirectToAction("Index","Home");
             }
 
             return View(news);
@@ -72,7 +78,7 @@ namespace Bsa2er_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            news news = db.News.Find(id);
+            news news = _newsRepository.FindById(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -101,8 +107,7 @@ namespace Bsa2er_MVC.Controllers
                     imgFile.SaveAs(Server.MapPath("~/images/News/") + imageName);
                     news.ImagePath = imageName;
                 }
-                db.Entry(news).State = EntityState.Modified;
-                db.SaveChanges();
+                _newsRepository.EditItem(news);
                 return RedirectToAction("Index");
             }
             return View(news);
@@ -115,7 +120,7 @@ namespace Bsa2er_MVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            news news = db.News.Find(id);
+            news news = _newsRepository.FindById(id);
             if (news == null)
             {
                 return HttpNotFound();
@@ -128,15 +133,14 @@ namespace Bsa2er_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            news news = db.News.Find(id);
-            db.News.Remove(news);
-            db.SaveChanges();
+            news news = _newsRepository.FindById(id);
+            _newsRepository.Remove(news);
             return RedirectToAction("Index");
         }
 
         public ActionResult NewsDetails(int id)
         {
-            news news = db.News.SingleOrDefault(n => n.id == id);
+            news news = _newsRepository.FindById(id);
             return PartialView(news);
         }
 
@@ -144,7 +148,7 @@ namespace Bsa2er_MVC.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _newsRepository.Dispose();
             }
             base.Dispose(disposing);
         }

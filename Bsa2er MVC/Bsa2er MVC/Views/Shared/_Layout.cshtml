@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
 </head>
 <body id="Target">
+    <div id="loader">
+        <div id="status"></div>
+    </div>
     <header id="mob">
         <div class="row">
             <div class="col-xs-4">
@@ -47,17 +50,17 @@
                         <li> <span class="nav-item">@Html.ActionLink("البوم الصور", "Gallery", "Home", null, new { @class = "nav-link" })</span></li>
                         <li> <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span></li>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
-        {
-            <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> DashBoard</a></span></li>
-        }
-        else if (User.IsInRole("Instructor"))
-        {
-            <li> <span class="nav-item"><a class="nav-link text-warning" href="/InstructorDashboard/Index"> لوحة التحكم</a></span></li>
-        }
-        else
-        {
-            <li> <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span></li>
-        }
+                        {
+                            <li> <span class="nav-item"><a class="nav-link text-warning" href="/DashBoard/DashBoardPage"> لوحة التحكم</a></span></li>
+                        }
+                        else if (User.IsInRole("Instructor"))
+                        {
+                            <li> <span class="nav-item"><a class="nav-link text-warning" href="/InstructorDashboard/Index"> لوحة التحكم</a></span></li>
+                        }
+                        else
+                        {
+                            <li> <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span></li>
+                        }
 
 
 
@@ -92,7 +95,7 @@
 
 
     </header>
-    <header id="com">
+    <header id="com" style="min-height:150px;">
         <div class="col-md-3 col-xs-12">
             <img id="image2" src="~/images/4.png" />
         </div>
@@ -114,14 +117,14 @@
                     <a class="fa fa-youtube text-danger  btn btn-toolbar mt-2" target="_blank"
                        href="https://github.com/"></a>
                 </ul>
-              
+
                 <ul class="navbar-nav mr-auto " style="text-align:center;">
                     @Html.Partial("_LoginPartial")
                 </ul>
                 @*<ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a class="nav-link text-warning" href="createuser.html"> سجل الان</a></li>
-            <li class="nav-item"><a class="nav-link text-warning" href="login.html"> تسجيل الدخول</a></li>
-        </ul>*@
+                        <li class="nav-item"><a class="nav-link text-warning" href="createuser.html"> سجل الان</a></li>
+                        <li class="nav-item"><a class="nav-link text-warning" href="login.html"> تسجيل الدخول</a></li>
+                    </ul>*@
                 <span id="wrapdate" class="navbar-brand date d-none d-md-block text-warning"></span>
             </div>
         </nav>
@@ -153,7 +156,7 @@
                         <span class="nav-item">@Html.ActionLink("المكتبة", "BookSection", "Home", null, new { @class = "nav-link" }) </span>
                         @if (User.IsInRole("Owner") || User.IsInRole("Admin"))
                         {
-                            <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">To DashBoard</a></span>
+                            <span class="nav-item"><a class="nav-link" href="/DashBoard/DashBoardPage">لوحة التحكم</a></span>
                         }
                         else if (User.IsInRole("Instructor"))
                         {
@@ -161,7 +164,7 @@
                         }
                         else
                         {
-                           <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span>
+                            <span class="nav-item">@Html.ActionLink("إتصل بنا", "contact", "Home", null, new { @class = "nav-link" })</span>
 
                         }
 
@@ -171,9 +174,9 @@
         </div>
     </header>
     <!--endheader-->
-
-    @RenderBody()
-
+    <div class="container-fluid mb-2" style="min-height:50vh;">
+        @RenderBody()
+    </div>
     <!--footer-->
 
     <footer class="p-3 mt-auto">
@@ -215,4 +218,10 @@
     @Scripts.Render("~/bundles/js")
     @RenderSection("scripts", required: false)
 </body>
+<style>
+    body
+    {
+        font-size:calc(0.6vw + 0.4rem);
+    }
+</style>
 </html>
