@@ -60,14 +60,23 @@
     </div>
 
     <div class="row box col-12 justify-content-around" style="margin-top: 12px;margin-left: 5px; width: 100%;">
+        @if (User.IsInRole("Student"))
+        {
+            <div><a href="/Account/StudentDashboard">التعليم الالكتروني</a></div>
+        }
+        else if  (User.IsInRole("Owner") | User.IsInRole("Admin")| User.IsInRole("Insructor"))
+        {
+            <div></div>
+        }
+        else
+        {
+            <div><span>@Html.ActionLink("سجل الأن", "Register", "Account", null, null) </span></div>
 
-        <div><span>@Html.ActionLink("سجل الأن", "Register", "Account", null, null) </span></div>
+
+            <div><span>@Html.ActionLink("تسجيل الدخول", "Login", "Account", null, null)  </span></div>
 
 
-        <div><span>@Html.ActionLink("تسجيل الدخول", "Login", "Account", null, null)  </span></div>
-
-
-        <div><span>@Html.ActionLink("التعليم الالكترونى", "", "", null, null)</span></div>
-
+            <div><span>@Html.ActionLink("التعليم الالكترونى", "", "", null, null)</span></div>
+        }
     </div>
 </div>

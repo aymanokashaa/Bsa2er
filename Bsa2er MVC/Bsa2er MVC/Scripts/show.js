@@ -1,10 +1,14 @@
-function showForm(e){
-    if (event.target.value == "3")
+function showForm(event) {
+    if (event.target.value =="")
        {
-           $("#myi").show();
+        $("#myi").show();
+        document.getElementById("quali").name = "";
+        document.getElementById("copyquali").name = "Qualifications";
        }
        else
        {
-          $("#myi").hide();
-       }
+        $("#myi").hide();
+        document.getElementById("quali").name = "Qualifications";
+        document.getElementById("copyquali").name = "";
+    }  
              }

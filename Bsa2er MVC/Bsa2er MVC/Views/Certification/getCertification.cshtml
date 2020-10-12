@@ -10,19 +10,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
 </head>
+<style>
+    .wrapper2 {
+        background-image: url(~/images/);
+        width: 710px;
+        height: 470px;
+    }
+
+    .certiname {
+        margin-left: 240px;
+        padding-top: 45px;
+        font-size: larger;
+    }
+
+    .certitext {
+        padding-top: 100px;
+        padding-right: 100px;
+        text-align: right;
+    }
+
+    .certiuser {
+        margin-left: 300px;
+        margin-top: 85px;
+        font-weight: bolder;
+        color: blue;
+    }
+
+    .certiname2 {
+        margin-left: 383px;
+        margin-top: 5px;
+        font-weight: bolder;
+        color: red;
+    }
+</style>
+
 <body>
-    <div style="width:800px; height:600px; padding:20px; text-align:center; border: 10px solid #787878">
-        <div style="width:750px; height:550px; padding:20px; text-align:center; border: 5px solid #787878">
-            <span style="font-size:50px; font-weight:bold">Certificate of Completion</span>
-            <br><br>
-            <span style="font-size:25px"><i>This is to certify that</i></span>
-            <br><br>
-            <span style="font-size:30px"><b>@ViewBag.studentName</b></span><br /><br />
-            <span style="font-size:25px"><i>has completed the course</i></span> <br /><br />
-            <span style="font-size:30px">@ViewBag.programName</span> <br /><br />
-            <span style="font-size:20px">with score of <b>@ViewBag.grad</b></span> <br /><br /><br /><br />
-            <span style="font-size:25px"><i>dated</i></span><br>
-            @DateTime.Now.ToLongDateString()
+    <div class="wrapper2 container">
+        <div class="wrapper2 container">
+            <div class="certiname">
+@ViewBag.programName
+            </div>
+            <div class="certiuser">
+@ViewBag.studentName
+            </div>
+            <div class="certiname2">
+@ViewBag.programName          
+            </div>
         </div>
     </div>
 </body>

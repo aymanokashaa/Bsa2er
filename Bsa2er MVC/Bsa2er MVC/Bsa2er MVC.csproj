@@ -324,6 +324,18 @@
     <Compile Include="Migrations\202007201553543_an.Designer.cs">
       <DependentUpon>202007201553543_an.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009241349293_somephots.cs" />
+    <Compile Include="Migrations\202009241349293_somephots.Designer.cs">
+      <DependentUpon>202009241349293_somephots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009241656279_deluser.cs" />
+    <Compile Include="Migrations\202009241656279_deluser.Designer.cs">
+      <DependentUpon>202009241656279_deluser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010121610480_add-phots.cs" />
+    <Compile Include="Migrations\202010121610480_add-phots.Designer.cs">
+      <DependentUpon>202010121610480_add-phots.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
@@ -736,6 +748,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202007201553543_an.resx">
       <DependentUpon>202007201553543_an.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009241349293_somephots.resx">
+      <DependentUpon>202009241349293_somephots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009241656279_deluser.resx">
+      <DependentUpon>202009241656279_deluser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010121610480_add-phots.resx">
+      <DependentUpon>202010121610480_add-phots.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -12,24 +12,71 @@
     @Styles.Render("~/Content/css")
     <link href="https://fonts.googleapis.com/css?family=Amiri|Changa&display=swap" rel="stylesheet">
 </head>
+<style>
+    .img-border {
+        border: 15px solid transparent;
+        padding: 15px;
+        border-image-source: url(../../images/);
+        border-image-repeat: repeat;
+        border-image-slice: 110;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 20% 60% 40%;
+        font-size: larger;
+    }
+</style>
 <body>
-    <table class="table table-striped w-75 mx-auto my-5 h2 text-right" style="direction:rtl">
-        <thead>
+    <div class="container img-border mt-5">
+        <div class="row container wrapper">
+            <div class="col-3 ml-5 mt-3">
+                Transcript
+            </div>
+            <div class="col-3" style="margin-right: 50px;">
+                <img src="~/images/4.png" width="600px" />">
+            </div>
+            <div class="col-3 ml-5 mt-3" style="direction: rtl;text-align: center;">
+                بيان الدرجات
+            </div>
+        </div>
+        <table table table-dark w-75 mx-auto my-5 h2 text-right" style="direction:rtl">
             <tr class="d-flex">
-                <td class="col-6 border-top-0">البرنامج</td>
-                <td class="col-6 border-top-0">الدرجة</td>
+                <td class="col-3 border-top-0">الأسم بالكامل</td>
+                <td class="col-9 border-top-0">@Model.ApplicationUser.fullname</td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
-            {
+            <tr class="d-flex">
+                <td class="col-3">محل الأقامة</td>
+                <td class="col-9">@Model.ApplicationUser.Country</td>
+            </tr>
+            <tr class="d-flex">
+                <td class="col-3">الجنسية</td>
+                <td class="col-9">@Model.ApplicationUser.birthcountry</td>
+            </tr>
+
+        </table>
+        <table class="table table-striped w-75 mx-auto my-5 h2 text-right" style="direction:rtl">
+            <thead>
                 <tr class="d-flex">
-                    <td class="col-6">@item.Program.Program_Title</td>
-                    <td class="col-6">@item.ProgramGrade</td>
+                    <td class="col-6 border-top-0">البرنامج</td>
+                    <td class="col-6 border-top-0">الدرجة</td>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model.StudentPrograms.Where(sp => sp.ProgramGrade != 0))
+                {
+    <tr class="d-flex">
+        <td class="col-6">@item.Program.Program_Title</td>
+        <td class="col-6">@item.ProgramGrade</td>
+    </tr>
+}
+            </tbody>
+        </table>
+  <h3>
+      إدارة الاكاديمية
+  </h3>
+    </div>
     @Scripts.Render("~/bundles/js")
 </body>
 </html>

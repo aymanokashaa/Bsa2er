@@ -57,7 +57,7 @@
                                 <option selected="selected" value="male">معلم</option>
                                 <option value="female">معلمة</option>
                             }
-                            else if(ViewBag.id == "4")
+                            else if (ViewBag.id == "4")
                             {
                                 <option selected="selected" value="male">طالب </option>
                                 <option value="female">طالبة</option>
@@ -364,15 +364,25 @@
                 </div>
                 <div class="form-row mt-5">
                     <div class="offset-5 col-3">
-                        <select style="direction:rtl;" name="Qualifications" class="form-control">
+                        <select style="direction:rtl;" id="quali"  class="form-control" onchange="showForm(event);">
                             <option value="متوسط">متوسط</option>
                             <option value="ثانوي"> ثانوي</option>
                             <option value="بكالريوس">بكالريوس</option>
                             <option value="دراسات عليا">دراسات عليا</option>
+                            <option  value="">غير ذلك</option>
                         </select>
                     </div>
+                     <div class="col-2">
+                        @Html.LabelFor(a => a.Qualifications, "المؤهل", new { @class = "form-lable" })
+                    </div>
+
+                </div>
+                <div class="form-row mt-5 mb-2" id="myi" style="display:none;">
+                    <div class="offset-5 col-3" >
+                        <input type="text" id="copyquali" class="form-control" placeholder="اكتب المؤهل">
+                    </div>
                     <div class="col-2">
-                        @Html.LabelFor(a => a.Qualifications, "المؤهل", new { @class = "form-label" })
+                        @Html.LabelFor(a => a.Qualifications, "غير ذلك", new { @class = "form-lable" })
                     </div>
                 </div>
                 <div class="form-row mt-4">

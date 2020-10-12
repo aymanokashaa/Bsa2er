@@ -76,7 +76,7 @@ namespace Bsa2er_MVC.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.username, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -211,9 +211,9 @@ namespace Bsa2er_MVC.Controllers
                     }
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
-                   // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    //var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                 //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
+                   string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                 await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a><br> Your userName:" + model.Username + "<br>Your Password:" + model.Password);
 
                     if (id == "4")
                         return RedirectToAction("GoConfirmYourEmail");
@@ -547,11 +547,17 @@ namespace Bsa2er_MVC.Controllers
         {
             var userID = User.Identity.GetUserId();
             
-            
+            try
+            {
                 db.StudentsPrograms.Add(new StudentsPrograms() { Std_Id = userID, Program_Id = id, Program_Status = ProgramStatus.Continuous, StartDateTime = DateTime.Now });
                 db.SaveChanges();
-            
-            return RedirectToAction("Index", "Home");
+            }
+            catch (Exception ex )
+            {
+                Response.Write("<script>alert('" + Server.HtmlEncode(ex.Message) + "')</script>");
+            }
+
+            return RedirectToAction("StudentDashboard", "Account");
         }
 
         protected override void Dispose(bool disposing)

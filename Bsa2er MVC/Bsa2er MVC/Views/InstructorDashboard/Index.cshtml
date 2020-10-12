@@ -170,6 +170,46 @@
             <div class="collapse multi-collapse personal show" id="cont-insmanage" data-parent="#content">
                 <div class="tracks-box">
 
+                    <h2 style="text-align:center" class="m-3">الدورات التدريبية</h2>
+                    <div class="row">
+                        @foreach (var item in Model.Programs)
+                        {
+                            <div class="col-md-4 col-lg-6 col-xl-6 p-2">
+                                <div class="card bg-info text-light">
+                                    <div class="img-c">
+                                        <img src="~/images/Programs/@item.Program_MainImage">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title ">@item.Program_Title</h5>
+                                        <p class="card-text ">@item.Program_Body</p>
+                                        @Html.ActionLink("تعديل", "Edit", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-danger " }) |
+                                        @Html.ActionLink("تفاصيل", "Details", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-warning" }) |
+                                        @Html.ActionLink("حذف", "Delete", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-secondary" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <h2 style="text-align:center" class="m-3">البرامج العلمية</h2>
+                    <div class="row">
+                        @foreach (var item in Model.Programs)
+                        {
+                            <div class="col-md-4 col-lg-6 col-xl-6 p-2">
+                                <div class="card bg-info text-light">
+                                    <div class="img-c">
+                                        <img src="~/images/Programs/@item.Program_MainImage">
+                                    </div>
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title ">@item.Program_Title</h5>
+                                        <p class="card-text ">@item.Program_Body</p>
+                                        @Html.ActionLink("تعديل", "Edit", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-danger " }) |
+                                        @Html.ActionLink("تفاصيل", "Details", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-warning" }) |
+                                        @Html.ActionLink("حذف", "Delete", "Programs", new { id = item.ProgramId }, new { @class = "btn btn-secondary" })
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
                     <h2 style="text-align:center" class="m-3">الدورات والبرامج</h2>
                     <div class="row">
                         @foreach (var item in Model.Programs)
@@ -190,6 +230,7 @@
                             </div>
                         }
                     </div>
+
                     <p>
                         @Html.ActionLink("اضافة دورة", "Create", "Programs", new { InstructorId = Model.InsId }, new { @class = "btn btn-info btn-block w-25 m-auto text-white" })
                     </p>

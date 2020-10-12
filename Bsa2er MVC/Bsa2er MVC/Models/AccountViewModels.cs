@@ -55,8 +55,7 @@ namespace Bsa2er_MVC.Models
         [Display(Name = "Email")]
         [EmailAddress]
         public string  Email { get; set; }
-
-        public string username { set; get; }
+        public string Username { set; get; }
 
         [Required(ErrorMessage ="يجب عليك ادخال كلمة السر")]
         [DataType(DataType.Password)]
